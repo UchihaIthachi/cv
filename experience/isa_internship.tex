@@ -1,0 +1,19 @@
+\textbf{Software Engineer Intern} \hfill \textit{Dec 2024 – May 2024} \\
+\textit{Information Systems Associates (Pvt) Ltd — Aviation Technology Company}
+
+\begin{itemize}[leftmargin=*]
+    \item Contributed to both \textbf{AeroOrder}, a revamped microservices-based product (\textit{Java 18, Spring Boot}), and \textbf{AeroMart}, the legacy stable Passenger Service System (\textit{Java 8, Ant}).
+    \item Designed and deployed a modern \textbf{Passenger Name Record (PNR) generation system} in AeroOrder, replacing the legacy Oracle DB-based generator in AeroMart, ensuring randomness, GDS compliance, and high scalability.
+    \item Exposed PNR generation as \textbf{gRPC services} for integration with AeroMart, enabling backward compatibility during phased migration.
+    \item Developed \textbf{fallback logic and feature flags} to allow runtime switching between new and legacy services, ensuring uninterrupted operations and smooth migration.
+    \item Implemented an \textbf{application-level pessimistic locking mechanism} to manage distributed concurrency safely under high load, replacing DB-level locking.
+    \item Used manual \textbf{Kafka consumer polling} (instead of Kafka Streams) for precise control over message consumption, improving resilience and service decoupling.
+    \item Researched and benchmarked \textbf{ID generation strategies} (UUID, Snowflake, Redis counters), lookup optimizations (Bloom filters, radix trees, Couchbase KV access), and distributed coordination patterns.
+    \item Built a \textbf{threshold-based PNR pool refill scheduler} using Kafka-triggered events to maintain availability without collisions across multiple instances.
+    \item Conducted \textbf{asynchronous load and performance testing} for Kafka-based order creation workflows (JMeter, Gatling), validating 25+ orders/sec throughput with acceptable latency, while using \textbf{Prometheus + Grafana} to monitor queue depth, pool refill rates, and latency metrics in real-time.
+    \item Refactored \textbf{structured logging} across AeroOrder and AeroMart services, standardizing JSON output for Kibana searchability and adding correlation IDs for cross-service tracing.
+    \item Participated in Agile ceremonies (stand-ups, sprint planning, retrospectives) and contributed to technical documentation on Confluence covering architecture, test plans, and operational guidelines.
+\end{itemize}
+
+\textbf{Tech Stack:} Java 18, Spring Boot, Java 8, Ant, gRPC, Kafka, React, Protobuf, REST API, Spring Security, Couchbase, Oracle DB, PostgreSQL, JMeter, Gatling, Ant Design, Docker, Docker Compose, Gradle, Prometheus, Grafana, Kibana, Jira, Microservices, Distributed Systems
+\end{xaiArtifact>
