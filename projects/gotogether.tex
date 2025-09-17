@@ -1,16 +1,18 @@
-\subsection*{GoTogether – Cloud-Native Travel Assistant Platform  \href{https://github.com/GoTogetherOrganization}{\faGithub} \href{https://go-together-uom.vercel.app/}{\faExternalLink}}
-Architected a \textbf{cloud-native, microservices-based} tourism platform for Sri Lanka featuring AI-driven itinerary generation (\textbf{Gemini API}), real-time transport tracking, and social engagement tools.
+\subsection*{GoTogether – Intelligent Travel Companion for Sri Lanka \href{https://github.com/GoTogetherOrganization}{\faGithub} \href{https://go-together-uom.vercel.app/}{\faLink}}
+Developed and deployed a full-stack travel assistant platform tailored for Sri Lankan tourism, offering AI-based itinerary generation, real-time transport data, and social interaction features through a cloud-native microservices architecture.
 
 \begin{itemize}
-    \item Designed independently deployable \textbf{microservices} for scalability, resilience, and fault isolation.
-    \item Developed \textbf{Next.js} frontend with secure authentication, SSR/CSR hybrid rendering, and role-based route protection.
-    \item Built \textbf{Spring Boot} User Service integrated with \textbf{Keycloak} for OAuth2/OIDC identity management.
-    \item Automated identity provisioning with a dedicated Auth Service and realm/client setup scripts.
-    \item Increased service startup reliability via a custom Keycloak dependency wait script.
-    \item Configured \textbf{HTTPS} with NGINX, Certbot, and DuckDNS; optimized Docker builds with multi-stage pipelines.
-    \item Migrated infrastructure from \textbf{AWS EC2} to \textbf{Oracle Cloud Free Tier}, improving performance while reducing costs.
+    \item Led development of the web frontend using \textbf{Next.js} with secure authentication, session handling via HTTP-only cookies, SSR/CSR hybrid rendering, and route protection for role-based access.
+    \item Designed and implemented the \textbf{User Service (Spring Boot)} to manage profiles, preferences, and social connections, integrating securely with \textbf{Keycloak} for identity management.
+    \item Built a dedicated \textbf{Auth Service using Keycloak}, managing OAuth2/OIDC flows, token issuance, and automated realm/client boot-time import scripts.
+    \item Solved startup dependency issues between services by writing a custom wait script to delay the user service until Keycloak initialization completed, improving reliability.
+    \item Configured \textbf{HTTPS for production with NGINX + Certbot + DuckDNS}, ensuring compatibility with Vercel’s secure API policies.
+    \item Refactored the Social Media Service, improving modularity, adding pagination, and enhancing error handling for REST APIs.
+    \item Optimized container builds using .dockerignore and multi-stage Docker builds; manually built JARs outside Docker to reduce image size and speed up builds.
+    \item Created a robust \textbf{deploy.sh script} to support local builds, selective service orchestration, and GitHub Actions-based CI/CD.
+    \item Migrated backend infrastructure from \textbf{AWS EC2 to Oracle Cloud Free Tier}, improving stability, memory headroom, and deployment speed.
 \end{itemize}
 
-\textit{Tech:} Microservices, Next.js, Spring Boot, Go (Gin), Keycloak, Gemini API, NGINX, Docker, Vercel, Oracle Cloud, PostgreSQL
+\textit{Keywords:} Next.js, React Native, Go, Spring Boot, Kong, PostgreSQL, Cloudflare, Vercel, NGINX, Certbot, DuckDNS, Gemini API
 
-{\rule{\linewidth}{0.4pt}}
+\vspace{1em}
