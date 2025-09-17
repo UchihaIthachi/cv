@@ -1,13 +1,14 @@
-\subsection*{Employee Management System (EMS) – Oracle Kubernetes Engine (OKE) \href{https://github.com/UchihaIthachi/EMS}{\faGithub}}
-Cloud-native microservices system for employee and department management, deployed on Oracle Kubernetes Engine with GitOps best practices.
+\subsection*{Employee Management System (EMS) \href{https://github.com/UchihaIthachi/EMS}{\faGithub}}
+Designed and built a comprehensive, cloud-native microservices application for employee and department management, featuring a full-stack architecture with a React/TypeScript frontend and Spring Boot backend.
 
 \begin{itemize}
-    \item Developed \textbf{Spring Boot} microservices (employee, department) with dedicated \textbf{MySQL} databases, service discovery via \textbf{Eureka/K8s DNS}, API gateway (\textbf{Spring Cloud Gateway}), and \textbf{RabbitMQ} for asynchronous messaging.
-    \item Implemented observability with \textbf{Zipkin/Sleuth} tracing, structured \textbf{ELK} logging, \textbf{Prometheus} metrics, and \textbf{Grafana} dashboards.
-    \item Authored production-grade \textbf{Kubernetes} manifests (Deployments, StatefulSets, Ingress, PVCs), configured \textbf{HPA} for auto-scaling, secured configs/secrets, and integrated with \textbf{OCI Load Balancer}.
-    \item Automated builds and tests with \textbf{GitHub Actions}; deployed with \textbf{ArgoCD GitOps} for sync, rollback, and drift detection.
+    \item Architected a distributed system with independent microservices for employees, departments, and configuration, using \textbf{Spring Cloud} for service discovery (\textbf{Eureka}), centralized configuration, and an API gateway.
+    \item Implemented both synchronous inter-service communication with \textbf{Feign Clients} and asynchronous messaging with \textbf{RabbitMQ}.
+    \item Established a robust observability stack, integrating \textbf{Zipkin/Sleuth} for distributed tracing, the \textbf{ELK Stack} for centralized logging, and \textbf{Prometheus/Grafana} for real-time metrics and monitoring.
+    \item Containerized all services using \textbf{Docker} and orchestrated local deployments with \textbf{Docker Compose}.
+    \item Designed and managed a CI/CD pipeline using \textbf{Jenkins}, with \textbf{ArgoCD} for GitOps-based deployments to a production-like \textbf{Kubernetes (OKE)} cluster.
 \end{itemize}
 
-\textit{Tech:} Java, Spring Boot, Spring Cloud, Eureka, RabbitMQ, Resilience4j, Sleuth, Zipkin, Feign, Hibernate, MySQL, Docker, Postman, Maven, Microservices
+\textit{Keywords:} Java 17, Spring Boot, Spring Cloud, React, TypeScript, Vite, Nginx, RabbitMQ, Resilience4j, MySQL, Docker, Kubernetes, Jenkins, ArgoCD, Prometheus, Grafana, ELK Stack, Nexus, GHCR
 
-{\rule{\linewidth}{0.4pt}}
+\vspace{1em}

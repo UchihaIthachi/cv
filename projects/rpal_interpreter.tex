@@ -1,14 +1,15 @@
-\subsection*{Rpal Interpreter  \href{https://github.com/malinduGamage/RPAL-Interpreter}{\faGithub}}
-Built a functional language interpreter from scratch, showcasing advanced compiler and automata theory concepts.
+\subsection*{RPAL Interpreter – Functional Language Compiler \href{https://github.com/malinduGamage/RPAL-Interpreter}{\faGithub}}
+Engineered a complete compiler and interpreter for the RPAL (Right-reference Pedagogic Algorithmic Language), built from scratch to parse and evaluate programs according to official language grammar and semantics.
 
 \begin{itemize}
-    \item Implemented lexical analysis using finite automata and custom regex engine.
-    \item Designed parser with pushdown automata for syntactic analysis.
-    \item Evaluated programs via lambda calculus-based execution model.
-    \item Manipulated AST and symbol tables using graph theory algorithms.
-    \item Set up automated testing with \textbf{Pytest} and CI/CD pipeline via \textbf{GitHub Actions}.
+    \item Developed a Lexical Analyzer using custom Finite State Automata (FSA) and regex-based token identification.
+    \item Built an Abstract Syntax Tree (AST) and Standard Tree (ST) generator.
+    \item Implemented a CSE Machine to evaluate programs using 13 semantic rules of RPAL.
+    \item Built a robust testing framework with \textbf{Pytest} covering over 168 test cases across AST, ST, and full output validation.
+    \item Automated build and test pipelines using \textbf{Makefiles} and \textbf{GitHub Actions}.
+    \item Supports interactive CLI switches (-ast, -st, -ct, -t, -ft) for granular output inspection.
 \end{itemize}
 
-\textit{Tech:} Python, Pytest, GitHub Actions, Makefile, CLI, Cygwin
+\textit{Keywords:} Python, Pytest, GitHub Actions, Makefile, CLI
 
-{\rule{\linewidth}{0.4pt}}
+\vspace{1em}
