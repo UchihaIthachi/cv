@@ -26,7 +26,7 @@ jobs:
         with:
           root_file: main.tex
           # Install extra system packages
-          extra_system_packages: "texlive-xetex texlive-fonts-extra texlive-latex-extra"
+          extra_system_packages: "texlive-full"
 
       # 3) Upload PDF artifact
       - name: Upload resume artifact
