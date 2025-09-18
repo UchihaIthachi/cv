@@ -27,6 +27,9 @@ jobs:
           root_file: main.tex
           # Install extra system packages
           extra_system_packages: "texlive-full"
+          cache: true
+          cache_key: resume-latex-cache
+          latexmk_use_xelatex: true
 
       # 3) Upload PDF artifact
       - name: Upload resume artifact
