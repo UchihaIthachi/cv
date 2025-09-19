@@ -75,12 +75,13 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: resume-pdf
+          path: ./dist
 
       - name: Deploy PDF to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUBTOKEN }}
-          publish_dir: .
+          publish_dir: ./dist
           publish_branch: gh-pages
           force_orphan: true
           keep_files: false
