@@ -1,0 +1,10 @@
+\subsection*{Food Delivery Application \href{https://github.com/FoodDeliveryApp-ISA}{\faGithub}}
+Built a scalable, event-driven food delivery platform inspired by systems like Uber Eats, using a modern microservices architecture. As part of the core team, I focused on designing and developing the Restaurant Service.
+
+\begin{itemize}
+    \item Developed the Restaurant Module with secure sign-up/login using \textbf{Spring Security} and \textbf{JWT} (with extended claims).
+    \item Built CRUD APIs for menu and item management; integrated \textbf{Redis caching} to improve performance and reduce database load, with appropriate cache invalidation strategies.
+    \item Enabled order sync via \textbf{Kafka}: when an order is placed, an event is published to the `order\_created` topic, which the restaurant service consumes to update order details.
+\end{itemize}
+
+\textit{Keywords:} Java, Spring Boot, gRPC, Kafka, Redis, PostgreSQL, WebSocket, Docker, React.js, Ant Design
