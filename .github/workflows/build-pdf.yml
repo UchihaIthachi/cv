@@ -18,23 +18,25 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.1.7
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Compile LaTeX
-        uses: xu-cheng/latex-action@v2.5.0
+        uses: xu-cheng/latex-action@v2
         with:
           root_file: main.tex
           extra_system_packages: "texlive-full"
+          cache: true
+          cache_key: resume-latex-cache
           latexmk_use_xelatex: true
 
       - name: Upload resume artifact
-        uses: actions/upload-artifact@v4.3.1
+        uses: actions/upload-artifact@v4
         with:
           name: resume-pdf
           path: main.pdf
-          retention-days: 7
+
 
       - name: Commit PDF back to repo
         if: github.ref == 'refs/heads/main'
@@ -52,7 +54,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download PDF artifact
-        uses: actions/download-artifact@v4.1.7
+        uses: actions/download-artifact@v4
         with:
           name: resume-pdf
 
@@ -70,7 +72,7 @@ jobs:
     if: github.ref == 'refs/heads/main'
     steps:
       - name: Download PDF artifact
-        uses: actions/download-artifact@v4.1.7
+        uses: actions/download-artifact@v4
         with:
           name: resume-pdf
 
