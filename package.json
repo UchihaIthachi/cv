@@ -1,0 +1,25 @@
+{
+  "name": "latex-editor",
+  "version": "1.0.0",
+  "description": "A web-based LaTeX editor",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "fs-extra": "^11.1.1",
+    "dotenv": "^16.3.1",
+    "glob": "^10.3.10",
+    "passport": "^0.6.0",
+    "passport-github2": "^0.1.12"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
