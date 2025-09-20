@@ -1,4 +1,4 @@
-name: Build Resume PDF
+name: Build Resume PDFs
 
 on:
   workflow_dispatch:
@@ -6,21 +6,29 @@ on:
     branches: [main]
     tags:
       - "v*"
-  pull_request:  # preview PDFs in PRs
+  pull_request:
     branches: [main]
 
 permissions:
-  contents: write   # needed for commit & gh-pages deployment
-  pages: write      # needed to deploy to GitHub Pages
-  id-token: write   # required by pages deployment
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        profile: [general, devops, backend, fullstack, web3, full]
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Select profile
+        run: |
+          sed -i 's/^\\input{profiles\/.*}/%&/' main.tex
+          sed -i 's/^%\\s*\\input{profiles\/${{ matrix.profile }}}/\\input{profiles\/${{ matrix.profile }}}/' main.tex
 
       - name: Compile LaTeX
         uses: xu-cheng/latex-action@v2
@@ -28,40 +36,32 @@ jobs:
           root_file: main.tex
           extra_system_packages: "texlive-full"
           cache: true
-          cache_key: resume-latex-cache
+          cache_key: resume-latex-cache-${{ matrix.profile }}
           latexmk_use_xelatex: true
+
+      - name: Rename PDF
+        run: mv main.pdf ${{ matrix.profile }}-resume.pdf
 
       - name: Upload resume artifact
         uses: actions/upload-artifact@v4
         with:
-          name: resume-pdf
-          path: main.pdf
-
-
-      - name: Commit PDF back to repo
-        if: github.ref == 'refs/heads/main'
-        run: |
-          set -e
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add main.pdf
-          git commit -m "docs: auto-generate resume and update PDF" || echo "No changes to commit"
-          git push
+          name: resume-${{ matrix.profile }}
+          path: ${{ matrix.profile }}-resume.pdf
 
   release:
     needs: build
     if: startsWith(github.ref, 'refs/tags/v')
     runs-on: ubuntu-latest
     steps:
-      - name: Download PDF artifact
+      - name: Download all PDF artifacts
         uses: actions/download-artifact@v4
         with:
-          name: resume-pdf
+          path: pdfs
 
-      - name: Create Release and Upload PDF
+      - name: Create Release and Upload PDFs
         uses: softprops/action-gh-release@v1
         with:
-          files: main.pdf
+          files: pdfs/**/*.pdf
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}
@@ -71,13 +71,12 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     steps:
-      - name: Download PDF artifact
+      - name: Download all PDF artifacts
         uses: actions/download-artifact@v4
         with:
-          name: resume-pdf
           path: ./dist
 
-      - name: Deploy PDF to GitHub Pages
+      - name: Deploy PDFs to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
