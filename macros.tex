@@ -6,10 +6,5 @@
     \textbf{Technologies:} #4 \par
 }
 
-\makeatletter
-\ifdefined\titlerule
-  \renewcommand{\titlerule}{\titlerule*[0.5pt]\vspace{0.5em}}
-\else
-  \newcommand{\titlerule}{\titlerule*[0.5pt]\vspace{0.5em}}
-\fi
-\makeatother
+% Custom rule for section headings (safe wrapper)
+\newcommand{\mytitlerule}{\titlerule*[0.5pt]\vspace{0.5em}}
