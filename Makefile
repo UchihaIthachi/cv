@@ -1,19 +1,15 @@
 # Makefile for building resume profiles
 
-# List of all profiles
+# List of all profiles (each must have a corresponding .tex file)
 PROFILES = general devops backend fullstack web3 full
 
-# Default target
+# Default target: build all PDFs
 all: $(patsubst %, %-resume.pdf, $(PROFILES))
 
 # Rule to build a PDF for a specific profile
-%-resume.pdf: main.tex
+%-resume.pdf: %.tex
 	@echo "Building $@..."
-	@cp main.tex main.tmp.tex
-	@sed -i 's/^\\input{profiles\/.*}/%&/' main.tmp.tex
-	@sed -i 's/^%\\s*\\input{profiles\/$(patsubst %-resume.pdf, %, $@)}/\\input{profiles\/$(patsubst %-resume.pdf, %, $@)}/' main.tmp.tex
-	@latexmk -xelatex -jobname=$(patsubst %.pdf, %, $@) main.tmp.tex
-	@rm main.tmp.tex
+	@latexmk -xelatex -jobname=$* $<
 
 # Rule to build a specific profile by name (e.g., make general)
 .PHONY: $(PROFILES)

@@ -25,22 +25,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Select profile
-        run: |
-          sed -i 's/^\\input{profiles\/.*}/%&/' main.tex
-          sed -i 's/^%\\s*\\input{profiles\/${{ matrix.profile }}}/\\input{profiles\/${{ matrix.profile }}}/' main.tex
-
       - name: Compile LaTeX
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: main.tex
+          root_file: profiles/${{ matrix.profile }}.tex
           extra_system_packages: "texlive-full"
-          cache: true
-          cache_key: resume-latex-cache-${{ matrix.profile }}
           latexmk_use_xelatex: true
-
-      - name: Rename PDF
-        run: mv main.pdf ${{ matrix.profile }}-resume.pdf
+          args: "-jobname=${{ matrix.profile }}-resume"
 
       - name: Upload resume artifact
         uses: actions/upload-artifact@v4
