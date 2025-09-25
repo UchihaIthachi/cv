@@ -1,10 +1,13 @@
-% CV Project/Experience Macro
+% CV Project/Experience Macro - more compact
 % Arguments: #1 = Title/Role, #2 = Date/Duration, #3 = Description, #4 = Tech stack
 \newcommand{\cvproject}[4]{
     \textbf{#1} \hfill \textit{#2} \par
+    \vspace{-0.5em}
     #3 \par
+    \vspace{-0.5em}
     \textbf{Technologies:} #4 \par
+    \vspace{0.5em}
 }
 
-% Custom rule for section headings (safe wrapper)
-\newcommand{\mytitlerule}{\titlerule*[0.5pt]{\hfill}\par\vspace{0.5em}}
+% Custom rule for section headings (more compact)
+\newcommand{\sectionrule}{\titlerule*[0.5pt]}
