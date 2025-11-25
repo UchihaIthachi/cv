@@ -1,17 +1,36 @@
-\textbf{Software Engineer Intern} \hfill \textit{Dec 2024 – May 2025} \\
-\textit{Information Systems Associates (Pvt) Ltd — Aviation Technology Company}
+\noindent
+\textbf{Software Engineer Intern} \hfill \textit{Dec 2024 -- May 2025}\\
+\noindent
+\textit{Information Systems Associates (Pvt) Ltd --- Aviation Technology Company}\\[0.05em]
 
-\begin{itemize}[leftmargin=*]
-    \item Engineered a distributed, high-throughput unique ID generator for Passenger Name Records (PNRs) using a Kafka-backed pool model, ensuring uniqueness and security across scaled instances while adhering to aviation domain standards.
-    \item Optimized the PNR generation service to achieve **25+ PNRs/sec throughput** per node with **<100ms latency**, validating performance and resilience through extensive load, stress, and spike testing with Apache JMeter.
-    \item Resolved critical production issues, including Kafka consumer lag and offset resetting, by implementing robust shutdown hooks and enhanced retry mechanisms to improve fault tolerance and system recoverability.
-    \item Architected and implemented a hybrid integration strategy by embedding a gRPC client and Kafka consumer into a legacy Java 8 monolith (AeroMart), enabling seamless, backward-compatible communication with the new AeroOrder microservices platform.
-    \item Developed dynamic, database-driven feature toggles to control PNR routing logic, minimizing risk during the phased production rollout by allowing for granular control and immediate fallback.
-    \item Led Research and Development for asynchronous load testing, establishing a monitoring stack with Prometheus and Grafana to collect and visualize key performance metrics like queue time and latency.
-    \item Investigated and refactored inefficient Kafka Streams processing logic, building a proof-of-concept to validate a more efficient Producer-Consumer model that significantly reduced consumer lag and improved system stability.
-    \item Modernized the logging infrastructure by implementing structured JSON logging, which removed legacy dependencies and improved log parsing efficiency across all microservices.
-    \item Authored comprehensive design documents, sequence diagrams, and integration plans on Confluence; facilitated knowledge transfer sessions to ensure seamless handover to the core development team.
-    \item Actively contributed to the agile development lifecycle, participating in all ceremonies, performing code reviews, and collaborating with cross-functional teams to deliver production-ready features using Jira and Bitbucket.
+\begin{itemize}[leftmargin=*, itemsep=0.3em, topsep=0.01em]
+
+    \item \textbf{AeroOrder --- Revamped Order Management Microservice (Java 18, Spring Boot)}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em, topsep=0.1em]
+        \item Engineered a \textbf{distributed}, \textbf{high-throughput} unique ID generator for Passenger Name Records (PNRs) using a \textbf{Kafka}-backed pool model, ensuring uniqueness and security across scaled instances while adhering to aviation domain standards.
+        \item Optimized the PNR generation service to achieve \textbf{25+ PNRs/sec throughput} per node with \textbf{<100ms latency}, validating performance and resilience through extensive load, stress, and spike testing with \textbf{Apache JMeter}.
+        \item Resolved critical \textbf{production} issues, including \textbf{Kafka} consumer lag and offset resetting, by implementing robust shutdown hooks and enhanced retry mechanisms to improve fault tolerance and system recoverability.
+        \item Led \textbf{Research and Development} for \textbf{asynchronous load testing}, establishing a monitoring stack with \textbf{Prometheus} and \textbf{Grafana} to collect and visualize key performance metrics like queue time and latency.
+        \item Investigated and refactored inefficient \textbf{Kafka Streams} processing logic, building a proof-of-concept to validate a more efficient \textbf{Producer-Consumer} model that significantly reduced consumer lag and improved system stability.
+        \item Modernized the logging infrastructure by implementing structured \textbf{JSON logging}, which removed legacy dependencies and improved log parsing efficiency across all microservices.
+    \end{itemize}
+
+    \item \textbf{AeroMart — Legacy Monolithic Passenger Reservation System (Java 8 ,Ant )}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em, topsep=0.1em]
+        \item Architected and implemented a hybrid integration strategy by embedding a \textbf{gRPC} client and \textbf{Kafka} consumer into a \textbf{legacy} \textbf{Java 8} monolith (AeroMart), enabling seamless, backward-compatible communication with the new \textbf{AeroOrder microservices} platform.
+        \item Developed dynamic, database-driven \textbf{feature toggles} to control PNR routing logic, minimizing risk during the phased \textbf{production rollout} by allowing for granular control and immediate fallback.
+    \end{itemize}
+
+    \item \textbf{Other}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em, topsep=0.1em]
+        \item Authored comprehensive \textbf{design documents}, \textbf{sequence diagrams}, and \textbf{integration plans} on Confluence; facilitated knowledge transfer sessions to ensure seamless handover to the core development team.
+        \item Actively contributed to the \textbf{agile development lifecycle}, participating in all ceremonies, performing \textbf{code reviews}, and collaborating with cross-functional teams to deliver \textbf{production-ready} features using \textbf{Jira} and \textbf{Bitbucket}.
+    \end{itemize}
+
 \end{itemize}
 
-\textit{Keywords:} Java 18, Java 8, Spring Boot, Spring Security, Ant, gRPC, Kafka, React, Protobuf, REST API, Couchbase, Oracle DB, Oracle SQL, PostgreSQL, JMeter, Gatling, Ant Design, Docker, Docker Compose, Gradle, Prometheus, Grafana, Kibana, Confluence, Jira, Bitbucket, Microservices, Kafka Streams, JSON
+\vspace{-0.1em}
+\noindent\small
+\textsc{Keywords:} %
+Java 18, Java 8, \textbf{Spring Boot}, \textbf{Spring Security}, Ant, \textbf{gRPC}, \textbf{Kafka}, React, Protobuf, REST API, Couchbase, Oracle DB, Oracle SQL, PostgreSQL, \textbf{JMeter}, Gatling, Ant Design, \textbf{Docker}, Docker Compose, Gradle, \textbf{Prometheus}, \textbf{Grafana}, Kibana, Confluence, Jira, Bitbucket, Microservices, \textbf{Kafka Streams}, JSON
+\normalsize

@@ -1,17 +1,26 @@
 % preamble.tex
 
 % XeLaTeX-compatible setup
-\usepackage[a4paper,margin=1.5cm]{geometry}
+\usepackage[a4paper,margin=1cm]{geometry} % Reduced margins
 \usepackage{enumitem}
+\setlist{nosep, leftmargin=*} % Compact lists
 \usepackage{xcolor}
 \usepackage{fontawesome5}
 \usepackage{titlesec}
 \usepackage[hidelinks]{hyperref}
+\usepackage{setspace}
+\setstretch{0.95} % Reduce line spacing
+\usepackage{fontspec}
+\usepackage{xparse} 
+\usepackage{tabularx}
+% \setmainfont{Roboto} % Example: using Roboto font
 % \input{glyphtounicode} % Additional Unicode mappings
 % \pdfgentounicode=1 % Ensure ATS-readable PDF
 
-% Section styling (black)
-\titleformat{\section}{\large\bfseries}{}{0em}{}[\mytitlerule]
+% Section styling (black) - more compact
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\sectionrule]
+\titlespacing{\section}{0pt}{2ex plus .1ex minus .2ex}{1ex plus .1ex}
 \titleformat{\subsection}{\normalsize\bfseries}{}{0em}{}[]
+\titlespacing{\subsection}{0pt}{1.5ex plus .1ex minus .2ex}{0.5ex plus .1ex}
 
 \input{macros}

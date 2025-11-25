@@ -1,10 +1,31 @@
-% CV Project/Experience Macro
+% CV Project/Experience Macro - more compact
 % Arguments: #1 = Title/Role, #2 = Date/Duration, #3 = Description, #4 = Tech stack
 \newcommand{\cvproject}[4]{
     \textbf{#1} \hfill \textit{#2} \par
+    \vspace{-0.5em}
     #3 \par
+    \vspace{-0.5em}
     \textbf{Technologies:} #4 \par
+    \vspace{0.5em}
 }
 
-% Custom rule for section headings (safe wrapper)
-\newcommand{\mytitlerule}{\titlerule*[0.5pt]{\hfill}\par\vspace{0.5em}}
+% Custom rule for section headings (more compact)
+\newcommand{\sectionrule}{\titlerule*[0.5pt]}
+
+\newcommand{\MainDivider}{%
+  \vspace{0.6em}%
+  \noindent\hrule height 1pt%
+  \vspace{0.15em}%
+  \noindent\hrule height 0.4pt%
+  \vspace{0.5em}}
+
+% Big section divider
+\newcommand{\BigDivider}{%
+  \vspace{0.1em}\noindent\rule{\textwidth}{0.8pt}\vspace{0.4em}}
+
+
+% \cvcert{Title}{Provider}{Date}{URL}[Optional note]
+\NewDocumentCommand{\cvcert}{ m m m m o }{%
+  \item \textbf{\href{#4}{#1}} -- #2, #3%
+  \IfNoValueTF{#5}{}{\\{\footnotesize\textit{#5}}}%
+}
