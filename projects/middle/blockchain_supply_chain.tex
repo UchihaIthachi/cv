@@ -5,13 +5,10 @@
 Built a decentralized shipment tracking and payment platform that leverages Ethereum smart contracts to bring transparency and automation to supply chains.
 
 \begin{itemize}
-    \item Implemented a Solidity smart contract (Tracking.sol) to model shipments with a full lifecycle (PENDING → IN_TRANSIT → DELIVERED), including timestamped events and on-chain auditability.
-    \item Designed an escrow-style payment flow where receivers pre-pay shipment fees into the contract and funds are automatically released to senders upon successful delivery.
-    \item Developed a Next.js/React dashboard that integrates with MetaMask via Ethers.js and Web3Modal, enabling users to create, start, complete, and inspect shipments directly from the browser.
-    \item Used Hardhat for local blockchain development, automated deployment scripts, and a test suite (Mocha/Chai) to validate lifecycle transitions, event emission, and payment correctness.
+    \item Implemented a Solidity smart contract to model shipments with a full lifecycle and on-chain auditability.
+    \item Designed an escrow-style payment flow where funds are automatically released to senders upon successful delivery.
+    \item Developed a Next.js/React dashboard integrating with MetaMask via Ethers.js for direct browser interaction.
 \end{itemize}
 
 \nointent
 \textit{Keywords:} Solidity, Hardhat, Ethers.js, Web3Modal, MetaMask, Next.js, React, Tailwind CSS, Smart Contracts, Escrow Payments, DApp
-
-\vspace{1em}
