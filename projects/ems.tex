@@ -1,18 +1,16 @@
-\nointent
-\subsection*{Employee Management System (EMS) \href{https://github.com/UchihaIthachi/EMS}{\faGithub}}
-
-\nointent
-Designed and built a comprehensive, cloud-native microservices application for employee and department management, featuring a full-stack architecture with a React/TypeScript frontend and Spring Boot backend.
-
+\nointent \subsection*{Employee Management System (EMS) \href{https://github.com/UchihaIthachi/EMS}{\faGithub}} 
+ 
+\nointent Designed and built a comprehensive, cloud-native microservices application for employee and department management, featuring a full-stack architecture with a React/TypeScript frontend and Spring Boot backend. 
+ 
 \begin{itemize}
     \item Architected a distributed system with independent microservices for employees, departments, and configuration, using \textbf{Spring Cloud} for service discovery (\textbf{Eureka}), centralized configuration, and an API gateway.
-    \item Implemented both synchronous inter-service communication with \textbf{Feign Clients} and asynchronous messaging with \textbf{RabbitMQ}.
+    \item Implemented robust fault tolerance using \textbf{Resilience4j}, incorporating \textbf{Circuit Breaker}, \textbf{Retry}, and \textbf{Rate Limiter} patterns to ensure system stability during partial failures.
+    \item Enabled dynamic configuration management using \textbf{Spring Cloud Config Server} and \textbf{Spring Cloud Bus} with \textbf{RabbitMQ} for real-time property updates across services.
     \item Established a robust observability stack, integrating \textbf{Zipkin/Sleuth} for distributed tracing, the \textbf{ELK Stack} for centralized logging, and \textbf{Prometheus/Grafana} for real-time metrics and monitoring.
-    \item Containerized all services using \textbf{Docker} and orchestrated local deployments with \textbf{Docker Compose}.
-    \item Designed and managed a CI/CD pipeline using \textbf{Jenkins}, with \textbf{ArgoCD} for GitOps-based deployments to a production-like \textbf{Kubernetes (OKE)} cluster.
-\end{itemize}
-
-\noindent
-\textit{Keywords:} Java 17, Spring Boot, Spring Cloud, React, TypeScript, Vite, Nginx, RabbitMQ, Resilience4j, MySQL, Docker, Kubernetes, Jenkins, ArgoCD, Prometheus, Grafana, ELK Stack, Nexus, GHCR
-
+    \item Containerized all services using \textbf{Docker} and orchestrated local deployments with \textbf{Docker Compose}, while targeting \textbf{Kubernetes (OKE)} for production.
+    \item Designed and managed a CI/CD pipeline using \textbf{GitHub Actions}, with \textbf{ArgoCD} for GitOps-based deployments to the Kubernetes cluster.
+\end{itemize} 
+ 
+\noindent \textit{Keywords:} Java 17, Spring Boot, Spring Cloud, React, TypeScript, Vite, Nginx, RabbitMQ, Resilience4j, MySQL, Docker, Kubernetes, GitHub Actions, ArgoCD, Prometheus, Grafana, ELK Stack, Nexus, GHCR 
+ 
 \vspace{1em}
