@@ -5,10 +5,10 @@
 A capstone project built using AWS, following a microservices architecture with an event-driven, serverless (FaaS) design.
 
 \begin{itemize}
-    \item Architected an event-driven system with independently deployable microservices for auctions, authentication, and notifications.
-    \item Leveraged a full suite of AWS services, including \textbf{Lambda}, \textbf{API Gateway}, \textbf{DynamoDB}, \textbf{SQS}, \textbf{SNS}, and \textbf{SES}.
-    \item Utilized the \textbf{Serverless Framework} for streamlined deployment and infrastructure management on AWS.
+    \item Architected an event-driven system using \textbf{AWS Lambda}, \textbf{API Gateway}, and \textbf{EventBridge}, with \textbf{SQS} and \textbf{SNS} for asynchronous communication.
+    \item Designed a high-performance \textbf{DynamoDB} data model with GSIs and implemented a custom \textbf{Lambda Authorizer} for JWT-based security.
+    \item Utilized \textbf{LocalStack} and \textbf{Docker} for local cloud emulation and integrated \textbf{Middy} middleware for robust error handling.
 \end{itemize}
 
 \nointent
-\textit{Keywords:} Node.js, Serverless Framework, AWS Lambda, API Gateway, DynamoDB, SQS, SNS, SES, JWT
+\textit{Keywords:} Node.js, Serverless Framework, AWS Lambda, DynamoDB, SQS, SNS, SES, JWT, Middy, LocalStack, Docker

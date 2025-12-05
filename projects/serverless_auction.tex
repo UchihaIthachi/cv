@@ -5,13 +5,15 @@
 A capstone project built using AWS, following a microservices architecture with an event-driven, serverless (FaaS) design.
 
 \begin{itemize}
-    \item Architected an event-driven system with independently deployable microservices for auctions, authentication, and notifications.
-    \item Leveraged a full suite of AWS services, including \textbf{Lambda}, \textbf{API Gateway}, \textbf{DynamoDB}, \textbf{SQS}, \textbf{SNS}, and \textbf{SES}.
-    \item Implemented secure, token-based authentication using \textbf{JWT} and a custom \textbf{Lambda Authorizer}.
-    \item Utilized the \textbf{Serverless Framework} for streamlined deployment and infrastructure management on AWS.
+    \item Architected an event-driven microservices system (Auctions, Auth, Notifications) using \textbf{AWS Lambda}, \textbf{API Gateway}, and \textbf{EventBridge} for scheduled tasks.
+    \item Implemented asynchronous service communication using \textbf{SQS} and \textbf{SNS} to decouple components and handle email notifications via \textbf{SES}.
+    \item Designed a high-performance data model in \textbf{DynamoDB} utilizing \textbf{Global Secondary Indexes (GSI)} for efficient scheduled querying and \textbf{On-Demand Capacity} for auto-scaling.
+    \item Secured API endpoints with a custom \textbf{Lambda Authorizer} that validates \textbf{JSON Web Tokens (JWT)}, ensuring robust role-based access control.
+    \item Enhanced code reliability and maintainability by integrating \textbf{Middy} middleware for input validation and error handling.
+    \item Utilized \textbf{LocalStack} and \textbf{Docker} to create a comprehensive local development environment that emulates AWS cloud infrastructure.
 \end{itemize}
 
-\nointent
-\textit{Keywords:} Node.js, Serverless Framework, AWS Lambda, API Gateway, DynamoDB, SQS, SNS, SES, JWT
+\noindent
+\textit{Keywords:} Node.js, Serverless Framework, AWS Lambda, DynamoDB, SQS, SNS, SES, JWT, Middy, LocalStack, Docker
 
 \vspace{1em}
