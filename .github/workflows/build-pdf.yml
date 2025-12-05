@@ -68,6 +68,16 @@ jobs:
           path: ./dist
           merge-multiple: true
 
+      - name: Create Index Page
+        run: |
+          echo '<!DOCTYPE html><html><head><title>CV Resume PDFs</title></head><body>' > ./dist/index.html
+          echo '<h1>CV Resume PDFs</h1><ul>' >> ./dist/index.html
+          for f in ./dist/*.pdf; do
+            filename=$(basename "$f")
+            echo "<li><a href=\"$filename\">$filename</a></li>" >> ./dist/index.html
+          done
+          echo '</ul></body></html>' >> ./dist/index.html
+
       - name: Deploy PDFs to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
