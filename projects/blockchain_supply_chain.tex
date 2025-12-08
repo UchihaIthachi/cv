@@ -1,17 +1,16 @@
-\nointent
-\subsection*{Blockchain Supply Chain Management DApp}
-
-\nointent
-Built a decentralized shipment tracking and payment platform that leverages Ethereum smart contracts to bring transparency and automation to supply chains.
-
-\begin{itemize}
-    \item Implemented a Solidity smart contract (Tracking.sol) to model shipments with a full lifecycle (PENDING → IN_TRANSIT → DELIVERED), including timestamped events and on-chain auditability.
-    \item Designed an escrow-style payment flow where receivers pre-pay shipment fees into the contract and funds are automatically released to senders upon successful delivery.
-    \item Developed a Next.js/React dashboard that integrates with MetaMask via Ethers.js and Web3Modal, enabling users to create, start, complete, and inspect shipments directly from the browser.
-    \item Used Hardhat for local blockchain development, automated deployment scripts, and a test suite (Mocha/Chai) to validate lifecycle transitions, event emission, and payment correctness.
-\end{itemize}
-
-\nointent
-\textit{Keywords:} Solidity, Hardhat, Ethers.js, Web3Modal, MetaMask, Next.js, React, Tailwind CSS, Smart Contracts, Escrow Payments, DApp
-
-\vspace{1em}
+\nointent \subsection*{Blockchain Supply Chain Management DApp} 
+ 
+\nointent Built a full-stack decentralized application (DApp) enabling end-to-end shipment tracking and secure escrow payments on the Ethereum blockchain (Polygon Amoy Testnet). 
+ 
+\begin{itemize} 
+    \item Developed a production-grade Solidity smart contract (\texttt{Tracking.sol}) using \texttt{structs}, \texttt{mappings}, and a strict 3-state \texttt{enum} lifecycle (PENDING → IN\_TRANSIT → DELIVERED), complete with guarded state transitions, timestamped event logs, and full on-chain auditability. 
+    \item Implemented a trustless escrow mechanism using \texttt{payable} functions—validating \texttt{msg.value}, locking funds on creation, and releasing payments only upon verified delivery via \texttt{completeShipment}. 
+    \item Built a responsive Next.js/React frontend powered by a global \texttt{TrackingContext}, providing real-time state management, shipment inspection, and lifecycle actions (create, start, complete). 
+    \item Integrated \texttt{Ethers.js} and \texttt{Web3Modal} for secure wallet connection, dynamic provider/signer selection, MetaMask interaction, and seamless network handling (Localhost ↔ Polygon Amoy). 
+    \item Added data-formatting utilities for user-friendly display, including UNIX→date conversion and Ether/Wei transformations using \texttt{ethers.utils.formatEther}. 
+    \item Implemented polished UI/UX behaviors—loading indicators, masked modals (\texttt{maskClosable=false}), and utility helpers (\texttt{shortenAddress}, \texttt{copyToClipboard}) for high-quality user interaction. 
+    \item Designed a manual CI/CD pipeline using GitHub Actions to automate contract deployment (with pre-flight balance checks) and frontend deployment to Vercel, fully parameterized via GitHub Secrets and environment isolation. 
+    \item Utilized Hardhat for development, including local blockchain simulation (\texttt{npx hardhat node}), compilation, contract verification, and controlled deployment workflows. 
+\end{itemize} 
+ 
+\nointent \textit{Keywords:} Solidity, Hardhat, Ethers.js, Web3Modal, Next.js, React Context API, Tailwind CSS, Polygon Amoy, Smart Contracts, Escrow Payments, CI/CD 
