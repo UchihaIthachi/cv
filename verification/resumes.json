@@ -1,0 +1,25 @@
+{
+  "metadata": {
+    "generated_at": "2023-10-27T10:00:00.000000"
+  },
+  "files": [
+    {
+      "name": "backend-resume.pdf",
+      "profile": "Backend",
+      "size": 150000,
+      "date": "2023-10-27T09:55:00.000000"
+    },
+    {
+      "name": "fullstack-resume.pdf",
+      "profile": "Fullstack",
+      "size": 200000,
+      "date": "2023-10-27T09:58:00.000000"
+    },
+    {
+      "name": "devops-resume.pdf",
+      "profile": "Devops",
+      "size": 120000,
+      "date": "2023-10-26T10:00:00.000000"
+    }
+  ]
+}
