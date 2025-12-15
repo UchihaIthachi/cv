@@ -1,22 +1,12 @@
 \nointent
-\subsection*{Food Delivery Application (2024 | Group) \hfill \href{https://github.com/FoodDeliveryApp-ISA}{\faGithub}}
+\subsection*{Food Delivery Application \href{https://github.com/FoodDeliveryApp-ISA}{\faGithub}}
 
 \nointent
-Built a scalable, event-driven food delivery platform inspired by systems like Uber Eats, using a modern microservices architecture. As part of the core team, I focused on designing and developing the Restaurant Service.
-
+Built a scalable, event-driven food delivery platform using a modern microservices architecture.
 \begin{itemize}
-    \item Developed the Restaurant Module with secure sign-up/login using \textbf{Spring Security} and \textbf{JWT} (with extended claims).
-    \item Built CRUD APIs for menu and item management; integrated \textbf{Redis caching} to improve performance and reduce database load, with appropriate cache invalidation strategies.
-    \item Enabled order sync via \textbf{Kafka}: when an order is placed, an event is published to the `order\_created` topic, which the restaurant service consumes to update order details.
-    \item Implemented real-time order state updates through Kafka's publish/subscribe model to keep restaurant and rider services in sync.
-    \item Integrated \textbf{WebSockets} for real-time restaurant notifications (e.g., new orders, rider assignments).
-    \item Built a secure "Forget Password" flow using time-sensitive tokens for authentication recovery.
-    \item Implemented robust exception handling and API protection through middleware guards and JWT verification.
-    \item Dockerized all components (frontend, backend, Kafka, Redis, PostgreSQL) and managed them via \textbf{Docker Compose}.
-    \item Worked in Agile sprints using \textbf{Jira} for task tracking and \textbf{Bitbucket} for version control.
+    \item Developed the Restaurant Module with secure sign-up/login (Spring Security, JWT) and CRUD APIs with Redis caching.
+    \item Enabled real-time order sync and notifications using Kafka and WebSockets.
 \end{itemize}
 
 \nointent
-\textit{Keywords:} Java, Spring Boot, gRPC, Kafka, Redis, PostgreSQL, WebSocket, Docker, React.js, Ant Design
-
-\vspace{1em}
+\textit{Keywords:} Java, Spring Boot, gRPC, Kafka, Redis, WebSocket, Docker

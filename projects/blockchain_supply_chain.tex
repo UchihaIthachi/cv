@@ -1,17 +1,16 @@
-\nointent 
-\subsection*{Blockchain Supply Chain Management DApp (2024 | Individual) \hfill \href{https://supply-chain-management-dapp-kappa.vercel.app/}{\faLink} \href{https://github.com/UchihaIthachi/supply-chain-management-dapp}{\faGithub}} 
+\nointent \subsection*{Blockchain Supply Chain Management DApp (2025 | Individual) \hfill \href{https://supply-chain-management-dapp-kappa.vercel.app/}{\faLink} \href{https://github.com/UchihaIthachi/supply-chain-management-dapp}{\faGithub}} 
  
 \nointent Built a full-stack decentralized application (DApp) enabling end-to-end shipment tracking and secure escrow payments on the Ethereum blockchain (Polygon Amoy Testnet). 
  
 \begin{itemize} 
-    \item Developed a production-grade \textbf{Solidity} smart contract (\texttt{Tracking.sol}) using \texttt{structs}, \texttt{mappings}, and a strict 3-state \texttt{enum} lifecycle (PENDING $\rightarrow$ IN\_TRANSIT $\rightarrow$ DELIVERED), complete with guarded state transitions, timestamped event logs, and full on-chain auditability. 
-    \item Implemented a \textbf{trustless escrow mechanism} using \texttt{payable} functions—validating \texttt{msg.value}, locking funds on creation, and releasing payments only upon verified delivery via \texttt{completeShipment}. 
-    \item Built a responsive \textbf{Next.js/React} frontend powered by a global \texttt{TrackingContext}, providing real-time state management, shipment inspection, and lifecycle actions (create, start, complete). 
-    \item Integrated \textbf{Ethers.js} and \textbf{Web3Modal} for secure wallet connection, dynamic provider/signer selection, MetaMask interaction, and seamless network handling (Localhost $\leftrightarrow$ Polygon Amoy). 
-    \item Added data-formatting utilities for user-friendly display, including UNIX$\rightarrow$date conversion and Ether/Wei transformations using \texttt{ethers.utils.formatEther}. 
+    \item Developed a production-grade Solidity smart contract (\texttt{Tracking.sol}) using \texttt{structs}, \texttt{mappings}, and a strict 3-state \texttt{enum} lifecycle (PENDING → IN\_TRANSIT → DELIVERED), complete with guarded state transitions, timestamped event logs, and full on-chain auditability. 
+    \item Implemented a trustless escrow mechanism using \texttt{payable} functions—validating \texttt{msg.value}, locking funds on creation, and releasing payments only upon verified delivery via \texttt{completeShipment}. 
+    \item Built a responsive Next.js/React frontend powered by a global \texttt{TrackingContext}, providing real-time state management, shipment inspection, and lifecycle actions (create, start, complete). 
+    \item Integrated \texttt{Ethers.js} and \texttt{Web3Modal} for secure wallet connection, dynamic provider/signer selection, MetaMask interaction, and seamless network handling (Localhost ↔ Polygon Amoy). 
+    \item Added data-formatting utilities for user-friendly display, including UNIX→date conversion and Ether/Wei transformations using \texttt{ethers.utils.formatEther}. 
     \item Implemented polished UI/UX behaviors—loading indicators, masked modals (\texttt{maskClosable=false}), and utility helpers (\texttt{shortenAddress}, \texttt{copyToClipboard}) for high-quality user interaction. 
-    \item Designed a manual \textbf{CI/CD pipeline} using \textbf{GitHub Actions} to automate contract deployment (with pre-flight balance checks) and frontend deployment to \textbf{Vercel}, fully parameterized via GitHub Secrets and environment isolation. 
-    \item Utilized \textbf{Hardhat} for development, including local blockchain simulation (\texttt{npx hardhat node}), compilation, contract verification, and controlled deployment workflows. 
+    \item Designed a manual CI/CD pipeline using GitHub Actions to automate contract deployment (with pre-flight balance checks) and frontend deployment to Vercel, fully parameterized via GitHub Secrets and environment isolation. 
+    \item Utilized Hardhat for development, including local blockchain simulation (\texttt{npx hardhat node}), compilation, contract verification, and controlled deployment workflows. 
 \end{itemize} 
  
 \nointent \textit{Keywords:} Solidity, Hardhat, Ethers.js, Web3Modal, Next.js, React Context API, Tailwind CSS, Polygon Amoy, Smart Contracts, Escrow Payments, CI/CD 
