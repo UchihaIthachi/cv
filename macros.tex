@@ -2,8 +2,27 @@
 % CV Project/Experience Macro - more compact
 % Arguments: #1 = Title/Role, #2 = Date/Duration, #3 = Description, #4 = Tech stack
 \newcommand{\nointent}{\noindent}
+% Project Numbering Logic
+\newif\ifProjectNumbering
+\ProjectNumberingfalse % Default to false
+\newcounter{projectCount}
+
+\newcommand{\ProjectTitle}[1]{%
+  \ifProjectNumbering
+    \stepcounter{projectCount}%
+    \subsection*{\theprojectCount. #1}%
+  \else
+    \subsection*{#1}%
+  \fi
+}
+
 \newcommand{\cvproject}[4]{
-    \textbf{#1} \hfill \textit{#2} \par
+    \ifProjectNumbering
+        \stepcounter{projectCount}%
+        \textbf{\theprojectCount. #1} \hfill \textit{#2} \par
+    \else
+        \textbf{#1} \hfill \textit{#2} \par
+    \fi
     \vspace{-0.5em}
     \vspace{-0.5em}
     #3 \par

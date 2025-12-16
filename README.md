@@ -43,3 +43,16 @@ This project is set up with a GitHub Action that automatically builds the PDF.
 - When a new tag starting with `v` (e.g., `v1.0`, `v1.1`) is pushed, a new GitHub Release is created with the PDF attached.
 
 The `GITHUB_TOKEN` is automatically created by GitHub Actions and has the necessary permissions for creating releases. No further setup is required for this.
+
+## Features
+
+### Project Auto-Numbering
+
+The CV system now supports automatic numbering for project lists.
+
+- **Mechanism**: Implemented via `\ProjectTitle` and `\cvproject` macros in `macros.tex`.
+- **Usage**:
+    - Use `\ProjectNumberingtrue` before a list of projects to enable numbering.
+    - Use `\setcounter{projectCount}{0}` to reset the counter.
+    - Default behavior is off (`\ProjectNumberingfalse`).
+- **Files**: Project files now use `\ProjectTitle{...}` instead of `\subsection*{...}` to support this feature.
