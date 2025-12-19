@@ -71,6 +71,9 @@ jobs:
           path: ./dist
           merge-multiple: true
 
+      - name: Copy Architecture Images
+        run: cp -r arch dist/
+
       - name: Generate Index and JSON
         run: python3 scripts/generate_index.py
 
