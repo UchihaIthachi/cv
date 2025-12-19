@@ -1,0 +1,55 @@
+{
+  "metadata": {
+    "generated_at": "2025-12-19T06:24:20.024762"
+  },
+  "files": [
+    {
+      "name": "backend-resume.pdf",
+      "profile": "Backend",
+      "description": "Backend profile - focus on APIs, databases, and distributed systems.",
+      "url": "https://UchihaIthachi.github.io/cv/backend-resume.pdf",
+      "size": 70794,
+      "date": "2025-12-19T06:24:19.958250"
+    },
+    {
+      "name": "devops-resume.pdf",
+      "profile": "Devops",
+      "description": "DevOps profile - focus on infrastructure, CI/CD, and SRE.",
+      "url": "https://UchihaIthachi.github.io/cv/devops-resume.pdf",
+      "size": 60064,
+      "date": "2025-12-19T06:24:19.868240"
+    },
+    {
+      "name": "full-resume.pdf",
+      "profile": "Full",
+      "description": "Full profile - includes all projects and experiences at full detail.",
+      "url": "https://UchihaIthachi.github.io/cv/full-resume.pdf",
+      "size": 78302,
+      "date": "2025-12-19T06:24:19.868240"
+    },
+    {
+      "name": "fullstack-resume.pdf",
+      "profile": "Fullstack",
+      "description": "Fullstack profile - focus on frontend and backend delivery.",
+      "url": "https://UchihaIthachi.github.io/cv/fullstack-resume.pdf",
+      "size": 55162,
+      "date": "2025-12-19T06:24:19.782230"
+    },
+    {
+      "name": "general-resume.pdf",
+      "profile": "General",
+      "description": "General profile - a balanced overview of projects and experience.",
+      "url": "https://UchihaIthachi.github.io/cv/general-resume.pdf",
+      "size": 58490,
+      "date": "2025-12-19T06:24:19.949249"
+    },
+    {
+      "name": "web3-resume.pdf",
+      "profile": "Web3",
+      "description": "Web3 profile - focus on blockchain, smart contracts, and indexers.",
+      "url": "https://UchihaIthachi.github.io/cv/web3-resume.pdf",
+      "size": 62891,
+      "date": "2025-12-19T06:24:19.879241"
+    }
+  ]
+}
