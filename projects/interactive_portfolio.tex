@@ -1,0 +1,19 @@
+\nointent
+\ProjectTitle{Interactive 3D Portfolio (2025 | Individual) \hfill \href{https://harshanalf.netlify.app}{\textbf{Live} \faGlobe}}
+
+\nointent
+Designed and developed an immersive, high-performance portfolio website that merges advanced 3D web graphics with strict software engineering standards for SEO and accessibility.
+
+\begin{itemize}
+    \item Architected a custom \textbf{"Safe SSG" pipeline} using \textbf{Puppeteer} to pre-render static HTML for every route (`/`, `/projects`) post-build, solving SPA SEO issues by serving fully hydrated markup with baked-in canonical tags and \textbf{JSON-LD schemas}.
+    \item Engineered a high-performance \textbf{WebGL architecture} utilizing \texttt{AdaptiveDpr} to dynamically scale pixel ratios based on GPU load, ensuring smooth 60fps animations across devices.
+    \item Implemented robust bot detection via a custom \texttt{isCrawlerOrHeadless} utility to conditionally swap heavy \textbf{Three.js} contexts for optimized static fallbacks, ensuring 100\% indexing rates and preventing headless browser crashes.
+    \item Designed a cohesive \textbf{Glassmorphism UI} with \textbf{Tailwind CSS} (`backdrop-blur-md`) and \textbf{Framer Motion}, featuring a "Real-Time Mode" that synchronizes the 3D sun position and global theme (Day/Night) with the user's local time.
+    \item Optimized load performance by lazy-loading the 3D engine (`SceneCanvas`) via \textbf{React Suspense} and implemented \texttt{useGLTF.preload} to prevent visual popping during scene transitions.
+    \item Automated \textbf{Open Graph image generation} (`og-home.png`) using a custom CI/CD script (`capture-screenshot.cjs`) to ensure fresh social preview cards on every deployment.
+\end{itemize}
+
+\nointent
+\textit{Keywords:} React, Three.js, React Three Fiber, Vite, Puppeteer, SSG, SEO, Tailwind CSS, Framer Motion, WebGL, Netlify
+
+\vspace{1em}
