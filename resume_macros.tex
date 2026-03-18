@@ -1,0 +1,54 @@
+% resume_macros.tex
+\newcommand{\nointent}{\noindent}
+
+\newif\ifProjectNumbering
+\ProjectNumberingfalse
+\newcounter{projectCount}
+
+\newcommand{\ProjectTitle}[1]{%
+  \ifProjectNumbering
+    \stepcounter{projectCount}%
+    \textbf{\theprojectCount. #1}%
+  \else
+    \textbf{#1}%
+  \fi
+}
+
+\newcommand{\cvproject}[4]{
+    \ifProjectNumbering
+        \stepcounter{projectCount}%
+        \textbf{\theprojectCount. #1} \hfill #2 \par
+    \else
+        \textbf{#1} \hfill #2 \par
+    \fi
+    \vspace{-0.5em}
+    \begin{itemize}
+        \item #3
+        \item \textbf{Technologies:} #4
+    \end{itemize}
+    \vspace{-0.5em}
+}
+
+\newcommand{\CVExperienceEntry}[4]{
+  \noindent \textbf{#1} \hfill #2 \\
+  \noindent \textit{#3} \hfill \textit{#4} \par\vspace{0.2em}
+}
+
+
+\newcommand{\CVEducationEntry}[4]{
+  \noindent \textbf{#1} \hfill #2 \\
+  \noindent \textit{#3} \hfill \textit{#4} \par\vspace{0.2em}
+}
+
+
+\newcommand{\sectionrule}{\titlerule[0.5pt]}
+
+\newcommand{\MainDivider}{}
+
+\newcommand{\BigDivider}{}
+
+
+\NewDocumentCommand{\cvcert}{ m m m m o }{%
+  \item \textbf{\href{#4}{#1}} -- #2, #3%
+  \IfNoValueTF{#5}{}{\\{\footnotesize\textit{#5}}}%
+}
