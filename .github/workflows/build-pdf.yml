@@ -25,19 +25,29 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Compile LaTeX
+      - name: Compile Multi-Page CV
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: profiles/${{ matrix.profile }}.tex
+          root_file: documents/cv/${{ matrix.profile }}.tex
+          extra_system_packages: "texlive-full"
+          latexmk_use_xelatex: true
+          args: "-jobname=${{ matrix.profile }}-cv"
+
+      - name: Compile 1-Page Resume
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: documents/resume/${{ matrix.profile }}.tex
           extra_system_packages: "texlive-full"
           latexmk_use_xelatex: true
           args: "-jobname=${{ matrix.profile }}-resume"
 
-      - name: Upload resume artifact
+      - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: resume-${{ matrix.profile }}
-          path: ${{ matrix.profile }}-resume.pdf
+          name: pdfs-${{ matrix.profile }}
+          path: |
+            ${{ matrix.profile }}-cv.pdf
+            ${{ matrix.profile }}-resume.pdf
 
   release:
     needs: build
