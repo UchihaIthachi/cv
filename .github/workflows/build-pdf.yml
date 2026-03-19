@@ -25,19 +25,31 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Compile LaTeX
+      - name: Compile Multi-Page CV
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: profiles/${{ matrix.profile }}.tex
+          root_file: documents/cv/${{ matrix.profile }}.tex
+          work_in_root_file_dir: true
+          extra_system_packages: "texlive-full"
+          latexmk_use_xelatex: true
+          args: "-jobname=${{ matrix.profile }}-cv"
+
+      - name: Compile 1-Page Resume
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: documents/resume/${{ matrix.profile }}.tex
+          work_in_root_file_dir: true
           extra_system_packages: "texlive-full"
           latexmk_use_xelatex: true
           args: "-jobname=${{ matrix.profile }}-resume"
 
-      - name: Upload resume artifact
+      - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: resume-${{ matrix.profile }}
-          path: ${{ matrix.profile }}-resume.pdf
+          name: pdfs-${{ matrix.profile }}
+          path: |
+            documents/cv/${{ matrix.profile }}-cv.pdf
+            documents/resume/${{ matrix.profile }}-resume.pdf
 
   release:
     needs: build
@@ -70,6 +82,15 @@ jobs:
         with:
           path: ./dist
           merge-multiple: true
+
+      # The downloaded artifacts will retain their internal paths if merge-multiple isn't perfectly flat.
+      # Wait, actions/download-artifact@v4 merges files to the root of `path`.
+      # But since the uploaded path was `documents/cv/...` they might be unzipped at `./dist/documents/cv/...`.
+      # Let's flatten them into `./dist` so `generate_index.py` works seamlessly.
+      - name: Flatten PDFs
+        run: |
+          find ./dist -name "*.pdf" -exec mv {} ./dist/ \;
+          rm -rf ./dist/documents || true
 
       - name: Copy Architecture Images
         run: cp -r arch dist/

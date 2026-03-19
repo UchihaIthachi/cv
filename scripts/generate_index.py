@@ -34,18 +34,19 @@ def generate_index():
         if f.endswith('.pdf'):
             path = os.path.join(dist_dir, f)
             stat = os.stat(path)
-            # filename is like 'backend-resume.pdf', extract 'backend'
-            profile_key = f.replace('-resume.pdf', '').lower()
+
+            # filename is like 'backend-resume.pdf' or 'backend-cv.pdf'
+            profile_key = f.replace('-resume.pdf', '').replace('-cv.pdf', '').lower()
             profile = profile_key.capitalize()
             
-            # If capitalization fails or structure is different, fallback
-            if profile == f:
-                profile = "Unknown"
-                profile_key = "unknown"
+            if '-cv.pdf' in f:
+                profile_display = f"{profile} (CV)"
+            else:
+                profile_display = f"{profile} (Resume)"
 
             # Attempt to read description from profile source
             description = ""
-            profile_tex = os.path.join('profiles', f'{profile_key}.tex')
+            profile_tex = os.path.join('documents', 'cv', f'{profile_key}.tex')
             if os.path.exists(profile_tex):
                 try:
                     with open(profile_tex, 'r') as pf:
@@ -57,7 +58,7 @@ def generate_index():
             
             files.append({
                 'name': f,
-                'profile': profile,
+                'profile': profile_display,
                 'description': description,
                 'url': f"{base_url}{f}",
                 'size': stat.st_size,

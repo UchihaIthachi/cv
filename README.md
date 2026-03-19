@@ -1,6 +1,21 @@
-# LaTeX Resume
+# Highly Scalable LaTeX CV & Resume Framework
 
-This is a LaTeX project for a resume.
+This repository uses a highly structured, view-driven LaTeX framework to manage both **multi-page standard CVs** and **strict 1-page ATS resumes** across **multiple professional profiles** (e.g., Backend, DevOps, Web3, Fullstack) from a Single Source of Truth.
+
+## Directory Architecture
+
+The repository is built on a strict separation of concerns:
+
+- **`documents/`**: The compilable entry points.
+  - `cv/`: Multi-page, detailed ATS CVs (e.g., `backend.tex`, `devops.tex`).
+  - `resume/`: Strict 1-page resumes. These are thin wrapper files that dynamically pull in specific views.
+- **`content/`**: The Single Source of Truth (SSOT). All actual text, project descriptions, and experience bullet points live here.
+  - Variations are preserved in subdirectories like `content/projects/short/`, `content/projects/middle/`, and `content/experience/tailored/`. This allows different profiles to pull different lengths or focuses of the same project/role without duplicating the source text.
+- **`views/`**: Profile-specific aggregations. These files contain NO raw text; they simply `\input{}` the appropriate files from `content/` to build a tailored section (e.g., `views/projects/backend_projects_resume.tex`).
+- **`config/`**: Styling and LaTeX configuration.
+  - `preambles/`: Document class and package imports (`cv_preamble.tex`, `resume_preamble.tex`).
+  - `macros/`: Custom LaTeX commands (`shared_macros.tex`, `resume_macros.tex`).
+  - `themes/`: Font, color, and spacing configurations (if any).
 
 ## Dependencies
 
@@ -17,42 +32,38 @@ sudo apt-get update
 sudo apt-get install -y texlive-xetex texlive-fonts-extra texlive-latex-extra
 ```
 
-## Building the PDF
+## Building the PDFs
 
-To build the PDF, run the following command twice:
+You can build the PDFs manually using the provided shell scripts in the `scripts/` directory:
 
-```bash
-xelatex main.tex
-```
+1. **Build All Multi-Page CVs**:
+   ```bash
+   bash scripts/build_all.sh
+   ```
+   Outputs will be placed in the `output/` directory (e.g., `output/backend.pdf`).
 
-The first run will generate the auxiliary files, and the second run will ensure that all cross-references are correct. The output will be `main.pdf`.
+2. **Build All 1-Page Resumes**:
+   ```bash
+   bash scripts/build_resumes.sh
+   ```
+   Outputs will be placed in the `output/` directory (e.g., `output/Harshana_Fernando_backend_Resume.pdf`).
 
-## Notes
+3. **Build a Specific CV Profile**:
+   ```bash
+   bash scripts/build_local.sh backend
+   ```
 
-- The original `preamble.tex` had some commands that were incompatible with `xelatex`. These have been commented out.
-- The original document used some icons from the "Font Awesome Pro" set, which is not available in the standard TeX Live distribution. These icons have been replaced with free alternatives.
-  - `\faMapMarkerAlt` was replaced with `\faHome`.
-  - `\faExternalLink` was replaced with `\faLink`.
-- There was a syntax error in `experience/isa_internship.tex` which has been fixed.
+## Continuous Integration (GitHub Actions)
 
-## Continuous Integration
+This project is set up with a GitHub Action (`.github/workflows/build-pdf.yml`) that automatically builds both the CVs and the 1-page resumes for all 6 profiles (Backend, DevOps, Fullstack, Full, General, Web3).
 
-This project is set up with a GitHub Action that automatically builds the PDF.
+- **On push to `main`**: All PDFs are rebuilt.
+- **On push of a `v*` tag**: A GitHub Release is created containing all generated PDF artifacts.
+- **Deployment**: The generated PDFs are also deployed to GitHub Pages for easy public access.
 
-- On every push to the `main` branch, the PDF is rebuilt and committed to the repository.
-- When a new tag starting with `v` (e.g., `v1.0`, `v1.1`) is pushed, a new GitHub Release is created with the PDF attached.
+## Adding a New Profile
 
-The `GITHUB_TOKEN` is automatically created by GitHub Actions and has the necessary permissions for creating releases. No further setup is required for this.
-
-## Features
-
-### Project Auto-Numbering
-
-The CV system now supports automatic numbering for project lists.
-
-- **Mechanism**: Implemented via `\ProjectTitle` and `\cvproject` macros in `macros.tex`.
-- **Usage**:
-    - Use `\ProjectNumberingtrue` before a list of projects to enable numbering.
-    - Use `\setcounter{projectCount}{0}` to reset the counter.
-    - Default behavior is off (`\ProjectNumberingfalse`).
-- **Files**: Project files now use `\ProjectTitle{...}` instead of `\subsection*{...}` to support this feature.
+To add a new profile (e.g., `frontend`):
+1. Create the necessary views in `views/` (e.g., `views/experience/frontend_experience_resume.tex`, `views/projects/frontend_projects_resume.tex`). These should `\input{}` files from `content/`.
+2. Create thin entry files in `documents/cv/frontend.tex` and `documents/resume/frontend.tex`.
+3. Add `"frontend"` to the `matrix.profile` array in `.github/workflows/build-pdf.yml` and the `PROFILES` array in the build scripts.
