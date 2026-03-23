@@ -1,12 +1,31 @@
-\textbf{Software Engineer Intern} \hfill \textit{Dec 2024 – May 2025} \\
-\textit{Information Systems Associates (Pvt) Ltd — Aviation Technology Company}
+\noindent
+\textbf{Software Engineer Intern} \hfill \textit{Dec 2024 -- May 2025}\\
+\noindent
+\textit{Information Systems Associates (Pvt) Ltd --- Aviation Technology(Airarabia)}\\[0.05em]
+\begin{itemize}[leftmargin=*, itemsep=0.3em, topsep=0.01em]
+    \item \textbf{AeroOrder --- Order Management Microservice (Java 17, Spring Boot, Gradle)}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.1em]
+        \item Engineered a distributed, Kafka-backed ID generator for Passenger Name Records (PNRs), ensuring uniqueness and security across scaled instances.
+        \item Optimized PNR generation to achieve \textbf{25+ PNRs/sec throughput} per node with \textbf{<100ms latency}, validated via \textbf{Apache JMeter} stress testing.
+        \item Resolved production \textbf{Kafka consumer lag} by implementing robust shutdown hooks and enhanced retry mechanisms.
+        \item Established a monitoring stack using \textbf{Prometheus} and \textbf{Grafana} to visualize queue time and latency for asynchronous loads.
+        \item Refactored \textbf{Kafka Streams} logic into a Producer-Consumer model, significantly reducing consumer lag and improving stability.
+    \end{itemize}
+    
+    \item \textbf{AeroMart — Legacy Passenger Reservation System (Java 8, Ant)}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.1em]
+        \item Integrated \textbf{gRPC} clients and \textbf{Kafka} consumers into a \textbf{Java 8 monolith}, enabling backward-compatible communication with new microservices.
+        \item Developed database-driven \textbf{feature toggles} to manage PNR routing logic, allowing for granular control during production rollout.
+    \end{itemize}
 
-\begin{itemize}[leftmargin=*]
-    \item Engineered a distributed, high-throughput unique ID generator for Passenger Name Records (PNRs) using a Kafka-backed pool model, ensuring uniqueness and security across scaled instances while adhering to aviation domain standards.
-    \item Optimized the PNR generation service to achieve **25+ PNRs/sec throughput** per node with **<100ms latency**, validating performance and resilience through extensive load, stress, and spike testing with Apache JMeter.
-    \item Resolved critical production issues, including Kafka consumer lag and offset resetting, by implementing robust shutdown hooks and enhanced retry mechanisms to improve fault tolerance and system recoverability.
-    \item Architected and implemented a hybrid integration strategy by embedding a gRPC client and Kafka consumer into a legacy Java 8 monolith (AeroMart), enabling seamless, backward-compatible communication with the new AeroOrder microservices platform.
-    \item Developed dynamic, database-driven feature toggles to control PNR routing logic, minimizing risk during the phased production rollout by allowing for granular control and immediate fallback.
+    \item \textbf{Collaboration \& Engineering Standards}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.1em]
+        \item Authored technical design documents, sequence diagrams, and integration plans on Confluence.
+        \item Participated in code reviews and Agile ceremonies to deliver production-ready features using \textbf{Jira} and \textbf{Bitbucket}.
+    \end{itemize}
 \end{itemize}
 
-\textit{Keywords:} Java 18, Java 8, Spring Boot, Spring Security, gRPC, Kafka, Oracle DB, PostgreSQL, JMeter, Docker, Microservices
+\vspace{-0.1em}
+\noindent\small
+\textsc{Keywords:} Java 17/8, Spring Boot, gRPC, Kafka, Kafka Streams, Docker, Prometheus, Grafana, JMeter, Oracle DB, Microservices, Distributed Systems, Time-Series Data.
+\normalsize

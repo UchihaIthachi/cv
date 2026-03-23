@@ -1,11 +1,29 @@
-\CVExperienceEntry
-  {Software Engineer Intern}
-  {Dec 2024 -- May 2025}
-  {ISA (Information Systems Associates)}
-  {Colombo, Sri Lanka}
-\begin{itemize}[leftmargin=*, itemsep=0.35em]
-  \item Engineered a distributed, high-throughput ID generator for the AeroOrder microservice using \textbf{Java 18}, \textbf{Spring Boot}, and a \textbf{Kafka}-backed pool model, ensuring uniqueness across scaled instances.
-  \item Optimized service performance to achieve \textbf{25+ operations/sec throughput} per node with \textbf{<100ms latency}, validating resilience via extensive \textbf{Apache JMeter} load testing and \textbf{Prometheus/Grafana} monitoring.
-  \item Architected a hybrid \textbf{gRPC} and \textbf{Kafka} integration strategy within a legacy \textbf{Java 8} monolithic reservation system, enabling seamless, backward-compatible communication via database-driven feature toggles.
-  \item Resolved critical production bottlenecks by refactoring inefficient \textbf{Kafka Streams} logic into a robust Producer-Consumer model, drastically reducing consumer lag and improving fault tolerance.
+\noindent
+\textbf{Software Engineer Intern} \hfill \textit{Dec 2024 -- May 2025}\\
+\textit{Information Systems Associates (Pvt) Ltd --- Aviation Technology}
+\begin{itemize}[leftmargin=*, itemsep=0.2em, topsep=0.1em]
+    \item \textbf{AeroOrder --- Order Management Microservice (Java 17, Spring Boot, Gradle)}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.05em]
+        \item Built a distributed, Kafka-backed PNR ID generator ensuring uniqueness across scaled instances.
+        \item Optimized PNR generation to \textbf{25+ PNRs/sec} with \textbf{<100ms latency}, validated via \textbf{JMeter} stress tests.
+        \item Fixed production \textbf{Kafka consumer lag} using robust shutdown hooks and enhanced retry mechanisms.
+        \item Deployed \textbf{Prometheus} and \textbf{Grafana} monitoring to visualize queue time and latency metrics.
+        \item Refactored \textbf{Kafka Streams} logic into a Producer-Consumer model, reducing lag and improving stability.
+    \end{itemize}
+    
+    \item \textbf{AeroMart — Legacy Passenger Reservation System (Java 8, Ant)}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.05em]
+        \item Integrated \textbf{gRPC} and \textbf{Kafka} into a \textbf{Java 8 monolith} for backward-compatible microservices sync.
+        \item Implemented database-driven \textbf{feature toggles} for granular PNR routing control during rollout.
+    \end{itemize}
+
+    \item \textbf{Collaboration \& Engineering Standards}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.05em]
+        \item Produced design docs and sequence diagrams; participated in code reviews and Agile ceremonies via \textbf{Jira/Bitbucket}.
+    \end{itemize}
 \end{itemize}
+
+\vspace{-0.2em}
+\noindent\small
+\textsc{Keywords:} Java 17/8, Spring Boot, gRPC, Kafka, Docker, Prometheus, Grafana, JMeter, Oracle DB, Microservices.
+\normalsize
