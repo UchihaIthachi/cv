@@ -1,0 +1,18 @@
+\noindent
+\ProjectTitle{Agrinova Inventory Management System (2024 | Freelance)}
+
+\noindent
+Designed and delivered a production-grade, multi-branch inventory and sales management system for a real-world agricultural business, replacing manual workflows with a centralized, data-driven platform supporting inventory operations, financial tracking, and performance analytics.
+
+\begin{itemize}
+    \item Architected a location-aware inventory model and a transaction-safe stock movement system using atomic database operations to prevent race conditions and data corruption.
+    \item Engineered core business logic for stock updates (Issue, Return, Purchase) and a dynamic commission calculation engine based on delayed payment rules.
+    \item Optimized performance by replacing application-layer aggregation with \textbf{PostgreSQL} aggregations (GROUP BY, COUNT, SUM), reducing location summary execution time from \textbf{$\sim$384 ms to $\sim$0.02 ms}.
+    \item Designed a multi-layer caching strategy with \textbf{Next.js} and \textbf{React Query}, reducing repeated dashboard response time from \textbf{$\sim$703 ms to $\sim$0.05 ms}.
+    \item Added composite indexes and validated execution plans using \texttt{EXPLAIN ANALYZE}, ensuring query efficiency under cache misses.
+    \item Built a data-driven sales dashboard prioritizing clarity over visual complexity, with fully dynamic, API-driven rendering derived strictly from backend capabilities.
+    \item Ensured system reliability by building end-to-end test coverage with \textbf{Playwright} and validating UAT workflows simulating real business operations.
+\end{itemize}
+
+\noindent
+\textit{Keywords:} Next.js (App Router), PostgreSQL (Supabase), Prisma ORM, React Query, Tailwind CSS, Playwright, Vercel
