@@ -1,31 +1,41 @@
 \noindent
 \textbf{Software Engineer Intern} \hfill \textit{Dec 2024 -- May 2025}\\
-\noindent
-\textit{Information Systems Associates (Pvt) Ltd --- Aviation Technology(Airarabia)}\\[0.05em]
-\begin{itemize}[leftmargin=*, itemsep=0.3em, topsep=0.01em]
+\textit{Information Systems Associates (Pvt) Ltd --- Aviation Technology (\textbf{AirArabia})}\\[0.05em]
+
+\begin{itemize}[leftmargin=*, itemsep=0.3em, topsep=0.05em]
+
     \item \textbf{AeroOrder --- Order Management Microservice (Java 17, Spring Boot, Gradle)}
-    \begin{itemize}[leftmargin=1.5em, itemsep=0.1em]
-        \item Engineered a distributed, Kafka-backed ID generator for Passenger Name Records (PNRs), ensuring uniqueness and security across scaled instances.
-        \item Optimized PNR generation to achieve \textbf{25+ PNRs/sec throughput} per node with \textbf{<100ms latency}, validated via \textbf{Apache JMeter} stress testing.
-        \item Resolved production \textbf{Kafka consumer lag} by implementing robust shutdown hooks and enhanced retry mechanisms.
-        \item Established a monitoring stack using \textbf{Prometheus} and \textbf{Grafana} to visualize queue time and latency for asynchronous loads.
-        \item Refactored \textbf{Kafka Streams} logic into a Producer-Consumer model, significantly reducing consumer lag and improving stability.
-    \end{itemize}
-    
-    \item \textbf{AeroMart — Legacy Passenger Reservation System (Java 8, Ant)}
-    \begin{itemize}[leftmargin=1.5em, itemsep=0.1em]
-        \item Integrated \textbf{gRPC} clients and \textbf{Kafka} consumers into a \textbf{Java 8 monolith}, enabling backward-compatible communication with new microservices.
-        \item Developed database-driven \textbf{feature toggles} to manage PNR routing logic, allowing for granular control during production rollout.
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.12em]
+        \item Built a \textbf{distributed Kafka-based PNR ID generator} (live in \textbf{production}), ensuring \textbf{uniqueness and consistency} across horizontally scaled services.
+        
+        \item Achieved \textbf{25+ PNRs/sec per node} with \textbf{<100ms latency}, validated using \textbf{Apache JMeter} (load, stress, spike testing).
+        
+        \item Improved \textbf{reliability and recoverability} by resolving \textbf{Kafka consumer lag and offset issues} using \textbf{graceful shutdown hooks} and \textbf{retry mechanisms}.
+        
+        \item Implemented \textbf{observability (Prometheus, Grafana)} for real-time monitoring of \textbf{queue time and latency}.
+        
+        \item Refactored \textbf{Kafka Streams pipelines} into a \textbf{Producer–Consumer model}, reducing lag and improving stability.
+        
+        \item Improved \textbf{maintainability and debugging} via \textbf{structured JSON logging} and removal of legacy dependencies.
+        
+        \item Maintained \textbf{>90\% unit test coverage} while delivering \textbf{production-ready features}.
     \end{itemize}
 
-    \item \textbf{Collaboration \& Engineering Standards}
-    \begin{itemize}[leftmargin=1.5em, itemsep=0.1em]
-        \item Authored technical design documents, sequence diagrams, and integration plans on Confluence.
-        \item Participated in code reviews and Agile ceremonies to deliver production-ready features using \textbf{Jira} and \textbf{Bitbucket}.
+    \item \textbf{AeroMart --- Legacy Passenger Reservation System (Java 8, Ant)}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.12em]
+        \item Integrated \textbf{gRPC clients} and \textbf{Kafka consumers} into a \textbf{Java 8 monolith}, enabling \textbf{backward-compatible communication} with microservices.
+        
+        \item Implemented \textbf{database-driven feature toggles} for \textbf{PNR routing}, enabling \textbf{safe, phased rollouts with fallback}.
     \end{itemize}
+
+    \item \textbf{Engineering Practices}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.12em]
+        \item Authored \textbf{design documents, sequence diagrams, and integration plans}; contributed to \textbf{Agile workflows}, \textbf{code reviews}, and team collaboration (Jira, Bitbucket, Confluence).
+    \end{itemize}
+
 \end{itemize}
 
 \vspace{-0.1em}
 \noindent\small
-\textsc{Keywords:} Java 17/8, Spring Boot, gRPC, Kafka, Kafka Streams, Docker, Prometheus, Grafana, JMeter, Oracle DB, Microservices, Distributed Systems, Time-Series Data.
+\textsc{Keywords:} Java 17/8, Spring Boot, Kafka, Kafka Streams, gRPC, Docker, Prometheus, Grafana, JMeter, Oracle DB, Microservices, Distributed Systems, Time-Series Data.
 \normalsize
