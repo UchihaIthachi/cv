@@ -1,0 +1,34 @@
+\noindent
+\ProjectTitle{KōreroCare: Secure Mobile–Wearable Digital Phenotyping Infrastructure (2026 | Research)}
+
+\noindent
+\textit{Associated with Empathic Computing Laboratory}
+
+\begin{itemize}
+    \item Designed a multi-layer digital phenotyping architecture across Android (Kotlin), WearOS, and backend services to capture behavioral and physiological signals such as activity, heart rate, sleep, and contextual device usage data.
+
+    \item Engineered high-uptime background sensing workflows using Foreground Services and WorkManager, enabling reliable passive data collection despite strict Android battery and background execution limits.
+
+    \item Built resilient cross-device synchronization and buffering mechanisms to improve consistency between mobile and wearable streams and reduce data loss in real-world usage conditions.
+
+    \item Developed secure and structured backend foundations using Go for service-layer design, with clear separation of ingestion, routing, and authentication responsibilities to support future microservice scaling.
+
+    \item Integrated Keycloak-based authentication and identity management design to support secure token-based access control, role separation, and extensible researcher/user authentication workflows.
+
+    \item Introduced Traefik as an API gateway and load-balancing layer to centralize routing, service exposure, and secure backend entry points in a containerized environment.
+
+    \item Explored and incorporated Open Wearables as an integration layer for wearable ecosystem interoperability, helping normalize device data flows across heterogeneous wearable sources.
+
+    \item Built validated ingestion APIs and data contracts for high-volume time-series streams, supporting structured handling of raw sensor data and downstream derived features.
+
+    \item Defined schemas for both raw sensing data and processed feature outputs, creating a strong foundation for later machine learning, temporal analysis, and digital marker extraction.
+
+    \item Solved multi-device timestamp alignment and synchronization challenges to improve the reliability of longitudinal data analysis across mobile and wearable sources.
+
+    \item Designed observability and monitoring workflows to detect missing data, sensor failures, and real-world edge cases in production-like research deployments.
+
+    \item Produced system architecture documentation and reproducibility-focused engineering artifacts to support collaboration, research continuity, and maintainable infrastructure evolution.
+\end{itemize}
+
+\noindent
+\textit{Technologies:} Android, Kotlin, WearOS, Go, Keycloak, Traefik, Open Wearables, FastAPI, Pydantic, WorkManager, Foreground Services, Docker, Time-Series Data Pipelines, Digital Phenotyping, Observability
