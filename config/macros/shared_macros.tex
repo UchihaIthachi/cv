@@ -1,7 +1,14 @@
 % CV Project/Experience Macro - more compact
 % CV Project/Experience Macro - more compact
 % Arguments: #1 = Title/Role, #2 = Date/Duration, #3 = Description, #4 = Tech stack
+\newcommand{\kw}[1]{\textbf{#1}}
+\newcommand{\skw}[1]{\textbf{\uline{#1}}}
 \newcommand{\nointent}{\noindent}
+
+\newcommand{\CVExperienceEntry}[4]{
+  \noindent \textbf{#1} \hfill #2 \\
+  \noindent \textit{#3} \hfill \textit{#4} \par\vspace{0.2em}
+}
 % Project Numbering Logic
 \newif\ifProjectNumbering
 \ProjectNumberingfalse % Default to false

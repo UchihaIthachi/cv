@@ -1,4 +1,15 @@
 % resume_macros.tex
+\definecolor{BlockGray}{HTML}{D9D9D9}
+\definecolor{BlockText}{HTML}{000000}
+\newcommand{\titleblock}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{1pt}%
+  \colorbox{BlockGray}{\strut\textbf{#1}}%
+  \endgroup
+}
+
+\newcommand{\kw}[1]{\textbf{#1}}
+\newcommand{\skw}[1]{\textbf{\uline{#1}}}
 \newcommand{\nointent}{\noindent}
 
 \newif\ifProjectNumbering
@@ -29,9 +40,21 @@
     \vspace{-0.5em}
 }
 
+\newcommand{\cvprojectcompact}[4]{%
+  \begin{minipage}[t]{0.48\textwidth}
+    \titleblock{#1}\par
+    {\scriptsize\textit{#2}}\par
+    \vspace{-0.35em}
+    \begin{itemize}[leftmargin=1em, itemsep=0pt, topsep=1pt, parsep=0pt]
+      \item #3
+      \item #4
+    \end{itemize}
+  \end{minipage}
+}
+
 \newcommand{\CVExperienceEntry}[4]{
-  \noindent \textbf{#1} \hfill #2 \\
-  \noindent \textit{#3} \hfill \textit{#4} \par\vspace{0.2em}
+  \noindent \titleblock{#1} \hfill #2 \\
+  \noindent \textit{#3} \hfill \textit{#4} \par\vspace{0.15em}
 }
 
 
@@ -41,7 +64,7 @@
 }
 
 
-\newcommand{\sectionrule}{\titlerule[0.5pt]}
+\newcommand{\sectionrule}{\titlerule[0.7pt]}
 
 \newcommand{\MainDivider}{}
 

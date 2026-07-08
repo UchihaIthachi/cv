@@ -1,29 +1,14 @@
-\noindent
-\textbf{Software Engineer Intern} \hfill \textit{Dec 2024 -- May 2025}\\
-\textit{Information Systems Associates (Pvt) Ltd --- Aviation Technology}
+\CVExperienceEntry
+{Software Engineer Intern}
+{Dec 2024 -- May 2025}
+{Information Systems Associates (Pvt) Ltd --- Aviation Technology}
+{Colombo, Sri Lanka}
+
 \begin{itemize}[leftmargin=*, itemsep=0.2em, topsep=0.1em]
-    \item \textbf{AeroOrder --- Order Management Microservice (Java 17, Spring Boot, Gradle)}
-    \begin{itemize}[leftmargin=1.5em, itemsep=0.05em]
-        \item Built a distributed, Kafka-backed PNR ID generator ensuring uniqueness across scaled instances.
-        \item Optimized PNR generation to \textbf{25+ PNRs/sec} with \textbf{<100ms latency}, validated via \textbf{JMeter} stress tests.
-        \item Fixed production \textbf{Kafka consumer lag} using robust shutdown hooks and enhanced retry mechanisms.
-        \item Deployed \textbf{Prometheus} and \textbf{Grafana} monitoring to visualize queue time and latency metrics.
-        \item Refactored \textbf{Kafka Streams} logic into a Producer-Consumer model, reducing lag and improving stability.
-    \end{itemize}
-    
-    \item \textbf{AeroMart — Legacy Passenger Reservation System (Java 8, Ant)}
-    \begin{itemize}[leftmargin=1.5em, itemsep=0.05em]
-        \item Integrated \textbf{gRPC} and \textbf{Kafka} into a \textbf{Java 8 monolith} for backward-compatible microservices sync.
-        \item Implemented database-driven \textbf{feature toggles} for granular PNR routing control during rollout.
-    \end{itemize}
-
-    \item \textbf{Collaboration \& Engineering Standards}
-    \begin{itemize}[leftmargin=1.5em, itemsep=0.05em]
-        \item Produced design docs and sequence diagrams; participated in code reviews and Agile ceremonies via \textbf{Jira/Bitbucket}.
-    \end{itemize}
+  \item Built a distributed \skw{Spring Boot}/\skw{Kafka}-backed PNR ID generator, \skw{live in production}, achieving \skw{25+ PNRs/sec} at \skw{<100ms latency}.
+  \item Resolved \kw{Kafka consumer lag} and offset issues using shutdown hooks, retry handling, and a Producer-Consumer refactor.
+  \item Integrated \kw{gRPC} clients, Kafka consumers, and feature toggles into a legacy Java 8 AeroMart monolith.
+  \item Implemented database-driven feature toggles for granular PNR routing during a \kw{phased production rollout}.
+  \item Maintained \kw{>90\%} unit test coverage while delivering \kw{production-ready microservice} features.
+  \item Deployed \kw{Prometheus} and \kw{Grafana} dashboards for queue-time, latency, and service monitoring.
 \end{itemize}
-
-\vspace{-0.2em}
-\noindent\small
-\textsc{Keywords:} Java 17/8, Spring Boot, gRPC, Kafka, Docker, Prometheus, Grafana, JMeter, Oracle DB, Microservices.
-\normalsize
