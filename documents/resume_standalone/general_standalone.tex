@@ -1,0 +1,333 @@
+\providecommand{\currentprofile}{general}
+\documentclass[a4paper,9pt]{extarticle}
+
+% ==================================================
+% PREAMBLE
+% ==================================================
+
+\usepackage[a4paper, margin=0.38in]{geometry}
+
+\usepackage{enumitem}
+\setlist[itemize]{
+  noitemsep,
+  topsep=0pt,
+  parsep=0pt,
+  partopsep=0pt,
+  leftmargin=10pt,
+  label=\textbullet
+}
+
+\usepackage{xcolor}
+\definecolor{DarkSlate}{HTML}{2B2B2B}
+\definecolor{DARKSLATE}{HTML}{2B2B2B}
+\definecolor{BlockGray}{HTML}{D9D9D9}
+\definecolor{BlockText}{HTML}{000000}
+
+\usepackage{titlesec}
+\usepackage{setspace}
+\setstretch{0.88}
+
+\usepackage{fontspec}
+\usepackage{xparse}
+\usepackage{fontawesome5}
+
+% Dark/clean hyperlinks
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  urlcolor=DarkSlate,
+  linkcolor=DarkSlate,
+  citecolor=DarkSlate
+}
+
+% Font configuration
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% ==================================================
+% MACROS
+% ==================================================
+
+\newcommand{\sectionrule}{\titlerule[0.7pt]}
+\newcommand{\MainDivider}{}
+\newcommand{\BigDivider}{}
+
+% Section styling with slightly better spacing
+\titleformat{\section}
+{\color{DarkSlate}\fontsize{10}{12}\bfseries\uppercase}
+{}{0em}{}
+[\vspace{0.2em}\color{DarkSlate}\sectionrule]
+
+\titlespacing{\section}{0pt}{1.0ex plus .1ex minus .2ex}{0.45ex plus .1ex}
+
+\titleformat{\subsection}
+{\fontsize{10}{12}\bfseries}
+{}{0em}{}
+[]
+
+\titlespacing{\subsection}{0pt}{0.8ex plus .1ex minus .2ex}{0.3ex plus .1ex}
+
+% Gray title block for role/project titles
+% NOTE: kept as a colored box (not an image), so text still extracts
+% cleanly for ATS parsers -- this is safe to keep.
+\newcommand{\titleblock}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{1pt}%
+  \colorbox{BlockGray}{\strut\textbf{\textcolor{BlockText}{#1}}}%
+  \endgroup
+}
+
+% ATS-safe keyword styles
+% Simplified \skw to bold-only (dropped underline). Underlined text in a
+% resume commonly reads as "this is a hyperlink" to both humans and some
+% parsers, which adds visual noise without adding ATS keyword weight --
+% bold alone is picked up identically by keyword-matching engines.
+\newcommand{\kw}[1]{\textbf{#1}}
+\newcommand{\skw}[1]{\textbf{#1}}
+
+% Strong visible skill highlight
+% Requires XeLaTeX or LuaLaTeX
+\newcommand{\skillhi}[1]{{\textbf{#1}}}
+
+\newcommand{\nointent}{\noindent}
+
+\newif\ifProjectNumbering
+\ProjectNumberingfalse
+\newcounter{projectCount}
+
+\newcommand{\ProjectTitle}[1]{%
+  \ifProjectNumbering
+    \stepcounter{projectCount}%
+    \textbf{\theprojectCount. #1}%
+  \else
+    \textbf{#1}%
+  \fi
+}
+
+\newcommand{\cvproject}[4]{
+    \ifProjectNumbering
+        \stepcounter{projectCount}%
+        \textbf{\theprojectCount. #1} \hfill #2 \par
+    \else
+        \textbf{#1} \hfill #2 \par
+    \fi
+    \vspace{-0.5em}
+    \begin{itemize}
+        \item #3
+        \item \textbf{Technologies:} #4
+    \end{itemize}
+    \vspace{-0.5em}
+}
+
+% CHANGED: projects now stack full-width, single column, in normal
+% top-to-bottom reading order (was: two-column tabularx grid).
+% Why: PDF text-extraction (what ATS parsers actually read) walks a
+% page roughly left-to-right in horizontal bands. In a 2-column table,
+% that often interleaves Project A's text with Project B's text mid-
+% sentence, corrupting keyword context (e.g. "Technologies" line from
+% one project gets glued to bullet text from the other). A single
+% vertical stack reads in the exact order it's written, every time --
+% all 6 projects are kept, nothing removed, just re-flowed.
+\newcommand{\cvprojectfull}[4]{%
+  \noindent \titleblock{#1} \hfill {\scriptsize\textit{#2}} \\[0.15em]
+  \begin{itemize}[leftmargin=*, itemsep=0pt, topsep=1pt, parsep=0pt]
+    \item #3
+    \item #4
+  \end{itemize}
+  \vspace{0.28em}
+}
+
+\newcommand{\CVExperienceEntry}[4]{
+  \noindent \titleblock{#1} \hfill #2 \\
+  \noindent \textit{#3} \hfill \textit{#4} \par\vspace{0.22em}
+}
+
+\newcommand{\CVEducationEntry}[4]{
+  \noindent \textbf{#1} \hfill #2 \\
+  \noindent \textit{#3} \hfill \textit{#4} \par\vspace{0.2em}
+}
+
+\NewDocumentCommand{\cvcert}{ m m m m o }{%
+  \item \textbf{\href{#4}{#1}} -- #2, #3%
+  \IfNoValueTF{#5}{}{\\{\footnotesize\textit{#5}}}%
+}
+
+% ==================================================
+% DOCUMENT
+% ==================================================
+
+\begin{document}
+
+% ==================================================
+% HEADER
+% ==================================================
+
+\newcommand{\CVName}{Harshana Lakshara Fernando}
+\newcommand{\CVLocation}{Panadura, Sri Lanka}
+\newcommand{\CVPhone}{+94 783 310 520}
+\newcommand{\CVEmailPersonal}{harshanalf.work@gmail.com}
+\newcommand{\CVEmailUni}{lakshara.21@cse.mrt.ac.lk}
+\newcommand{\CVPortfolioURL}{https://harshanalf.netlify.app/portfolio}
+\newcommand{\CVLinkedinURL}{https://www.linkedin.com/in/harshana-lakshara/}
+\newcommand{\CVGithubURL}{https://github.com/UchihaIthachi}
+\newcommand{\CVMediumURL}{https://medium.com/@HarshanaLF}
+
+\begin{center}
+    {\fontsize{20}{24}\bfseries \CVName}\\[3pt]
+    \small
+    \CVLocation \,|\, \CVPhone \,|\, \href{mailto:\CVEmailPersonal}{\CVEmailPersonal} \,|\, \href{\CVPortfolioURL}{Portfolio} \,|\, \href{\CVLinkedinURL}{LinkedIn} \,|\, \href{\CVGithubURL}{GitHub}
+\end{center}
+\vspace{-0.6em}
+
+% ==================================================
+% SUMMARY
+% ==================================================
+
+\section*{Summary}
+\BigDivider
+
+\noindent
+Software Engineer specializing in \skw{Distributed Systems}, \skw{Microservices}, and \kw{Event-Driven Architecture}, with hands-on experience building \skw{Kafka}-based backend services and optimizing production system performance. Proficient in Java, \skw{Spring Boot}, Go, gRPC, REST APIs, PostgreSQL, Docker, Kubernetes, CI/CD, and observability using Prometheus and Grafana.
+
+% ==================================================
+% EXPERIENCE
+% ==================================================
+
+\section*{Experience}
+\BigDivider
+
+\CVExperienceEntry
+{Software Engineer --- KōreroCare Platform}
+{Mar 2026 -- Present}
+{Empathic Computing Laboratory, University of Auckland}
+{Remote}
+
+\begin{itemize}[leftmargin=*, itemsep=0.2em, topsep=0.1em]
+  \item Built \skw{Go/Gin}-based backend services for wearable time-series ingestion and cross-device synchronization.
+  \item Designed \kw{PostgreSQL} schemas for participants, studies, devices, consent, and sensor streams.
+  \item Integrated \skw{Keycloak OAuth2/OIDC} with \kw{Traefik} as API gateway and load balancer, via Docker Compose.
+  \item Developed Firebase notification and reminder flows for participant engagement and study prompts.
+  \item Modeled an \skw{HL7/FHIR}-aligned schema mapping participants, devices, and wearable measurements.
+\end{itemize}
+\vspace{0.12em}
+
+\CVExperienceEntry
+{Software Engineer Intern}
+{Dec 2024 -- May 2025}
+{Information Systems Associates (Pvt) Ltd --- Aviation Technology}
+{Colombo, Sri Lanka}
+
+\begin{itemize}[leftmargin=*, itemsep=0.2em, topsep=0.1em]
+  \item Built a distributed \skw{Spring Boot}/\skw{Kafka}-backed PNR ID generator, \skw{live in production}, achieving \skw{25+ PNRs/sec} at \skw{<100ms latency}.
+  \item Resolved \kw{Kafka consumer lag} and offset issues using shutdown hooks, retry handling, and a Producer-Consumer refactor.
+  \item Integrated \kw{gRPC} clients, Kafka consumers, and feature toggles into a legacy Java 8 AeroMart monolith.
+  \item Implemented database-driven feature toggles for granular PNR routing during a \kw{phased production rollout}.
+  \item Maintained \kw{>90\%} unit test coverage while delivering \kw{production-ready microservice} features.
+  \item Deployed \kw{Prometheus} and \kw{Grafana} dashboards for queue-time, latency, and service monitoring.
+\end{itemize}
+\vspace{0.12em}
+
+\CVExperienceEntry
+{Freelance Software Engineer}
+{May 2025 -- May 2026}
+{Client Platforms}
+{Remote / Sri Lanka}
+
+\begin{itemize}[leftmargin=*, itemsep=0.2em, topsep=0.1em]
+  \item Built \kw{Agrinova}, a multi-branch inventory and sales platform automating legacy manual inventory workflows.
+  \item Implemented transaction-safe stock logic across \kw{3 workflows}: material issuance, returns, and purchase operations.
+  \item Optimized \kw{PostgreSQL} queries/indexing and improved dashboard responsiveness using Next.js caching and Zod validation.
+  \item Developed \kw{TipLanka}, a \kw{low-latency} creator tipping platform with live PayHere webhook integration.
+  \item Architected cost-efficient serverless infrastructure using Vercel and Supabase/PostgreSQL.
+\end{itemize}
+\vspace{0.12em}
+
+% ==================================================
+% PROJECTS
+% ==================================================
+% All 6 projects kept -- re-flowed from a 2-column tabularx grid into a
+% single-column vertical stack (see \cvprojectfull note above) so the
+% text extracts in the correct order for ATS parsers. Uses slightly
+% tighter vertical spacing per entry so it still fits comfortably.
+
+\section*{Projects}
+\BigDivider
+
+\cvprojectfull
+{\href{https://github.com/UchihaIthachi/EMS}{Employee Management System} {\scriptsize\href{https://UchihaIthachi.github.io/cv/arch/ems.png}{[Architecture]}} --- Java 17, Spring Boot, Spring Cloud, Kubernetes}
+{}
+{Built cloud-native \kw{Spring Boot microservices} with Eureka, Config Server, API Gateway, and RabbitMQ-based config refresh.}
+{Implemented \skw{Circuit Breaker}, \skw{Retry}, and \skw{Rate Limiter} patterns with Resilience4j, plus CI/CD and monitoring.}
+
+\cvprojectfull
+{\href{https://github.com/UchihaIthachi/serverless-auction-platform}{Serverless Auction Platform} {\scriptsize\href{https://UchihaIthachi.github.io/cv/arch/serverless_auction.png}{[Architecture]}} --- Node.js, AWS Lambda, API Gateway, DynamoDB, SQS/SNS}
+{}
+{Architected 3 event-driven services for auctions, auth, and notifications using \kw{AWS Lambda} and EventBridge.}
+{Designed \kw{DynamoDB} GSIs and secured APIs with a custom JWT Lambda Authorizer and Middy validation.}
+
+\cvprojectfull
+{ZK-Rollup L2 Benchmarking Framework --- Rust, Solidity, TypeScript, Python, Docker}
+{}
+{Built an end-to-end benchmark pipeline with \kw{Rust} Submitter, \kw{Solidity} L1 contracts, and Python metrics tools.}
+{Raised Submitter test coverage from \skw{41\% to 88\%} and measured $\sim$\skw{70\% lower DA cost} with blob-style mode.}
+
+\cvprojectfull
+{\href{https://go-together-uom.vercel.app/}{GoTogether Travel Platform} {\scriptsize\href{https://UchihaIthachi.github.io/cv/arch/gotogether.png}{[Architecture]}} --- Next.js, Go, Spring Boot, Keycloak, PostgreSQL}
+{}
+{Built a full-stack travel platform with Next.js, \kw{Spring Boot} social services, and \kw{Go/gRPC} itinerary APIs.}
+{Configured \kw{OAuth2/OIDC} with \kw{Keycloak} and deployed backend services on Oracle Cloud with NGINX/Certbot.}
+
+\cvprojectfull
+{\href{https://e-commerce-admin-nextjs.vercel.app/}{Maison Vella --- E-Commerce Admin Panel} {\scriptsize\href{https://UchihaIthachi.github.io/cv/arch/ecommerce_admin.png}{[Architecture]}} --- Next.js 14, tRPC, Prisma, PostgreSQL, Sanity}
+{}
+{Built a responsive admin dashboard using \kw{Next.js 14}, Server Actions, ShadCN UI, and Tailwind CSS.}
+{Implemented type-safe data access with \kw{tRPC}, Prisma, Supabase/PostgreSQL, Sanity CMS, and Clerk Auth.}
+
+\cvprojectfull
+{\href{https://github.com/FoodDeliveryApp-ISA}{Food Delivery Application} --- Java, Spring Boot, gRPC, Kafka, Redis, WebSockets}
+{}
+{Developed the Restaurant service with \kw{JWT authentication}, CRUD APIs, and Redis caching with invalidation.}
+{Enabled real-time order sync using \kw{Kafka} pub/sub and \kw{WebSockets} for restaurant/rider notifications.}
+
+% ==================================================
+% SKILLS
+% ==================================================
+
+\section*{Skills}
+\BigDivider
+\small
+\noindent
+\kw{Backend:} Java, \skillhi{Spring Boot}, \skillhi{Spring Cloud}, \skillhi{Microservices}, Node.js, Go, Gin, \skillhi{REST}, \skillhi{gRPC}, GraphQL, \skillhi{Hibernate}\\
+\kw{Frontend:} \skillhi{React}, \skillhi{Next.js}, JavaScript, TypeScript\\
+\kw{Messaging:} \skillhi{Kafka}, RabbitMQ, WebSockets, Protobuf\\
+\kw{Data:} \skillhi{PostgreSQL}, MySQL, Oracle DB, Redis, Couchbase, \skillhi{Prisma}\\
+\kw{Cloud / DevOps:} AWS, Docker, Kubernetes, GitHub Actions, Jenkins\\
+\kw{Observability / Testing:} Prometheus, Grafana, JMeter, Gatling, \skillhi{JUnit}, \skillhi{Mockito}, Pytest
+\normalsize
+\vspace{0.15em}
+
+% ==================================================
+% EDUCATION
+% ==================================================
+
+\section*{Education}
+\BigDivider
+\noindent
+\textbf{B.Sc. (Hons) in Engineering --- Computer Science and Engineering, University of Moratuwa}
+\hfill 2022 -- 2026\\
+G.C.E. A/L: 3 A's, Physical Science Stream, District Rank 17
+
+% ==================================================
+% CERTIFICATIONS
+% ==================================================
+
+\section*{Certifications}
+\BigDivider
+\noindent
+\href{https://www.udemy.com/certificate/UC-246987b5-df13-4f9b-a53f-d74d9de0d221/}{CKA Training} (KodeKloud, 2025) ·
+\href{https://www.udemy.com/certificate/UC-b1ef5d20-5c70-472f-a936-96567f299af7/}{AWS SAA-C03 Training} (Udemy, 2025) ·
+Apache Kafka Series (\href{https://www.udemy.com/certificate/UC-ec3b908f-9983-4510-bdb1-bc1fb5567a2d/}{I}, \href{https://www.udemy.com/certificate/UC-6c2275bc-4236-441a-9cb6-de7ada31a3c8/}{II}, \href{https://www.udemy.com/certificate/UC-1e1e34e9-0ba4-4c9d-bf10-3b5b16ee6f10/}{III}) ·
+\href{https://engineer.kodekloud.com/certificate-verification/8a2e35fb-02fd-4082-aff3-d1fbc291f0d1}{100 Days of DevOps} (KodeKloud, 2025) ·
+\href{https://www.udemy.com/certificate/UC-57aa3ba1-44be-4d7d-ab4b-e232f489411d/}{Advanced OAuth Security} (Udemy, 2024)
+
+\end{document}

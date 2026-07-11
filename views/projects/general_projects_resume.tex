@@ -1,49 +1,21 @@
 \section*{Projects}
 \BigDivider
-\noindent
-\begin{tabularx}{\textwidth}{@{}X X@{}}
 
-\cvprojectcompact
+\vspace{-0.3em}
+\cvprojectsingle
 {\href{https://github.com/UchihaIthachi/EMS}{Employee Management System} {\scriptsize\href{https://UchihaIthachi.github.io/cv/arch/ems.png}{[Architecture]}}}
-{Java 17, Spring Boot, Spring Cloud, Kubernetes}
-{Built cloud-native \skw{Spring Boot} microservices with Eureka, Config Server, API Gateway, and RabbitMQ-based config refresh.}
-{Implemented \skw{Circuit Breaker}, \skw{Retry}, and \skw{Rate Limiter} patterns with Resilience4j, plus CI/CD and monitoring.}
-&
+{Java 17, Spring Boot, Spring Cloud, Microservices, Kubernetes}
+{Built cloud-native microservices using Eureka, Gateway, RabbitMQ-based config refresh, and Resilience4j (\skw{Circuit Breaker}, \skw{Rate Limiter}).}
 
-\cvprojectcompact
+\cvprojectsingle
 {\href{https://github.com/UchihaIthachi/serverless-auction-platform}{Serverless Auction Platform} {\scriptsize\href{https://UchihaIthachi.github.io/cv/arch/serverless_auction.png}{[Architecture]}}}
 {Node.js, AWS Lambda, API Gateway, DynamoDB, SQS/SNS}
-{Architected 3 event-driven services for auctions, auth, and notifications using \skw{AWS Lambda} and EventBridge.}
-{Designed \skw{DynamoDB} GSIs and secured APIs with a custom JWT Lambda Authorizer and Middy validation.}
+{Architected event-driven auction/auth services using \kw{AWS Lambda}, EventBridge, \kw{DynamoDB} GSIs, and custom JWT authorizers.}
 
-\\[0.25em]
-
-\cvprojectcompact
+\cvprojectsingle
 {ZK-Rollup L2 Benchmarking Framework}
 {Rust, Solidity, TypeScript, Python, Docker}
-{Built an end-to-end benchmark pipeline with \kw{Rust} Submitter, \kw{Solidity} L1 contracts, and Python metrics tools.}
-{Raised Submitter test coverage from \skw{41\% to 88\%} and measured $\sim$\skw{70\% lower DA cost} with blob-style mode.}
-&
+{Built benchmark pipelines with \kw{Rust} Submitters and \kw{Solidity} contracts, measuring $\sim$\skw{70\% lower DA cost} while raising coverage from \skw{41\% to 88\%}.}
 
-\cvprojectcompact
-{\href{https://go-together-uom.vercel.app/}{GoTogether Travel Platform} {\scriptsize\href{https://UchihaIthachi.github.io/cv/arch/gotogether.png}{[Architecture]}}}
-{Next.js, Go, Spring Boot, Keycloak, PostgreSQL}
-{Built a full-stack travel platform with Next.js, \kw{Spring Boot} social services, and \kw{Go/gRPC} itinerary APIs.}
-{Configured \kw{OAuth2/OIDC} with \kw{Keycloak} and deployed backend services on Oracle Cloud with NGINX/Certbot.}
-
-\\[0.25em]
-
-\cvprojectcompact
-{\href{https://e-commerce-admin-nextjs.vercel.app/}{Maison Vella --- E-Commerce Admin Panel} {\scriptsize\href{https://UchihaIthachi.github.io/cv/arch/ecommerce_admin.png}{[Architecture]}}}
-{Next.js 14, tRPC, Prisma, PostgreSQL, Sanity}
-{Built a responsive admin dashboard using \kw{Next.js 14}, Server Actions, ShadCN UI, and Tailwind CSS.}
-{Implemented type-safe data access with \kw{tRPC}, Prisma, Supabase/PostgreSQL, Sanity CMS, and Clerk Auth.}
-&
-
-\cvprojectcompact
-{\href{https://github.com/FoodDeliveryApp-ISA}{Food Delivery Application}}
-{Java, Spring Boot, gRPC, Kafka, Redis, WebSockets}
-{Developed the Restaurant service with \kw{JWT authentication}, CRUD APIs, and Redis caching with invalidation.}
-{Enabled real-time order sync using \kw{Kafka} pub/sub and \kw{WebSockets} for restaurant/rider notifications.}
-
-\end{tabularx}
+\vspace{0.3em}
+\noindent \textit{More projects, architecture diagrams, and articles are available on my \href{https://harshanalf.netlify.app/portfolio}{\textbf{portfolio}}.}

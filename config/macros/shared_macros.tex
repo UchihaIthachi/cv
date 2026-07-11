@@ -1,8 +1,8 @@
 % CV Project/Experience Macro - more compact
 % CV Project/Experience Macro - more compact
 % Arguments: #1 = Title/Role, #2 = Date/Duration, #3 = Description, #4 = Tech stack
-\newcommand{\kw}[1]{\textbf{#1}}
-\newcommand{\skw}[1]{\textbf{\uline{#1}}}
+\newcommand{\kw}[1]{{\special{pdf:literal 2 Tr 0.4 w}\textbf{#1}\special{pdf:literal 0 Tr 0 w}}}
+\newcommand{\skw}[1]{{\special{pdf:literal 2 Tr 0.4 w}\textbf{#1}\special{pdf:literal 0 Tr 0 w}}}
 \newcommand{\nointent}{\noindent}
 
 \newcommand{\CVExperienceEntry}[4]{

@@ -8,8 +8,8 @@
   \endgroup
 }
 
-\newcommand{\kw}[1]{\textbf{#1}}
-\newcommand{\skw}[1]{\textbf{\uline{#1}}}
+\newcommand{\kw}[1]{{\special{pdf:literal 2 Tr 0.4 w}\textbf{#1}\special{pdf:literal 0 Tr 0 w}}}
+\newcommand{\skw}[1]{{\special{pdf:literal 2 Tr 0.4 w}\textbf{#1}\special{pdf:literal 0 Tr 0 w}}}
 \newcommand{\nointent}{\noindent}
 
 \newif\ifProjectNumbering
@@ -50,6 +50,23 @@
       \item #4
     \end{itemize}
   \end{minipage}
+}
+
+\newcommand{\cvprojectsingle}[3]{%
+  \noindent\titleblock{#1} \hfill {\scriptsize\textit{#2}}\par
+  \vspace{-0.35em}
+  \begin{itemize}[leftmargin=1em, itemsep=0pt, topsep=1pt, parsep=0pt]
+    \item #3
+  \end{itemize}
+}
+
+\newcommand{\cvprojectfull}[4]{%
+  \noindent \titleblock{#1} \hfill {\scriptsize\textit{#2}} \\[0.15em]
+  \begin{itemize}[leftmargin=*, itemsep=0pt, topsep=1pt, parsep=0pt]
+    \item #3
+    \item #4
+  \end{itemize}
+  \vspace{0.28em}
 }
 
 \newcommand{\CVExperienceEntry}[4]{

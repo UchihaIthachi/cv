@@ -1,14 +1,14 @@
 \CVExperienceEntry
-{Software Engineer Intern}
+{Software Engineer Intern — ISA Aviation Technology}
 {Dec 2024 -- May 2025}
-{Information Systems Associates (Pvt) Ltd --- Aviation Technology}
+{Information Systems Associates (Pvt) Ltd}
 {Colombo, Sri Lanka}
 
 \begin{itemize}[leftmargin=*, itemsep=0.2em, topsep=0.1em]
-  \item Built a distributed \skw{Spring Boot}/\skw{Kafka}-backed PNR ID generator, \skw{live in production}, achieving \skw{25+ PNRs/sec} at \skw{<100ms latency}.
-  \item Resolved \kw{Kafka consumer lag} and offset issues using shutdown hooks, retry handling, and a Producer-Consumer refactor.
-  \item Integrated \kw{gRPC} clients, Kafka consumers, and feature toggles into a legacy Java 8 AeroMart monolith.
-  \item Implemented database-driven feature toggles for granular PNR routing during a \kw{phased production rollout}.
-  \item Maintained \kw{>90\%} unit test coverage while delivering \kw{production-ready microservice} features.
-  \item Deployed \kw{Prometheus} and \kw{Grafana} dashboards for queue-time, latency, and service monitoring.
+  \item Owned design and delivery of a distributed \skw{Spring Boot}/\skw{Kafka}-backed PNR generation service, \skw{live in production}, achieving \skw{25+ PNRs/sec} at \skw{<100ms latency}.
+  \item Led the rollout from legacy PNR generation to AeroOrder using database-driven \kw{feature toggles} and a \kw{strangler-pattern} migration approach.
+  \item Resolved production \kw{Kafka consumer lag} and offset-reset issues by adding graceful shutdown hooks, retry handling, validation, and a Producer–Consumer refactor.
+  \item Integrated \kw{gRPC} clients and Kafka consumers into a legacy \kw{Java 8} AeroMart monolith for backward-compatible communication with AeroOrder services.
+  \item Built load-testing and monitoring support using \kw{JMeter}, \kw{Prometheus}, and \kw{Grafana} to validate async order/PNR flows, queue time, and service latency.
+  \item Added Jenkins environment support and maintained \kw{>90\% unit test coverage} while coordinating delivery with QA and distributed engineering teams.
 \end{itemize}
