@@ -1,14 +1,16 @@
 \CVExperienceEntry
-{Software Engineer Intern — ISA Aviation Technology}
+{Software Engineer Intern --- ISA Aviation Technology}
 {Dec 2024 -- May 2025}
 {Information Systems Associates (Pvt) Ltd}
 {Colombo, Sri Lanka}
 
 \begin{itemize}[leftmargin=*, itemsep=0.2em, topsep=0.1em]
-  \item Owned design and delivery of a distributed \skw{Spring Boot}/\skw{Kafka}-backed PNR generation service, \skw{live in production}, achieving \skw{25+ PNRs/sec} at \skw{<100ms latency}.
-  \item Led the rollout from legacy PNR generation to AeroOrder using database-driven \kw{feature toggles} and a \kw{strangler-pattern} migration approach.
-  \item Resolved production \kw{Kafka consumer lag} and offset-reset issues by adding graceful shutdown hooks, retry handling, validation, and a Producer–Consumer refactor.
-  \item Integrated \kw{gRPC} clients and Kafka consumers into a legacy \kw{Java 8} AeroMart monolith for backward-compatible communication with AeroOrder services.
-  \item Built load-testing and monitoring support using \kw{JMeter}, \kw{Prometheus}, and \kw{Grafana} to validate async order/PNR flows, queue time, and service latency.
-  \item Added Jenkins environment support and maintained \kw{>90\% unit test coverage} while coordinating delivery with QA and distributed engineering teams.
+  \item Owned design and delivery of a distributed \skw{Spring Boot}/\skw{Kafka}-backed PNR ID generation service, \skw{live in production}, achieving \skw{25+ PNRs/sec} at \skw{<100ms latency}.
+  \item Designed a \kw{pool-based PNR allocation model} to replace legacy Oracle-sequence generation, supporting short domain-specific PNR formats while avoiding predictable sequential identifiers.
+  \item Implemented \kw{concurrency-safe} PNR allocation using a \kw{Kafka-backed pool}, ensuring the same PNR was not assigned to multiple service instances, while using Java \kw{ReentrantLock} for application-level critical sections.
+  \item Led the rollout from legacy PNR generation to AeroOrder using database-driven \kw{feature toggles} and a \kw{strangler-pattern} migration approach for phased production cutover and fallback.
+  \item Resolved production \kw{Kafka consumer lag} and offset-reset issues by adding graceful shutdown hooks, retry handling, validation, and a Producer--Consumer refactor.
+  \item Integrated \kw{gRPC} clients and Kafka consumers into the legacy \kw{Java 8} AeroMart monolith for backward-compatible communication with AeroOrder microservices.
+  \item Built async load-testing and monitoring support using \kw{JMeter}, \kw{Prometheus}, and \kw{Grafana} to validate PNR/order flows, queue time, consumer behavior, and service latency.
+  \item Added Jenkins environment support, maintained \kw{>90\% unit test coverage}, and coordinated delivery with QA and distributed engineering teams.
 \end{itemize}
