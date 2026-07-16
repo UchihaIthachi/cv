@@ -1,21 +1,15 @@
 \noindent
-\ProjectTitle{Improving Blockchain Scalability: Throughput Enhancement in ZK-Rollups}
+\ProjectTitle{ZK-Rollup L2 Benchmarking Framework}
 
 \noindent
-\textit{Research Project — University of Moratuwa}
+Built benchmark pipelines with Rust Submitters and Solidity contracts, measuring ~70\% lower DA cost while raising coverage from 41\% to 88\%.
 
 \begin{itemize}
     \item Built a modular ZK-rollup benchmarking framework to evaluate Ethereum Layer-2 trade-offs across sequencing, batching, proving, data availability, and L1 settlement.
-
     \item Implemented the Rust-based Submitter service for finalized batch submission, DA-mode selection, L1 bridge interaction, transaction receipt validation, and settlement metric export.
-
-    \item Added calldata, EIP-4844-style blob, and off-chain / Validium-style benchmark modes, observing approximately 70\% lower DA publication cost for blob-style mode compared with calldata.
-
-    \item Introduced a mock-testable \texttt{BridgeClient} abstraction, improving Submitter testability and increasing verifiable test coverage from approximately 41\% to 88\%.
-
-    \item Built Docker-based benchmark orchestration scripts, a Poisson-style workload generator supporting 8 TPS base and 80 TPS burst workloads, and Python data tools for throughput, P50/P95/P99 latency, finalization time, gas/cost, and DA-footprint analysis.
-
-    \item Produced reproducible benchmark outputs including latency CDFs, cost heatmaps, and Pareto-style trade-off comparisons for the final research evaluation.
+    \item Added calldata, EIP-4844-style blob, and off-chain / Validium-style benchmark modes.
+    \item Introduced a mock-testable \texttt{BridgeClient} abstraction, improving Submitter testability.
+    \item Built Docker-based benchmark orchestration scripts, a Poisson-style workload generator, and Python data tools for throughput, P50/P95/P99 latency, finalization time, gas/cost, and DA-footprint analysis.
 \end{itemize}
 
 \noindent

@@ -1,41 +1,27 @@
 \noindent
-\textbf{Software Engineer Intern} \hfill \textit{Dec 2024 -- May 2025}\\
-\textit{Information Systems Associates (Pvt) Ltd --- Aviation Technology (\textbf{AirArabia})}\\[0.05em]
+\textbf{Software Engineer Intern — ISA Aviation Technology} \hfill \textit{Dec 2024 -- May 2025}\\
+\noindent
+\textit{Information Systems Associates (Pvt) Ltd \hfill Colombo, Sri Lanka}\\[0.05em]
 
-\begin{itemize}[leftmargin=*, itemsep=0.3em, topsep=0.05em]
+\begin{itemize}[leftmargin=*, itemsep=0.3em, topsep=0.01em]
 
-    \item \textbf{AeroOrder --- Order Management Microservice (Java 17, Spring Boot, Gradle)}
-    \begin{itemize}[leftmargin=1.5em, itemsep=0.12em]
-        \item Built a \textbf{distributed Kafka-based PNR ID generator} (live in \textbf{production}), ensuring \textbf{uniqueness and consistency} across horizontally scaled services.
-        
-        \item Achieved \textbf{25+ PNRs/sec per node} with \textbf{<100ms latency}, validated using \textbf{Apache JMeter} (load, stress, spike testing).
-        
-        \item Improved \textbf{reliability and recoverability} by resolving \textbf{Kafka consumer lag and offset issues} using \textbf{graceful shutdown hooks} and \textbf{retry mechanisms}.
-        
-        \item Implemented \textbf{observability (Prometheus, Grafana)} for real-time monitoring of \textbf{queue time and latency}.
-        
-        \item Refactored \textbf{Kafka Streams pipelines} into a \textbf{Producer–Consumer model}, reducing lag and improving stability.
-        
-        \item Improved \textbf{maintainability and debugging} via \textbf{structured JSON logging} and removal of legacy dependencies.
-        
-        \item Maintained \textbf{>90\% unit test coverage} while delivering \textbf{production-ready features}.
+    \item \textbf{AeroOrder}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em, topsep=0.1em]
+        \item Owned design and delivery of a distributed Spring Boot/Kafka-backed PNR ID generation service, live in production, achieving 25+ PNRs/sec at <100ms latency.
+        \item Implemented concurrency-safe PNR allocation using a Kafka-backed pool and Java ReentrantLock for application-level critical sections.
+        \item Led the legacy-to-microservice PNR rollout using database-driven feature toggles and a strangler-pattern migration approach.
+        \item Resolved production Kafka consumer lag and offset-reset issues by adding graceful shutdown hooks, retry handling, validation, and a Producer–Consumer refactor.
+        \item Built async load-testing and monitoring support using JMeter, Prometheus, and Grafana to validate PNR/order flows.
     \end{itemize}
 
-    \item \textbf{AeroMart --- Legacy Passenger Reservation System (Java 8, Ant)}
-    \begin{itemize}[leftmargin=1.5em, itemsep=0.12em]
-        \item Integrated \textbf{gRPC clients} and \textbf{Kafka consumers} into a \textbf{Java 8 monolith}, enabling \textbf{backward-compatible communication} with microservices.
-        
-        \item Implemented \textbf{database-driven feature toggles} for \textbf{PNR routing}, enabling \textbf{safe, phased rollouts with fallback}.
+    \item \textbf{AeroMart}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em, topsep=0.1em]
+        \item Integrated gRPC clients and Kafka consumers into the legacy Java 8 AeroMart monolith for backward-compatible communication with AeroOrder microservices.
     \end{itemize}
 
     \item \textbf{Engineering Practices}
-    \begin{itemize}[leftmargin=1.5em, itemsep=0.12em]
-        \item Authored \textbf{design documents, sequence diagrams, and integration plans}; contributed to \textbf{Agile workflows}, \textbf{code reviews}, and team collaboration (Jira, Bitbucket, Confluence).
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em, topsep=0.1em]
+        \item Added Jenkins environment support, maintained >90\% unit test coverage, and coordinated delivery with QA and distributed engineering teams.
     \end{itemize}
 
 \end{itemize}
-
-\vspace{-0.1em}
-\noindent\small
-\textsc{Keywords:} Java 17/8, Spring Boot, Kafka, Kafka Streams, gRPC, Docker, Prometheus, Grafana, JMeter, Oracle DB, Microservices, Distributed Systems, Time-Series Data.
-\normalsize
