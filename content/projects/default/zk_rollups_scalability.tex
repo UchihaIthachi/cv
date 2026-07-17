@@ -1,24 +1,37 @@
 \noindent
-\ProjectTitle{ZK-Rollup L2 Benchmarking Framework}
+\ProjectTitle{Improving Blockchain Scalability: Throughput Enhancement in ZK-Rollups}
 
 \noindent
-Built benchmark pipelines with Rust Submitters and Solidity contracts, measuring ~70\% lower DA cost while raising coverage from 41\% to 88\%.
+\textit{Research Project — BSc (Hons) in Computer Science \& Engineering, University of Moratuwa}
 
 \begin{itemize}
     \item Designed and implemented a modular ZK-rollup benchmarking framework to evaluate Ethereum Layer-2 performance trade-offs across sequencing, batching, proving, data availability, and Layer-1 settlement.
+
     \item Built an end-to-end benchmark pipeline consisting of a Workload Generator, Sequencer, Executor, Prover, Rust-based Submitter, Solidity L1 contracts, and Python data-analysis tools.
+
     \item Implemented and refactored the Rust Submitter service to receive finalized L2 batches, select the configured Data Availability mode, submit commitments to the L1 bridge contract, validate transaction receipts, and export settlement metrics.
+
     \item Added configurable Data Availability paths including calldata, EIP-4844-style blob mode, and off-chain / Validium-style benchmark mode, enabling controlled comparison of cost, latency, and DA-footprint trade-offs.
+
     \item Introduced a mock-testable \texttt{BridgeClient} abstraction for L1 interactions, improving Submitter testability and increasing verifiable Submitter test coverage from approximately 41\% to 88\%.
+
     \item Fixed a critical settlement reliability issue by validating L1 transaction receipt status, preventing mined but reverted transactions from being incorrectly recorded as successful benchmark results.
+
     \item Contributed Solidity bridge, Data Availability, and verifier-related contracts to provide a local L1 settlement boundary for end-to-end benchmark execution.
+
     \item Developed Docker-based benchmark orchestration scripts for service startup, repeated experiment execution, workload triggering, result management, and metrics extraction.
+
+    \item Built a synthetic Poisson-style workload generator supporting controlled traffic profiles, including an 8 TPS base workload with 80 TPS burst injection for stress testing batching and scheduling behaviour.
+
     \item Developed Python data tools to aggregate JSON/JSONL/CSV metrics and compute throughput, P50/P95/P99 latency, finalization time, gas/cost summaries, and DA footprint.
+
     \item Generated reproducible benchmark outputs including latency CDFs, cost heatmaps, and Pareto-style trade-off comparisons for the final research evaluation.
+
+    \item Demonstrated that EIP-4844-style blob data availability reduced data publication cost by approximately 70\% compared with calldata in the benchmark environment.
 \end{itemize}
 
 \noindent
-\textit{Key Results:} Delivered a working end-to-end ZK-rollup benchmark workflow from workload generation to L1 submission and post-experiment analysis; improved Submitter test coverage from approximately 41\% to 88\%; observed approximately 70\% DA publication cost reduction using blob-style DA compared with calldata.
+\textit{Key Results:} Delivered a working end-to-end ZK-rollup benchmark workflow from workload generation to L1 submission and post-experiment analysis; improved Submitter test coverage from approximately 41\% to 88\%; evaluated 8 TPS base and 80 TPS burst workloads; observed approximately 70\% DA publication cost reduction using blob-style DA compared with calldata.
 
 \noindent
 \textit{Technologies:} Rust, Solidity, Hardhat, TypeScript, Python, Docker, gRPC, SQLite/PostgreSQL, Ethereum Local Test Networks, RISC0 / Mock Proving Path, JSON/JSONL/CSV Metrics, Matplotlib

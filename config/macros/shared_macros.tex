@@ -1,3 +1,67 @@
+% % CV Project/Experience Macro - more compact
+% % CV Project/Experience Macro - more compact
+% % Arguments: #1 = Title/Role, #2 = Date/Duration, #3 = Description, #4 = Tech stack
+% \newcommand{\kw}[1]{{\special{pdf:literal 2 Tr 0.4 w}\textbf{#1}\special{pdf:literal 0 Tr 0 w}}}
+% \newcommand{\skw}[1]{{\special{pdf:literal 2 Tr 0.4 w}\textbf{#1}\special{pdf:literal 0 Tr 0 w}}}
+% \newcommand{\nointent}{\noindent}
+
+% \newcommand{\CVExperienceEntry}[4]{
+%   \noindent \textbf{#1} \hfill #2 \\
+%   \noindent \textit{#3} \hfill \textit{#4} \par\vspace{0.2em}
+% }
+% % Project Numbering Logic
+% \newif\ifProjectNumbering
+% \ProjectNumberingfalse % Default to false
+% \newcounter{projectCount}
+
+% \newcommand{\ProjectTitle}[1]{%
+%   \ifProjectNumbering
+%     \stepcounter{projectCount}%
+%     \subsection*{\theprojectCount. #1}%
+%   \else
+%     \subsection*{#1}%
+%   \fi
+% }
+
+% \newcommand{\cvproject}[4]{
+%     \ifProjectNumbering
+%         \stepcounter{projectCount}%
+%         \textbf{\theprojectCount. #1} \hfill \textit{#2} \par
+%     \else
+%         \textbf{#1} \hfill \textit{#2} \par
+%     \fi
+%     \vspace{-0.5em}
+%     \vspace{-0.5em}
+%     #3 \par
+%     \vspace{-0.5em}
+%     \vspace{-0.5em}
+%     \textbf{Technologies:} #4 \par
+%     \vspace{0.5em}
+%     \vspace{0.5em}
+% }
+
+% % Custom rule for section headings (more compact)
+% \newcommand{\sectionrule}{\titlerule*[0.5pt]}
+
+% \newcommand{\MainDivider}{%
+%   \vspace{0.6em}%
+%   \noindent\hrule height 1pt%
+%   \vspace{0.15em}%
+%   \noindent\hrule height 0.4pt%
+%   \vspace{0.5em}}
+
+% % Big section divider
+% \newcommand{\BigDivider}{%
+%   \vspace{0.1em}\noindent\rule{\textwidth}{0.8pt}\vspace{0.4em}}
+
+
+% % \cvcert{Title}{Provider}{Date}{URL}[Optional note]
+% \NewDocumentCommand{\cvcert}{ m m m m o }{%
+%   \item \textbf{\href{#4}{#1}} -- #2, #3%
+%   \IfNoValueTF{#5}{}{\\{\footnotesize\textit{#5}}}%
+% }
+
+
 % CV Project/Experience Macro - more compact
 % CV Project/Experience Macro - more compact
 % Arguments: #1 = Title/Role, #2 = Date/Duration, #3 = Description, #4 = Tech stack
@@ -5,9 +69,9 @@
 \newcommand{\skw}[1]{{\special{pdf:literal 2 Tr 0.4 w}\textbf{#1}\special{pdf:literal 0 Tr 0 w}}}
 \newcommand{\nointent}{\noindent}
 
-\newcommand{\CVExperienceEntry}[4]{
+\newcommand{\CVExperienceEntryOld}[4]{
   \noindent \textbf{#1} \hfill #2 \\
-  \noindent \textit{#3} \hfill \textit{#4} \par\vspace{0.2em}
+  \noindent \textit{#3} \hfill \textit{#4} \par\vspace{-0.2em}
 }
 % Project Numbering Logic
 \newif\ifProjectNumbering
@@ -30,23 +94,23 @@
     \else
         \textbf{#1} \hfill \textit{#2} \par
     \fi
-    \vspace{-0.5em}
-    \vspace{-0.5em}
+    
+    
     #3 \par
-    \vspace{-0.5em}
-    \vspace{-0.5em}
+    
+    
     \textbf{Technologies:} #4 \par
     \vspace{0.5em}
     \vspace{0.5em}
 }
 
 % Custom rule for section headings (more compact)
-\newcommand{\sectionrule}{\titlerule*[0.5pt]}
+\newcommand{\sectionrule}{\titlerule[0.7pt]}
 
 \newcommand{\MainDivider}{%
   \vspace{0.6em}%
   \noindent\hrule height 1pt%
-  \vspace{0.15em}%
+  \vspace{-0.2em}%
   \noindent\hrule height 0.4pt%
   \vspace{0.5em}}
 
@@ -59,4 +123,44 @@
 \NewDocumentCommand{\cvcert}{ m m m m o }{%
   \item \textbf{\href{#4}{#1}} -- #2, #3%
   \IfNoValueTF{#5}{}{\\{\footnotesize\textit{#5}}}%
+}
+
+\definecolor{BlockGray}{HTML}{D9D9D9}
+\definecolor{BlockText}{HTML}{000000}
+\newcommand{\titleblock}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{1pt}%
+  \textbf{#1}%
+  \endgroup
+}
+
+\newcommand{\cvprojectfull}[4]{%
+  \noindent\titleblock{#1}%
+  \if\relax\detokenize{#2}\relax
+  \else
+    \hfill{\scriptsize\textit{#2}}%
+  \fi
+  \par
+  \vspace{0.08em}
+  \begin{itemize}[
+    leftmargin=*,
+    itemsep=0pt,
+    topsep=0pt,
+    parsep=0pt,
+    partopsep=0pt
+  ]
+    \item #3
+    \item #4
+  \end{itemize}
+  \vspace{-0.35em}
+}
+
+\newcommand{\CVEducationEntry}[4]{
+  \noindent \textbf{#1} \hfill #2 \\
+  \noindent \textit{#3} \hfill \textit{#4} \par\vspace{-0.2em}
+}
+
+\newcommand{\CVExperienceEntry}[4]{
+  \noindent \titleblock{#1} \hfill #2 \\
+  \noindent \textit{#3} \hfill \textit{#4} \par\vspace{-0.2em}
 }
