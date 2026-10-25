@@ -19,6 +19,14 @@ def generate_index():
     else:
         print(f"Template {template_path} not found.")
 
+    # Extra static pages deployed next to the PDFs (e.g. open-source.html,
+    # which reads open-source.json at runtime).
+    for extra in ('open-source.html', 'open-source.json'):
+        src = os.path.join('resources', extra)
+        if os.path.exists(src):
+            shutil.copy(src, os.path.join(dist_dir, extra))
+            print(f"Copied {extra}.")
+
     repo = os.environ.get('GITHUB_REPOSITORY')
     if repo:
         user, repo_name = repo.split('/')

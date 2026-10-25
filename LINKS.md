@@ -18,6 +18,9 @@ After the GitHub Action `build-pdf.yml` executes successfully on the `main` bran
 5.  **Web3 Resume:** [web3-resume.pdf](https://UchihaIthachi.github.io/cv/web3-resume.pdf)
 6.  **Full Resume:** [full-resume.pdf](https://UchihaIthachi.github.io/cv/full-resume.pdf)
 
+### Open Source
+- **Open source contributions page:** [open-source.html](https://UchihaIthachi.github.io/cv/open-source.html) (data in `resources/open-source.json`)
+
 ### Architecture Diagrams
 - Architecture diagrams are hosted in the `arch/` directory and deployed alongside the PDFs:
   e.g., [EMS Architecture](https://UchihaIthachi.github.io/cv/arch/ems.png)

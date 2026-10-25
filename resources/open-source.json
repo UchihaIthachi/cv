@@ -1,0 +1,129 @@
+{
+  "updated": "2026-10-25",
+  "profile": "https://github.com/UchihaIthachi",
+  "contributions": [
+    {
+      "org": "kgateway-dev",
+      "repo": "kgateway",
+      "project": "kgateway (CNCF)",
+      "number": 14851,
+      "kind": "pr",
+      "status": "merged",
+      "date": "2026-10-20",
+      "title": "kgateway_build_info Prometheus metric",
+      "summary": "Added a build-info metric (version, revision, Go version, OS/arch) so operators can tell which build every pod is running. Shipped in kgateway v2.5.0-beta.2; the maintainer extended it into a reusable metrics.NewInfo helper.",
+      "diff": "5 files · +113",
+      "tags": [
+        "Go",
+        "Prometheus",
+        "Gateway API"
+      ],
+      "url": "https://github.com/kgateway-dev/kgateway/pull/14851"
+    },
+    {
+      "org": "containers",
+      "repo": "kubernetes-mcp-server",
+      "project": "Kubernetes MCP Server",
+      "number": 1482,
+      "kind": "pr",
+      "status": "merged",
+      "date": "2026-10-15",
+      "title": "Fix flaky HTTP server startup in tests",
+      "summary": "Replaced a ~0.5 s retry loop with a 5 s readiness poll and made test setup clean up before failing, fixing intermittent failures on the slow macOS CI runner (issue #1445).",
+      "diff": "2 files · +14 −14",
+      "tags": [
+        "Go",
+        "Testing",
+        "CI"
+      ],
+      "url": "https://github.com/containers/kubernetes-mcp-server/pull/1482"
+    },
+    {
+      "org": "kubeflow",
+      "repo": "spark-operator",
+      "project": "Kubeflow Spark Operator",
+      "number": 3249,
+      "kind": "pr",
+      "status": "review",
+      "date": "2026-10-18",
+      "title": "Ginkgo unit tests for executor metrics",
+      "summary": "20 specs covering every pod-phase transition, label sanitising and registration error paths: 100% of sparkpod_metrics.go, plus a fix for a wrong executor failure-count log message. LGTM from a reviewer, waiting for approval.",
+      "diff": "3 files · +228",
+      "tags": [
+        "Go",
+        "Ginkgo",
+        "Prometheus"
+      ],
+      "url": "https://github.com/kubeflow/spark-operator/pull/3249"
+    },
+    {
+      "org": "containers",
+      "repo": "kubernetes-mcp-server",
+      "project": "Kubernetes MCP Server",
+      "number": 1549,
+      "kind": "pr",
+      "status": "review",
+      "date": "2026-10-20",
+      "title": "RBAC metadata test for every capability",
+      "summary": "Checks that every tool, prompt, resource and resource template across all 12 toolsets declares valid RBAC metadata, using a real cluster inspector. All 14 CI checks green on the first run (issue #1435).",
+      "diff": "1 file · +33",
+      "tags": [
+        "Go",
+        "Kubernetes RBAC",
+        "MCP"
+      ],
+      "url": "https://github.com/containers/kubernetes-mcp-server/pull/1549"
+    },
+    {
+      "org": "containers",
+      "repo": "kubernetes-mcp-server",
+      "project": "Kubernetes MCP Server",
+      "number": 1568,
+      "kind": "issue",
+      "status": "confirmed",
+      "date": "2026-10-25",
+      "title": "Root-caused a “flaky” test",
+      "summary": "Showed that a reported flaky failure on another contributor's PR was a real merge-order bug, reproduced it and suggested the fix. The author confirmed it, applied the fix and closed the issue as root-caused.",
+      "diff": "Diagnosis",
+      "tags": [
+        "Debugging",
+        "Go"
+      ],
+      "url": "https://github.com/containers/kubernetes-mcp-server/issues/1568"
+    },
+    {
+      "org": "kedacore",
+      "repo": "keda",
+      "project": "KEDA (CNCF)",
+      "number": 4394,
+      "kind": "issue",
+      "status": "progress",
+      "date": "2026-10-25",
+      "title": "Workload scaler: count pods by state",
+      "summary": "Assigned by a maintainer. Proposed a podStates option (pod phases plus Ready) so the workload scaler can ignore pods that aren't ready yet; waiting on design sign-off before coding.",
+      "diff": "Design",
+      "tags": [
+        "Go",
+        "Autoscaling"
+      ],
+      "url": "https://github.com/kedacore/keda/issues/4394"
+    },
+    {
+      "org": "kubeflow",
+      "repo": "spark-operator",
+      "project": "Kubeflow Spark Operator",
+      "number": 3130,
+      "kind": "issue",
+      "status": "progress",
+      "date": "2026-10-22",
+      "title": "Migrate the API reference docs generator",
+      "summary": "Evaluated crd-ref-docs against genref with sample output and field-accuracy numbers, and recommended crd-ref-docs for the maintainer's decision.",
+      "diff": "Evaluation",
+      "tags": [
+        "Go",
+        "Docs tooling"
+      ],
+      "url": "https://github.com/kubeflow/spark-operator/issues/3130"
+    }
+  ]
+}

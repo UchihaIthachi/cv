@@ -1,0 +1,12 @@
+\CVExperienceEntry
+{Software Engineer --- Trading Systems}
+{Sep 2026 -- Present}
+{CAL}
+{Colombo, Sri Lanka}
+
+\begin{itemize}[leftmargin=*, itemsep=0.2em, topsep=0.1em]
+  \item Sole engineer on CAL's in-house electronic trading platform: a direct gateway to the \skw{Colombo Stock Exchange (CSE)} plus trading screens and ops tools, replacing a vendor-built broker system.
+  \item Carried \skw{CSE certification} to the final stage: all application-level cases of the \skw{188} exchange test cases re-run on CSE's test system with full exchange-message logs.
+  \item Built an \kw{event-sourced, CQRS} engine with a \kw{Chronicle Queue} write-ahead log on the order path and \kw{PostgreSQL} as an async read model, so database writes never block execution.
+  \item Implemented \kw{FIX 5.0 SP2} order routing and drop copy (\kw{QuickFIX/J}) and a custom \kw{Java NIO} decoder for the \kw{MITCH} UDP market-data feed; built a Certification Runner that diffs every field against CSE's expected results.
+\end{itemize}

@@ -1,0 +1,14 @@
+\par
+\noindent
+\textbf{Software Engineer --- Trading Systems} \hfill \textit{Sep 2026 -- Present}\\
+\noindent
+\textit{CAL | Colombo, Sri Lanka}\\[0.05em]
+
+\begin{itemize}[leftmargin=*, itemsep=0.3em, topsep=0.01em]
+  \item Sole engineer on CAL's in-house electronic trading platform: a direct gateway to the \kw{Colombo Stock Exchange (CSE)} plus the trading screens and ops tools around it, so the firm owns its platform instead of a vendor-built broker system.
+  \item Took over \kw{CSE certification} part-way and carried it to the final stage: every application-level case of the \kw{188} exchange test cases re-run on CSE's test system with a full exchange-message log; only failover and trade-bust cases that CSE must trigger remain.
+  \item Built an \kw{event-sourced, CQRS} engine: a \kw{Chronicle Queue} write-ahead log is the source of truth on the order path, with \kw{PostgreSQL} as an async read model, so database writes never block execution.
+  \item Implemented \kw{FIX 5.0 SP2 / FIXT 1.1} order routing and drop copy (\kw{QuickFIX/J}), a custom \kw{Java NIO} decoder for the \kw{MITCH} UDP market-data feed, and client-side token-bucket rate limiting.
+  \item Built and own the Certification Runner (matches each test case to live exchange messages and explains every field difference from CSE's expected result), an order-lifecycle view (New, Fill, Cancel, Amend, Reject, Bust), the ops console, Pro dealing ticket and CAL Trader, plus durable message logs and an audit-ready test register.
+  \item Using AI-assisted engineering (Claude), one person covers what is normally a team's work; design and code passed two senior reviews. Next: live CSE demonstration and sign-off, then Phase 2 (zero-allocation parsing with \kw{Agrona}, active-passive standby).
+\end{itemize}
