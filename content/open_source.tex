@@ -8,10 +8,12 @@
     Added the \kw{kgateway\_build\_info} Prometheus metric (version, revision, Go version, OS/arch) so operators can see which build each pod runs; shipped in \kw{kgateway v2.5.0-beta.2}.
   \item \textbf{\href{https://github.com/containers/kubernetes-mcp-server/pull/1482}{kubernetes-mcp-server \#1482}} \hfill \textit{Merged, Oct 2026}\\
     Fixed flaky HTTP server startup in the \kw{Go} test suite with a 5\,s readiness poll and cleanup before failing.
+  \item \textbf{\href{https://github.com/containers/kubernetes-mcp-server/pull/1549}{kubernetes-mcp-server \#1549}} \hfill \textit{Merged, Oct 2026}\\
+    Test that every tool, prompt and resource across all 12 toolsets declares valid \kw{Kubernetes RBAC} metadata; approved on the first review.
   \item \textbf{\href{https://github.com/kubeflow/spark-operator/pull/3249}{Kubeflow Spark Operator \#3249}} \hfill \textit{In review (LGTM)}\\
     20 \kw{Ginkgo} specs covering every executor pod-phase transition: \kw{100\%} of \texttt{sparkpod\_metrics.go}, plus a log message fix.
-  \item \textbf{\href{https://github.com/containers/kubernetes-mcp-server/pull/1549}{kubernetes-mcp-server \#1549}} \hfill \textit{In review}\\
-    Test that every tool, prompt and resource across all 12 toolsets declares valid \kw{Kubernetes RBAC} metadata.
+  \item \textbf{\href{https://github.com/kedacore/keda/pull/8317}{KEDA \#8317}} (CNCF) \hfill \textit{In review}\\
+    New \kw{onlyReadyPods} option for the Kubernetes workload scaler (count only Running and Ready pods); design agreed with a maintainer, docs in keda-docs \#1919.
   \item \textbf{\href{https://github.com/containers/kubernetes-mcp-server/issues/1568}{kubernetes-mcp-server \#1568}} \hfill \textit{Root-caused, Oct 2026}\\
     Showed a reported ``flaky'' test was a real merge-order bug; the author confirmed and applied the suggested fix.
 \end{itemize}

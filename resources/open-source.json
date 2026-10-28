@@ -1,7 +1,25 @@
 {
-  "updated": "2026-10-25",
+  "updated": "2026-10-28",
   "profile": "https://github.com/UchihaIthachi",
   "contributions": [
+    {
+      "org": "containers",
+      "repo": "kubernetes-mcp-server",
+      "project": "Kubernetes MCP Server",
+      "number": 1549,
+      "kind": "pr",
+      "status": "merged",
+      "date": "2026-10-26",
+      "title": "RBAC metadata test for every capability",
+      "summary": "Checks that every tool, prompt, resource and resource template across all 12 toolsets declares valid RBAC metadata, using a real cluster inspector. Approved on the first review, all 14 CI checks green (closes #1435).",
+      "diff": "1 file · +33",
+      "tags": [
+        "Go",
+        "Kubernetes RBAC",
+        "MCP"
+      ],
+      "url": "https://github.com/containers/kubernetes-mcp-server/pull/1549"
+    },
     {
       "org": "kgateway-dev",
       "repo": "kgateway",
@@ -57,22 +75,22 @@
       "url": "https://github.com/kubeflow/spark-operator/pull/3249"
     },
     {
-      "org": "containers",
-      "repo": "kubernetes-mcp-server",
-      "project": "Kubernetes MCP Server",
-      "number": 1549,
+      "org": "kedacore",
+      "repo": "keda",
+      "project": "KEDA (CNCF)",
+      "number": 8317,
       "kind": "pr",
       "status": "review",
-      "date": "2026-10-20",
-      "title": "RBAC metadata test for every capability",
-      "summary": "Checks that every tool, prompt, resource and resource template across all 12 toolsets declares valid RBAC metadata, using a real cluster inspector. All 14 CI checks green on the first run (issue #1435).",
-      "diff": "1 file · +33",
+      "date": "2026-10-27",
+      "title": "Workload scaler: onlyReadyPods option",
+      "summary": "New onlyReadyPods setting for the Kubernetes workload scaler: counts only pods that are Running and Ready (not terminating), so scaling ignores pods that can't serve yet. Design agreed with a maintainer on issue #4394; docs in keda-docs #1919.",
+      "diff": "5 files · +207 −9",
       "tags": [
         "Go",
-        "Kubernetes RBAC",
-        "MCP"
+        "Autoscaling",
+        "Kubernetes"
       ],
-      "url": "https://github.com/containers/kubernetes-mcp-server/pull/1549"
+      "url": "https://github.com/kedacore/keda/pull/8317"
     },
     {
       "org": "containers",
@@ -90,23 +108,6 @@
         "Go"
       ],
       "url": "https://github.com/containers/kubernetes-mcp-server/issues/1568"
-    },
-    {
-      "org": "kedacore",
-      "repo": "keda",
-      "project": "KEDA (CNCF)",
-      "number": 4394,
-      "kind": "issue",
-      "status": "progress",
-      "date": "2026-10-25",
-      "title": "Workload scaler: count pods by state",
-      "summary": "Assigned by a maintainer. Proposed a podStates option (pod phases plus Ready) so the workload scaler can ignore pods that aren't ready yet; waiting on design sign-off before coding.",
-      "diff": "Design",
-      "tags": [
-        "Go",
-        "Autoscaling"
-      ],
-      "url": "https://github.com/kedacore/keda/issues/4394"
     },
     {
       "org": "kubeflow",

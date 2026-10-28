@@ -197,8 +197,22 @@ Software Engineer specializing in \skw{Distributed Systems}, \skw{Microservices}
 \BigDivider
 
 \CVExperienceEntry
+{Software Engineer --- Trading Systems}
+{Sep 2026 -- Present}
+{CAL}
+{Colombo, Sri Lanka}
+
+\begin{itemize}[leftmargin=*, itemsep=0.2em, topsep=0.1em]
+  \item Sole engineer on CAL's in-house electronic trading platform: a direct gateway to the \skw{Colombo Stock Exchange (CSE)} plus trading screens and ops tools, replacing a vendor-built broker system.
+  \item Carried \skw{CSE certification} to the final stage: all application-level cases of the \skw{188} exchange test cases re-run on CSE's test system with full exchange-message logs.
+  \item Built an \kw{event-sourced, CQRS} engine with a \kw{Chronicle Queue} write-ahead log on the order path and \kw{PostgreSQL} as an async read model, so database writes never block execution.
+  \item Implemented \kw{FIX 5.0 SP2} order routing and drop copy (\kw{QuickFIX/J}) and a custom \kw{Java NIO} decoder for the \kw{MITCH} UDP market-data feed.
+\end{itemize}
+\vspace{0.12em}
+
+\CVExperienceEntry
 {Software Engineer --- KōreroCare Platform}
-{Mar 2026 -- Present}
+{Mar 2026 -- Aug 2026}
 {Empathic Computing Laboratory, University of Auckland}
 {Remote}
 
@@ -206,40 +220,49 @@ Software Engineer specializing in \skw{Distributed Systems}, \skw{Microservices}
   \item Built \skw{Go/Gin}-based backend services for wearable time-series ingestion and cross-device synchronization.
   \item Designed \kw{PostgreSQL} schemas for participants, studies, devices, consent, and sensor streams.
   \item Integrated \skw{Keycloak OAuth2/OIDC} with \kw{Traefik} as API gateway and load balancer, via Docker Compose.
-  \item Developed Firebase notification and reminder flows for participant engagement and study prompts.
-  \item Modeled an \skw{HL7/FHIR}-aligned schema mapping participants, devices, and wearable measurements.
+\end{itemize}
+\vspace{0.12em}
+
+\CVExperienceEntry
+{Co-founder \& Lead Engineer (Freelance)}
+{Jul 2025 -- Aug 2026}
+{ScaleX --- SaaS Development Lab}
+{Remote / Sri Lanka}
+
+\begin{itemize}[leftmargin=*, itemsep=0.2em, topsep=0.1em]
+  \item Built \kw{AgriNova} (Next.js, Prisma, Supabase/PostgreSQL), an inventory and commission platform across 5 branches and 329+ SKUs, tracking 194K+ units and 860+ invoices (Rs.~64.4M+).
+  \item Cut repeat dashboard data-fetch latency from $\sim$384ms to <1ms with React Query caching and pagination.
+  \item Developed \kw{TipLanka}, a \kw{low-latency} creator tipping platform with live PayHere webhook integration, on cost-efficient Vercel + Supabase serverless infrastructure.
 \end{itemize}
 \vspace{0.12em}
 
 \CVExperienceEntry
 {Software Engineer Intern}
-{Dec 2024 -- May 2025}
+{Dec 2024 -- Jun 2025}
 {Information Systems Associates (Pvt) Ltd --- Aviation Technology}
 {Colombo, Sri Lanka}
 
 \begin{itemize}[leftmargin=*, itemsep=0.2em, topsep=0.1em]
   \item Built a distributed \skw{Spring Boot}/\skw{Kafka}-backed PNR ID generator, \skw{live in production}, achieving \skw{25+ PNRs/sec} at \skw{<100ms latency}.
   \item Resolved \kw{Kafka consumer lag} and offset issues using shutdown hooks, retry handling, and a Producer-Consumer refactor.
-  \item Integrated \kw{gRPC} clients, Kafka consumers, and feature toggles into a legacy Java 8 AeroMart monolith.
-  \item Implemented database-driven feature toggles for granular PNR routing during a \kw{phased production rollout}.
-  \item Maintained \kw{>90\%} unit test coverage while delivering \kw{production-ready microservice} features.
-  \item Deployed \kw{Prometheus} and \kw{Grafana} dashboards for queue-time, latency, and service monitoring.
+  \item Integrated \kw{gRPC} clients, Kafka consumers, and database-driven feature toggles into a legacy Java 8 monolith for a \kw{phased production rollout}.
+  \item Maintained \kw{>90\%} unit test coverage; deployed \kw{Prometheus} and \kw{Grafana} dashboards for queue-time and latency monitoring.
 \end{itemize}
 \vspace{0.12em}
 
-\CVExperienceEntry
-{Freelance Software Engineer}
-{May 2025 -- May 2026}
-{Client Platforms}
-{Remote / Sri Lanka}
+% ==================================================
+% OPEN SOURCE
+% ==================================================
 
-\begin{itemize}[leftmargin=*, itemsep=0.2em, topsep=0.1em]
-  \item Built \kw{Agrinova}, a multi-branch inventory and sales platform automating legacy manual inventory workflows.
-  \item Implemented transaction-safe stock logic across \kw{3 workflows}: material issuance, returns, and purchase operations.
-  \item Optimized \kw{PostgreSQL} queries/indexing and improved dashboard responsiveness using Next.js caching and Zod validation.
-  \item Developed \kw{TipLanka}, a \kw{low-latency} creator tipping platform with live PayHere webhook integration.
-  \item Architected cost-efficient serverless infrastructure using Vercel and Supabase/PostgreSQL.
-\end{itemize}
+\section*{Open Source}
+\BigDivider
+\small
+\noindent
+\kw{Merged:} \href{https://github.com/kgateway-dev/kgateway/pull/14851}{kgateway \#14851} (CNCF) --- \texttt{kgateway\_build\_info} metric, shipped in v2.5.0-beta.2;
+\href{https://github.com/containers/kubernetes-mcp-server/pull/1482}{kubernetes-mcp-server \#1482} and \href{https://github.com/containers/kubernetes-mcp-server/pull/1549}{\#1549} --- test-startup fix, RBAC metadata test.\\
+\kw{In review:} \href{https://github.com/kubeflow/spark-operator/pull/3249}{Kubeflow Spark Operator \#3249} (100\% executor-metrics coverage, LGTM);
+\href{https://github.com/kedacore/keda/pull/8317}{KEDA \#8317} (CNCF, \texttt{onlyReadyPods} workload-scaler option).
+\normalsize
 \vspace{0.12em}
 
 % ==================================================
@@ -265,11 +288,11 @@ Software Engineer specializing in \skw{Distributed Systems}, \skw{Microservices}
 {Architected 3 event-driven services for auctions, auth, and notifications using \kw{AWS Lambda} and EventBridge.}
 {Designed \kw{DynamoDB} GSIs and secured APIs with a custom JWT Lambda Authorizer and Middy validation.}
 
-\cvprojectfull
-{ZK-Rollup L2 Benchmarking Framework --- Rust, Solidity, TypeScript, Python, Docker}
-{}
-{Built an end-to-end benchmark pipeline with \kw{Rust} Submitter, \kw{Solidity} L1 contracts, and Python metrics tools.}
-{Raised Submitter test coverage from \skw{41\% to 88\%} and measured $\sim$\skw{70\% lower DA cost} with blob-style mode.}
+% \cvprojectfull
+% {ZK-Rollup L2 Benchmarking Framework --- Rust, Solidity, TypeScript, Python, Docker}
+% {}
+% {Built an end-to-end benchmark pipeline with \kw{Rust} Submitter, \kw{Solidity} L1 contracts, and Python metrics tools.}
+% {Raised Submitter test coverage from \skw{41\% to 88\%} and measured $\sim$\skw{70\% lower DA cost} with blob-style mode.}
 
 \cvprojectfull
 {\href{https://go-together-uom.vercel.app/}{GoTogether Travel Platform} {\scriptsize\href{https://UchihaIthachi.github.io/cv/arch/gotogether.png}{[Architecture]}} --- Next.js, Go, Spring Boot, Keycloak, PostgreSQL}
@@ -277,17 +300,17 @@ Software Engineer specializing in \skw{Distributed Systems}, \skw{Microservices}
 {Built a full-stack travel platform with Next.js, \kw{Spring Boot} social services, and \kw{Go/gRPC} itinerary APIs.}
 {Configured \kw{OAuth2/OIDC} with \kw{Keycloak} and deployed backend services on Oracle Cloud with NGINX/Certbot.}
 
-\cvprojectfull
-{\href{https://e-commerce-admin-nextjs.vercel.app/}{Maison Vella --- E-Commerce Admin Panel} {\scriptsize\href{https://UchihaIthachi.github.io/cv/arch/ecommerce_admin.png}{[Architecture]}} --- Next.js 14, tRPC, Prisma, PostgreSQL, Sanity}
-{}
-{Built a responsive admin dashboard using \kw{Next.js 14}, Server Actions, ShadCN UI, and Tailwind CSS.}
-{Implemented type-safe data access with \kw{tRPC}, Prisma, Supabase/PostgreSQL, Sanity CMS, and Clerk Auth.}
+% \cvprojectfull
+% {\href{https://e-commerce-admin-nextjs.vercel.app/}{Maison Vella --- E-Commerce Admin Panel} {\scriptsize\href{https://UchihaIthachi.github.io/cv/arch/ecommerce_admin.png}{[Architecture]}} --- Next.js 14, tRPC, Prisma, PostgreSQL, Sanity}
+% {}
+% {Built a responsive admin dashboard using \kw{Next.js 14}, Server Actions, ShadCN UI, and Tailwind CSS.}
+% {Implemented type-safe data access with \kw{tRPC}, Prisma, Supabase/PostgreSQL, Sanity CMS, and Clerk Auth.}
 
-\cvprojectfull
-{\href{https://github.com/FoodDeliveryApp-ISA}{Food Delivery Application} --- Java, Spring Boot, gRPC, Kafka, Redis, WebSockets}
-{}
-{Developed the Restaurant service with \kw{JWT authentication}, CRUD APIs, and Redis caching with invalidation.}
-{Enabled real-time order sync using \kw{Kafka} pub/sub and \kw{WebSockets} for restaurant/rider notifications.}
+% \cvprojectfull
+% {\href{https://github.com/FoodDeliveryApp-ISA}{Food Delivery Application} --- Java, Spring Boot, gRPC, Kafka, Redis, WebSockets}
+% {}
+% {Developed the Restaurant service with \kw{JWT authentication}, CRUD APIs, and Redis caching with invalidation.}
+% {Enabled real-time order sync using \kw{Kafka} pub/sub and \kw{WebSockets} for restaurant/rider notifications.}
 
 % ==================================================
 % SKILLS
