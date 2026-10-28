@@ -3,24 +3,6 @@
   "profile": "https://github.com/UchihaIthachi",
   "contributions": [
     {
-      "org": "containers",
-      "repo": "kubernetes-mcp-server",
-      "project": "Kubernetes MCP Server",
-      "number": 1549,
-      "kind": "pr",
-      "status": "merged",
-      "date": "2026-10-26",
-      "title": "RBAC metadata test for every capability",
-      "summary": "Checks that every tool, prompt, resource and resource template across all 12 toolsets declares valid RBAC metadata, using a real cluster inspector. Approved on the first review, all 14 CI checks green (closes #1435).",
-      "diff": "1 file · +33",
-      "tags": [
-        "Go",
-        "Kubernetes RBAC",
-        "MCP"
-      ],
-      "url": "https://github.com/containers/kubernetes-mcp-server/pull/1549"
-    },
-    {
       "org": "kgateway-dev",
       "repo": "kgateway",
       "project": "kgateway (CNCF)",
@@ -29,14 +11,34 @@
       "status": "merged",
       "date": "2026-10-20",
       "title": "kgateway_build_info Prometheus metric",
-      "summary": "Added a build-info metric (version, revision, Go version, OS/arch) so operators can tell which build every pod is running. Shipped in kgateway v2.5.0-beta.2; the maintainer extended it into a reusable metrics.NewInfo helper.",
+      "summary": "Added a build-info metric (version, revision, Go version, OS/arch) so operators can see which build every pod runs. The maintainer extended it into a reusable metrics.NewInfo helper; issue #13457 closed as completed. Shipped in kgateway v2.5.0-beta.2.",
       "diff": "5 files · +113",
       "tags": [
         "Go",
         "Prometheus",
         "Gateway API"
       ],
-      "url": "https://github.com/kgateway-dev/kgateway/pull/14851"
+      "url": "https://github.com/kgateway-dev/kgateway/pull/14851",
+      "note": "Opened 18 Oct → merged 20 Oct 2026"
+    },
+    {
+      "org": "containers",
+      "repo": "kubernetes-mcp-server",
+      "project": "Kubernetes MCP Server",
+      "number": 1549,
+      "kind": "pr",
+      "status": "merged",
+      "date": "2026-10-26",
+      "title": "RBAC metadata test for every capability",
+      "summary": "Checks that every tool, prompt, resource and resource template across all 12 toolsets declares valid RBAC metadata, using a real cluster inspector. All 14 CI checks green on the first run, approved on the first review (closes #1435).",
+      "diff": "1 file · +33",
+      "tags": [
+        "Go",
+        "Kubernetes RBAC",
+        "MCP"
+      ],
+      "url": "https://github.com/containers/kubernetes-mcp-server/pull/1549",
+      "note": "Opened 20 Oct → merged 26 Oct 2026"
     },
     {
       "org": "containers",
@@ -47,14 +49,15 @@
       "status": "merged",
       "date": "2026-10-15",
       "title": "Fix flaky HTTP server startup in tests",
-      "summary": "Replaced a ~0.5 s retry loop with a 5 s readiness poll and made test setup clean up before failing, fixing intermittent failures on the slow macOS CI runner (issue #1445).",
+      "summary": "Replaced a ~0.5 s retry loop with a 5 s readiness poll and made test setup clean up before failing, fixing intermittent failures on the slow macOS CI runner. Two review rounds (closes #1445).",
       "diff": "2 files · +14 −14",
       "tags": [
         "Go",
         "Testing",
         "CI"
       ],
-      "url": "https://github.com/containers/kubernetes-mcp-server/pull/1482"
+      "url": "https://github.com/containers/kubernetes-mcp-server/pull/1482",
+      "note": "Opened 8 Oct → merged 15 Oct 2026"
     },
     {
       "org": "kubeflow",
@@ -65,14 +68,15 @@
       "status": "review",
       "date": "2026-10-18",
       "title": "Ginkgo unit tests for executor metrics",
-      "summary": "20 specs covering every pod-phase transition, label sanitising and registration error paths: 100% of sparkpod_metrics.go, plus a fix for a wrong executor failure-count log message. LGTM from a reviewer, waiting for approval.",
+      "summary": "20 specs covering every pod-phase transition, label sanitising and registration error paths: 100% of sparkpod_metrics.go, plus a fix for a wrong failure-count log message. Requested by a maintainer under #3202; review changes done.",
       "diff": "3 files · +228",
       "tags": [
         "Go",
         "Ginkgo",
         "Prometheus"
       ],
-      "url": "https://github.com/kubeflow/spark-operator/pull/3249"
+      "url": "https://github.com/kubeflow/spark-operator/pull/3249",
+      "note": "Opened 18 Oct · LGTM 20 Oct · waiting for /approve"
     },
     {
       "org": "kedacore",
@@ -83,14 +87,51 @@
       "status": "review",
       "date": "2026-10-27",
       "title": "Workload scaler: onlyReadyPods option",
-      "summary": "New onlyReadyPods setting for the Kubernetes workload scaler: counts only pods that are Running and Ready (not terminating), so scaling ignores pods that can't serve yet. Design agreed with a maintainer on issue #4394; docs in keda-docs #1919.",
+      "summary": "New onlyReadyPods setting for the Kubernetes workload scaler: counts only pods that are Running and Ready (not terminating), so scaling ignores pods that can't serve yet. Design agreed with a maintainer on #4394; labelled kind/feature.",
       "diff": "5 files · +207 −9",
       "tags": [
         "Go",
         "Autoscaling",
         "Kubernetes"
       ],
-      "url": "https://github.com/kedacore/keda/pull/8317"
+      "url": "https://github.com/kedacore/keda/pull/8317",
+      "note": "Opened 27 Oct 2026 · docs done"
+    },
+    {
+      "org": "kedacore",
+      "repo": "keda-docs",
+      "project": "KEDA docs",
+      "number": 1919,
+      "kind": "pr",
+      "status": "review",
+      "date": "2026-10-27",
+      "title": "Docs for the onlyReadyPods parameter",
+      "summary": "Documentation for the new onlyReadyPods option of the Kubernetes workload scaler, the companion to KEDA #8317.",
+      "diff": "1 file · +4",
+      "tags": [
+        "Docs",
+        "Autoscaling"
+      ],
+      "url": "https://github.com/kedacore/keda-docs/pull/1919",
+      "note": "Opened 27 Oct 2026"
+    },
+    {
+      "org": "containers",
+      "repo": "kubernetes-mcp-server",
+      "project": "Kubernetes MCP Server",
+      "number": 1521,
+      "kind": "pr",
+      "status": "closed",
+      "date": "2026-10-20",
+      "title": "Fix main not building (Kiali status probe)",
+      "summary": "Found that main stopped compiling after two PRs merged out of order, and fixed it. The maintainer merged his own fix (#1526) with the same code change plus a test, so this one was closed as superseded.",
+      "diff": "1 file · +6 −2",
+      "tags": [
+        "Go",
+        "Build"
+      ],
+      "url": "https://github.com/containers/kubernetes-mcp-server/pull/1521",
+      "note": "Opened 17 Oct · closed 20 Oct 2026"
     },
     {
       "org": "containers",
@@ -107,7 +148,8 @@
         "Debugging",
         "Go"
       ],
-      "url": "https://github.com/containers/kubernetes-mcp-server/issues/1568"
+      "url": "https://github.com/containers/kubernetes-mcp-server/issues/1568",
+      "note": "25 Oct 2026"
     },
     {
       "org": "kubeflow",
@@ -118,13 +160,32 @@
       "status": "progress",
       "date": "2026-10-22",
       "title": "Migrate the API reference docs generator",
-      "summary": "Evaluated crd-ref-docs against genref with sample output and field-accuracy numbers, and recommended crd-ref-docs for the maintainer's decision.",
+      "summary": "Evaluated crd-ref-docs against genref with sample output, line counts and field-accuracy checks (genref marked some optional fields as required), and recommended crd-ref-docs for the maintainer's decision.",
       "diff": "Evaluation",
       "tags": [
         "Go",
         "Docs tooling"
       ],
-      "url": "https://github.com/kubeflow/spark-operator/issues/3130"
+      "url": "https://github.com/kubeflow/spark-operator/issues/3130",
+      "note": "Assigned 22 Oct 2026"
+    },
+    {
+      "org": "kgateway-dev",
+      "repo": "kgateway",
+      "project": "kgateway (CNCF)",
+      "number": 14835,
+      "kind": "issue",
+      "status": "waiting",
+      "date": "2026-10-22",
+      "title": "Metrics audit",
+      "summary": "Posted an inventory of findings for the maintainer's metrics audit and offered a cleanup PR for him to pick.",
+      "diff": "Audit",
+      "tags": [
+        "Prometheus",
+        "Go"
+      ],
+      "url": "https://github.com/kgateway-dev/kgateway/issues/14835",
+      "note": "22 Oct 2026"
     }
   ]
 }

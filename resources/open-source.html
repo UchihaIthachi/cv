@@ -217,15 +217,17 @@
         review:    { label: "In review",   icon: "fa-code-pull-request", dot: "bg-amber-400 animate-pulse" },
         confirmed: { label: "Root-caused", icon: "fa-circle-check",     dot: "bg-primary-500" },
         progress:  { label: "In progress", icon: "fa-circle-dot",       dot: "bg-slate-400" },
+        closed:    { label: "Superseded",  icon: "fa-code-pull-request", dot: "bg-slate-400" },
+        waiting:   { label: "Awaiting reply", icon: "fa-comments",      dot: "bg-slate-400" },
       };
       const FILTERS = [
         { id: "all", label: "All" },
         { id: "merged", label: "Merged" },
         { id: "review", label: "In review" },
-        { id: "issue", label: "Issues & design" },
+        { id: "issue", label: "Other work" },
       ];
       const matches = (f, c) =>
-        f === "all" || (f === "issue" ? c.kind === "issue" : c.status === f);
+        f === "all" || (f === "issue" ? c.kind === "issue" || c.status === "closed" : c.status === f);
 
       const el = (tag, cls, text) => {
         const n = document.createElement(tag);
@@ -279,7 +281,7 @@
 
         const foot = el("div", "mt-5 flex flex-wrap items-center gap-2");
         c.tags.forEach((t) => foot.append(el("span", "rounded-md bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-[11px] font-medium text-slate-600 dark:text-slate-300", t)));
-        foot.append(el("span", "ml-auto font-mono text-[11px] text-slate-500 dark:text-slate-400", `${c.diff} · ${fmtDate(c.date)}`));
+        foot.append(el("span", "ml-auto font-mono text-[11px] text-slate-500 dark:text-slate-400", `${c.diff} · ${c.note || fmtDate(c.date)}`));
 
         a.append(top, h, p, foot);
         return a;
