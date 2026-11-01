@@ -69,7 +69,7 @@
       "date": "2026-10-18",
       "title": "Ginkgo unit tests for executor metrics",
       "summary": "20 specs covering every pod-phase transition, label sanitising and registration error paths: 100% of sparkpod_metrics.go, plus a fix for a wrong failure-count log message. Requested by a maintainer under #3202; review changes done.",
-      "diff": "3 files · +228",
+      "diff": "4 files · +234 −1",
       "tags": [
         "Go",
         "Ginkgo",
@@ -84,8 +84,8 @@
       "project": "KEDA (CNCF)",
       "number": 8317,
       "kind": "pr",
-      "status": "review",
-      "date": "2026-10-27",
+      "status": "merged",
+      "date": "2026-11-01",
       "title": "Workload scaler: onlyReadyPods option",
       "summary": "New onlyReadyPods setting for the Kubernetes workload scaler: counts only pods that are Running and Ready (not terminating), so scaling ignores pods that can't serve yet. Design agreed with a maintainer on #4394; labelled kind/feature.",
       "diff": "5 files · +207 −9",
@@ -95,7 +95,26 @@
         "Kubernetes"
       ],
       "url": "https://github.com/kedacore/keda/pull/8317",
-      "note": "Opened 27 Oct · 2 approvals · e2e passed 1 Nov 2026"
+      "note": "Opened 27 Oct → merged 1 Nov 2026"
+    },
+    {
+      "org": "kedacore",
+      "repo": "keda",
+      "project": "KEDA (CNCF)",
+      "number": 8331,
+      "kind": "pr",
+      "status": "review",
+      "date": "2026-11-01",
+      "title": "Move IsPodReady to pkg/util",
+      "summary": "Follow-up to #8317, suggested by a maintainer: one shared IsPodReady helper in pkg/util (with tests) used by both the workload scaler and fallback, replacing two copies.",
+      "diff": "4 files · +87 −23",
+      "tags": [
+        "Go",
+        "Refactoring",
+        "Kubernetes"
+      ],
+      "url": "https://github.com/kedacore/keda/pull/8331",
+      "note": "Opened 1 Nov 2026 · 1 approval · e2e passed"
     },
     {
       "org": "kedacore",
