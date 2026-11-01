@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-28",
+  "updated": "2026-11-01",
   "profile": "https://github.com/UchihaIthachi",
   "contributions": [
     {
@@ -95,7 +95,7 @@
         "Kubernetes"
       ],
       "url": "https://github.com/kedacore/keda/pull/8317",
-      "note": "Opened 27 Oct 2026 · docs done"
+      "note": "Opened 27 Oct · 2 approvals · e2e passed 1 Nov 2026"
     },
     {
       "org": "kedacore",
@@ -103,7 +103,7 @@
       "project": "KEDA docs",
       "number": 1919,
       "kind": "pr",
-      "status": "review",
+      "status": "merged",
       "date": "2026-10-27",
       "title": "Docs for the onlyReadyPods parameter",
       "summary": "Documentation for the new onlyReadyPods option of the Kubernetes workload scaler, the companion to KEDA #8317.",
@@ -113,7 +113,45 @@
         "Autoscaling"
       ],
       "url": "https://github.com/kedacore/keda-docs/pull/1919",
-      "note": "Opened 27 Oct 2026"
+      "note": "Opened 27 Oct → merged 1 Nov 2026"
+    },
+    {
+      "org": "jaegertracing",
+      "repo": "jaeger",
+      "project": "Jaeger (CNCF)",
+      "number": 9997,
+      "kind": "pr",
+      "status": "review",
+      "date": "2026-11-01",
+      "title": "MCP trace topology: cycles and reused span IDs",
+      "summary": "Found and reported (#9991) a bug in Jaeger's MCP get_trace_topology tool: traces with reused span IDs looped and parent cycles silently dropped spans. The fix links spans by position, expands each ID once and keeps output deterministic; 6 tests cover self-parents, two cycles, shared IDs and the depth limit.",
+      "diff": "2 files · +192 −4",
+      "tags": [
+        "Go",
+        "MCP",
+        "Tracing"
+      ],
+      "url": "https://github.com/jaegertracing/jaeger/pull/9997",
+      "note": "Issue #9991 filed → PR opened 1 Nov 2026"
+    },
+    {
+      "org": "kgateway-dev",
+      "repo": "kgateway",
+      "project": "kgateway (CNCF)",
+      "number": 14945,
+      "kind": "pr",
+      "status": "review",
+      "date": "2026-10-29",
+      "title": "statPrefix for local rate limits",
+      "summary": "Adds rateLimit.local.statPrefix to the traffic policy, with route template tokens, so local rate-limit stats can be told apart per route (#14925). Unit and translator tests, including strict mode; labelled kind/feature.",
+      "diff": "11 files · +555 −8",
+      "tags": [
+        "Go",
+        "Envoy",
+        "Gateway API"
+      ],
+      "url": "https://github.com/kgateway-dev/kgateway/pull/14945",
+      "note": "Opened 29 Oct 2026"
     },
     {
       "org": "containers",
