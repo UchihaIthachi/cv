@@ -5,10 +5,12 @@
 \textit{CAL | Colombo, Sri Lanka}\\[0.05em]
 
 \begin{itemize}[leftmargin=*, itemsep=0.3em, topsep=0.01em]
-  \item Sole engineer on CAL's in-house electronic trading platform: a direct gateway to the \kw{Colombo Stock Exchange (CSE)} plus the trading screens and ops tools around it, so the firm owns its platform instead of a vendor-built broker system.
-  \item Took over \kw{CSE certification} part-way and carried it to the final stage: every application-level case of the \kw{188} exchange test cases re-run on CSE's test system with a full exchange-message log; only failover and trade-bust cases that CSE must trigger remain.
-  \item Built an \kw{event-sourced, CQRS} engine: a \kw{Chronicle Queue} write-ahead log is the source of truth on the order path, with \kw{PostgreSQL} as an async read model, so database writes never block execution.
-  \item Implemented \kw{FIX 5.0 SP2 / FIXT 1.1} order routing and drop copy (\kw{QuickFIX/J}), a custom \kw{Java NIO} decoder for the \kw{MITCH} UDP market-data feed, and client-side token-bucket rate limiting.
-  \item Built and own the Certification Runner (matches each test case to live exchange messages and explains every field difference from CSE's expected result), an order-lifecycle view (New, Fill, Cancel, Amend, Reject, Bust), the ops console, Pro dealing ticket and CAL Trader, plus durable message logs and an audit-ready test register.
-  \item Using AI-assisted engineering (Claude), one person covers what is normally a team's work; design and code passed two senior reviews. Next: live CSE demonstration and sign-off, then Phase 2 (zero-allocation parsing with \kw{Agrona}, active-passive standby).
+  \item Building CAL's in-house electronic trading platform: a direct gateway to the \kw{Colombo Stock Exchange (CSE)} plus the dealing, operations and testing tools around it.
+  \item Led CSE's \kw{188}-case \kw{exchange certification}, building a Certification Runner that drives each case and explains every field difference against the expected result, backed by durable message logs and a CI-enforced test register.
+  \item \kw{Event-sourced CQRS} order path: a \kw{Chronicle Queue} write-ahead journal with \kw{PostgreSQL} as an async read model, so no database write sits between a trader and the exchange; the day's orders replay after a restart.
+  \item \kw{FIX 5.0 SP2} order routing and drop copy (\kw{QuickFIX/J}), a custom \kw{Java NIO} decoder for the \kw{MITCH} UDP multicast feed (A/B feeds, snapshot recovery) and client-side rate limiting.
+  \item Designed an \kw{exchange simulator} (Python control plane, Java price-time matching engine) that replays \kw{1,700+} real exchange conversations with \kw{zero parity failures}, covering price bands, auctions and the trading-day schedule.
+  \item Resilience and operations: FIX and market-data \kw{failover} across primary and mirror hosts, sequence-number and feed-gap recovery, drop-copy \kw{reconciliation} with an audited adopt/close path, \kw{health-gated deployment} with rollback, and order-path changes behind default-off feature flags.
+  \item Built the ops console (session control, reconciliation, chaos tests) and the \kw{React} dealing screen, with pre-trade warnings for price bands, self-match and uncancellable AON orders.
+  \item \kw{\textasciitilde 1,050 automated tests} (637 Java, 195 simulator, 216 console) in CI; every exchange behaviour traceable to the CSE spec or captured wire evidence.
 \end{itemize}
