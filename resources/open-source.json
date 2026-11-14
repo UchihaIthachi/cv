@@ -1,7 +1,45 @@
 {
-  "updated": "2026-11-07",
+  "updated": "2026-11-14",
   "profile": "https://github.com/UchihaIthachi",
   "contributions": [
+    {
+      "org": "kedacore",
+      "repo": "keda",
+      "project": "KEDA (CNCF)",
+      "number": 8356,
+      "kind": "pr",
+      "status": "review",
+      "date": "2026-11-10",
+      "title": "Temporal Scaler: Add gRPC client metrics",
+      "summary": "Adds gRPC client metrics to KEDA's Temporal scaler (#8350), so its calls to the Temporal server can be monitored; the connect-time call is labelled `initialization` so it can be filtered. Approved by a reviewer after one change; the Temporal e2e run passed.",
+      "diff": "2 files · +124 −9",
+      "tags": [
+        "Go",
+        "Prometheus",
+        "gRPC"
+      ],
+      "url": "https://github.com/kedacore/keda/pull/8356",
+      "note": "Opened 10 Nov 2026 · approved 11 Nov · Temporal e2e passed"
+    },
+    {
+      "org": "apache",
+      "repo": "skywalking-banyandb",
+      "project": "Apache SkyWalking BanyanDB",
+      "number": 1465,
+      "kind": "pr",
+      "status": "merged",
+      "date": "2026-11-13",
+      "title": "fix(mcp): report HTTP request timeouts as timeouts",
+      "summary": "BanyanDB's MCP HTTP client aborted timed-out requests with a plain string, so the client's timeout checks (which look for an Error) never ran and timeouts were reported as generic failures. The fix aborts with a TimeoutError, with 3 tests that fail on main. I found it myself and filed apache/skywalking#14206; both are on the BanyanDB 0.12.0 milestone.",
+      "diff": "3 files · +74 −1",
+      "tags": [
+        "TypeScript",
+        "MCP",
+        "HTTP"
+      ],
+      "url": "https://github.com/apache/skywalking-banyandb/pull/1465",
+      "note": "Opened 8 Nov → merged 13 Nov 2026"
+    },
     {
       "org": "apache",
       "repo": "skywalking",
@@ -65,8 +103,8 @@
       "project": "Apache SkyWalking BanyanDB",
       "number": 1462,
       "kind": "pr",
-      "status": "review",
-      "date": "2026-11-05",
+      "status": "merged",
+      "date": "2026-11-10",
       "title": "fix(mcp): accept the Bearer auth scheme case-insensitively",
       "summary": "BanyanDB's MCP HTTP server rejected `bearer` tokens with 401 because it matched the auth scheme case-sensitively. The fix accepts any case, as the HTTP spec requires, with 4 new tests. I found it while reading the code and filed apache/skywalking#14199 with the fix ready; the issue is assigned to me and both are on the BanyanDB 0.12.0 milestone.",
       "diff": "3 files · +53 −3",
@@ -76,7 +114,7 @@
         "HTTP auth"
       ],
       "url": "https://github.com/apache/skywalking-banyandb/pull/1462",
-      "note": "Opened 5 Nov 2026 · issue #14199 assigned to me · milestone 0.12.0"
+      "note": "Opened 5 Nov → merged 10 Nov 2026"
     },
     {
       "org": "kgateway-dev",
@@ -218,9 +256,9 @@
       "kind": "pr",
       "status": "review",
       "date": "2026-11-01",
-      "title": "MCP trace topology: cycles and reused span IDs",
-      "summary": "Found and reported (#9991) a bug in Jaeger's MCP get_trace_topology tool: traces with reused span IDs looped and parent cycles silently dropped spans. The fix links spans by position, expands each ID once and keeps output deterministic; 6 tests cover self-parents, two cycles, shared IDs and the depth limit.",
-      "diff": "2 files · +192 −4",
+      "title": "MCP get_trace_topology: walk spans no root reaches",
+      "summary": "Found and reported (#9991) a bug in Jaeger's MCP get_trace_topology tool: spans in a parent cycle, or a span that lists itself as its parent, had no root above them, so the tool never reached them while total_span_count still counted them. The fix walks the spans no root reached, in start-time order, within the existing depth and span limits. (The reused-ID part of #9991 was fixed separately by #9763.)",
+      "diff": "2 files · +208 −3",
       "tags": [
         "Go",
         "MCP",

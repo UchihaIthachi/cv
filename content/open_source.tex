@@ -15,12 +15,16 @@
     Test that every tool, prompt and resource across all 12 toolsets declares valid \kw{Kubernetes RBAC} metadata; approved on the first review.
   \item \textbf{\href{https://github.com/kubeflow/spark-operator/pull/3249}{Kubeflow Spark Operator \#3249}} \hfill \textit{In review (LGTM)}\\
     20 \kw{Ginkgo} specs covering every executor pod-phase transition: \kw{100\%} of \texttt{sparkpod\_metrics.go}, plus a log message fix.
+  \item \textbf{\href{https://github.com/kedacore/keda/pull/8356}{KEDA \#8356}} (CNCF) \hfill \textit{In review (approved)}\\
+    \kw{gRPC} client metrics for the \kw{Temporal} scaler (\#8350); connect-time call labelled \texttt{initialization}; Temporal e2e passed.
   \item \textbf{\href{https://github.com/jaegertracing/jaeger/pull/9997}{Jaeger \#9997}} (CNCF) \hfill \textit{In review}\\
-    Found and reported (\#9991) a bug in Jaeger's \kw{MCP} trace-topology tool: reused span IDs looped and parent cycles dropped spans; fix with 6 tests.
+    Found and reported (\#9991) a bug in Jaeger's \kw{MCP} trace-topology tool: spans in parent cycles were dropped though still counted; fix walks the spans no root reaches, with tests.
   \item \textbf{\href{https://github.com/kgateway-dev/kgateway/pull/14945}{kgateway \#14945}} (CNCF) \hfill \textit{In review}\\
     \kw{statPrefix} for local rate limits on the traffic policy, with route template tokens; unit and translator tests.
-  \item \textbf{\href{https://github.com/apache/skywalking-banyandb/pull/1462}{Apache SkyWalking BanyanDB \#1462}} \hfill \textit{In review}\\
+  \item \textbf{\href{https://github.com/apache/skywalking-banyandb/pull/1462}{Apache SkyWalking BanyanDB \#1462}} \hfill \textit{Merged}\\
     Found and fixed (\#14199, assigned to me) case-sensitive \kw{Bearer} auth in the \kw{MCP} HTTP server; 4 tests; milestone 0.12.0.
+  \item \textbf{\href{https://github.com/apache/skywalking-banyandb/pull/1465}{Apache SkyWalking BanyanDB \#1465}} \hfill \textit{Merged}\\
+    Found and fixed (\#14206) \kw{MCP} HTTP request timeouts being reported as generic errors; 3 tests; milestone 0.12.0.
   \item \textbf{\href{https://github.com/apache/skywalking/issues/14194}{Apache SkyWalking \#14194}} \hfill \textit{Bug reported, Nov 2026}\\
     Found and reported \kw{MCP} server config bugs (\texttt{.env} ignored, malformed values silently accepted) with a reproduction; fix by another contributor in banyandb \#1460.
   \item \textbf{\href{https://github.com/apache/camel-k/pull/6933}{Apache Camel K \#6933}} \hfill \textit{Merged, Nov 2026}\\
