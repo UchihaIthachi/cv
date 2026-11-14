@@ -1,0 +1,362 @@
+{
+  "updated": "2026-11-14",
+  "profile": "https://github.com/UchihaIthachi",
+  "contributions": [
+    {
+      "org": "kedacore",
+      "repo": "keda",
+      "project": "KEDA (CNCF)",
+      "number": 8356,
+      "kind": "pr",
+      "status": "review",
+      "date": "2026-11-10",
+      "title": "Temporal Scaler: Add gRPC client metrics",
+      "summary": "Adds gRPC client metrics to KEDA's Temporal scaler (#8350), so its calls to the Temporal server can be monitored; the connect-time call is labelled `initialization` so it can be filtered. Approved by a reviewer after one change; the Temporal e2e run passed.",
+      "diff": "2 files · +124 −9",
+      "tags": [
+        "Go",
+        "Prometheus",
+        "gRPC"
+      ],
+      "url": "https://github.com/kedacore/keda/pull/8356",
+      "note": "Opened 10 Nov 2026 · approved 11 Nov · Temporal e2e passed"
+    },
+    {
+      "org": "apache",
+      "repo": "skywalking-banyandb",
+      "project": "Apache SkyWalking BanyanDB",
+      "number": 1465,
+      "kind": "pr",
+      "status": "merged",
+      "date": "2026-11-13",
+      "title": "fix(mcp): report HTTP request timeouts as timeouts",
+      "summary": "BanyanDB's MCP HTTP client aborted timed-out requests with a plain string, so the client's timeout checks (which look for an Error) never ran and timeouts were reported as generic failures. The fix aborts with a TimeoutError, with 3 tests that fail on main. I found it myself and filed apache/skywalking#14206; both are on the BanyanDB 0.12.0 milestone.",
+      "diff": "3 files · +74 −1",
+      "tags": [
+        "TypeScript",
+        "MCP",
+        "HTTP"
+      ],
+      "url": "https://github.com/apache/skywalking-banyandb/pull/1465",
+      "note": "Opened 8 Nov → merged 13 Nov 2026"
+    },
+    {
+      "org": "apache",
+      "repo": "skywalking",
+      "project": "Apache SkyWalking BanyanDB",
+      "number": 14194,
+      "kind": "issue",
+      "status": "reported",
+      "date": "2026-11-04",
+      "title": "Bug report: BanyanDB MCP server config",
+      "summary": "Found and reported that BanyanDB's MCP server ignored .env values and silently accepted malformed settings (e.g. 1MiB read as 1, 60s as 60, an invalid TRANSPORT falling back to stdio), with a reproduction and fix ideas. Another contributor opened the fix, apache/skywalking-banyandb#1460, which credits this report.",
+      "diff": "Bug report",
+      "tags": [
+        "TypeScript",
+        "MCP",
+        "Configuration"
+      ],
+      "url": "https://github.com/apache/skywalking/issues/14194",
+      "note": "Reported 4 Nov 2026 · fix in banyandb#1460 (another contributor)"
+    },
+    {
+      "org": "apache",
+      "repo": "camel-k",
+      "project": "Apache Camel K",
+      "number": 6934,
+      "kind": "pr",
+      "status": "merged",
+      "date": "2026-11-07",
+      "title": "fix(ci): enable gocyclo, gocognit and cyclop with current-max thresholds",
+      "summary": "Turns on three complexity linters (gocyclo, gocognit, cyclop) for issue #5486, with thresholds set at today's maximum so nothing breaks and new code can't get worse.",
+      "diff": "27 files · +43 −8",
+      "tags": [
+        "Go",
+        "CI",
+        "golangci-lint"
+      ],
+      "url": "https://github.com/apache/camel-k/pull/6934",
+      "note": "Opened 5 Nov → merged 7 Nov 2026"
+    },
+    {
+      "org": "apache",
+      "repo": "camel-k",
+      "project": "Apache Camel K",
+      "number": 6933,
+      "kind": "pr",
+      "status": "merged",
+      "date": "2026-11-07",
+      "title": "feat(trait/keda): add Apache Pulsar scaler mapping",
+      "summary": "Adds an Apache Pulsar autoscaler to Camel K's KEDA trait (issue #6932): the scaler mapping, unit tests, an end-to-end test in the KEDA workflow and docs.",
+      "diff": "7 files · +443 −1",
+      "tags": [
+        "Go",
+        "KEDA",
+        "Kubernetes"
+      ],
+      "url": "https://github.com/apache/camel-k/pull/6933",
+      "note": "Opened 5 Nov → merged 7 Nov 2026"
+    },
+    {
+      "org": "apache",
+      "repo": "skywalking-banyandb",
+      "project": "Apache SkyWalking BanyanDB",
+      "number": 1462,
+      "kind": "pr",
+      "status": "merged",
+      "date": "2026-11-10",
+      "title": "fix(mcp): accept the Bearer auth scheme case-insensitively",
+      "summary": "BanyanDB's MCP HTTP server rejected `bearer` tokens with 401 because it matched the auth scheme case-sensitively. The fix accepts any case, as the HTTP spec requires, with 4 new tests. I found it while reading the code and filed apache/skywalking#14199 with the fix ready; the issue is assigned to me and both are on the BanyanDB 0.12.0 milestone.",
+      "diff": "3 files · +53 −3",
+      "tags": [
+        "TypeScript",
+        "MCP",
+        "HTTP auth"
+      ],
+      "url": "https://github.com/apache/skywalking-banyandb/pull/1462",
+      "note": "Opened 5 Nov → merged 10 Nov 2026"
+    },
+    {
+      "org": "kgateway-dev",
+      "repo": "kgateway",
+      "project": "kgateway (CNCF)",
+      "number": 14851,
+      "kind": "pr",
+      "status": "merged",
+      "date": "2026-10-20",
+      "title": "kgateway_build_info Prometheus metric",
+      "summary": "Added a build-info metric (version, revision, Go version, OS/arch) so operators can see which build every pod runs. The maintainer extended it into a reusable metrics.NewInfo helper; issue #13457 closed as completed. Shipped in kgateway v2.5.0-beta.2.",
+      "diff": "5 files · +113",
+      "tags": [
+        "Go",
+        "Prometheus",
+        "Gateway API"
+      ],
+      "url": "https://github.com/kgateway-dev/kgateway/pull/14851",
+      "note": "Opened 18 Oct → merged 20 Oct 2026"
+    },
+    {
+      "org": "containers",
+      "repo": "kubernetes-mcp-server",
+      "project": "Kubernetes MCP Server",
+      "number": 1549,
+      "kind": "pr",
+      "status": "merged",
+      "date": "2026-10-26",
+      "title": "RBAC metadata test for every capability",
+      "summary": "Checks that every tool, prompt, resource and resource template across all 12 toolsets declares valid RBAC metadata, using a real cluster inspector. All 14 CI checks green on the first run, approved on the first review (closes #1435).",
+      "diff": "1 file · +33",
+      "tags": [
+        "Go",
+        "Kubernetes RBAC",
+        "MCP"
+      ],
+      "url": "https://github.com/containers/kubernetes-mcp-server/pull/1549",
+      "note": "Opened 20 Oct → merged 26 Oct 2026"
+    },
+    {
+      "org": "containers",
+      "repo": "kubernetes-mcp-server",
+      "project": "Kubernetes MCP Server",
+      "number": 1482,
+      "kind": "pr",
+      "status": "merged",
+      "date": "2026-10-15",
+      "title": "Fix flaky HTTP server startup in tests",
+      "summary": "Replaced a ~0.5 s retry loop with a 5 s readiness poll and made test setup clean up before failing, fixing intermittent failures on the slow macOS CI runner. Two review rounds (closes #1445).",
+      "diff": "2 files · +14 −14",
+      "tags": [
+        "Go",
+        "Testing",
+        "CI"
+      ],
+      "url": "https://github.com/containers/kubernetes-mcp-server/pull/1482",
+      "note": "Opened 8 Oct → merged 15 Oct 2026"
+    },
+    {
+      "org": "kubeflow",
+      "repo": "spark-operator",
+      "project": "Kubeflow Spark Operator",
+      "number": 3249,
+      "kind": "pr",
+      "status": "review",
+      "date": "2026-10-18",
+      "title": "Ginkgo unit tests for executor metrics",
+      "summary": "20 specs covering every pod-phase transition, label sanitising and registration error paths: 100% of sparkpod_metrics.go, plus a fix for a wrong failure-count log message. Requested by a maintainer under #3202; review changes done.",
+      "diff": "4 files · +234 −1",
+      "tags": [
+        "Go",
+        "Ginkgo",
+        "Prometheus"
+      ],
+      "url": "https://github.com/kubeflow/spark-operator/pull/3249",
+      "note": "Opened 18 Oct · LGTM 20 Oct · waiting for /approve"
+    },
+    {
+      "org": "kedacore",
+      "repo": "keda",
+      "project": "KEDA (CNCF)",
+      "number": 8317,
+      "kind": "pr",
+      "status": "merged",
+      "date": "2026-11-01",
+      "title": "Workload scaler: onlyReadyPods option",
+      "summary": "New onlyReadyPods setting for the Kubernetes workload scaler: counts only pods that are Running and Ready (not terminating), so scaling ignores pods that can't serve yet. Design agreed with a maintainer on #4394; labelled kind/feature.",
+      "diff": "5 files · +207 −9",
+      "tags": [
+        "Go",
+        "Autoscaling",
+        "Kubernetes"
+      ],
+      "url": "https://github.com/kedacore/keda/pull/8317",
+      "note": "Opened 27 Oct → merged 1 Nov 2026"
+    },
+    {
+      "org": "kedacore",
+      "repo": "keda",
+      "project": "KEDA (CNCF)",
+      "number": 8331,
+      "kind": "pr",
+      "status": "merged",
+      "date": "2026-11-05",
+      "title": "Move IsPodReady to pkg/util",
+      "summary": "Follow-up to #8317, suggested by a maintainer: one shared IsPodReady helper in pkg/util (with tests) used by both the workload scaler and fallback, replacing two copies.",
+      "diff": "5 files · +91 −37",
+      "tags": [
+        "Go",
+        "Refactoring",
+        "Kubernetes"
+      ],
+      "url": "https://github.com/kedacore/keda/pull/8331",
+      "note": "Opened 1 Nov → merged 5 Nov 2026"
+    },
+    {
+      "org": "kedacore",
+      "repo": "keda-docs",
+      "project": "KEDA docs",
+      "number": 1919,
+      "kind": "pr",
+      "status": "merged",
+      "date": "2026-10-27",
+      "title": "Docs for the onlyReadyPods parameter",
+      "summary": "Documentation for the new onlyReadyPods option of the Kubernetes workload scaler, the companion to KEDA #8317.",
+      "diff": "1 file · +4",
+      "tags": [
+        "Docs",
+        "Autoscaling"
+      ],
+      "url": "https://github.com/kedacore/keda-docs/pull/1919",
+      "note": "Opened 27 Oct → merged 1 Nov 2026"
+    },
+    {
+      "org": "jaegertracing",
+      "repo": "jaeger",
+      "project": "Jaeger (CNCF)",
+      "number": 9997,
+      "kind": "pr",
+      "status": "review",
+      "date": "2026-11-01",
+      "title": "MCP get_trace_topology: walk spans no root reaches",
+      "summary": "Found and reported (#9991) a bug in Jaeger's MCP get_trace_topology tool: spans in a parent cycle, or a span that lists itself as its parent, had no root above them, so the tool never reached them while total_span_count still counted them. The fix walks the spans no root reached, in start-time order, within the existing depth and span limits. (The reused-ID part of #9991 was fixed separately by #9763.)",
+      "diff": "2 files · +208 −3",
+      "tags": [
+        "Go",
+        "MCP",
+        "Tracing"
+      ],
+      "url": "https://github.com/jaegertracing/jaeger/pull/9997",
+      "note": "Issue #9991 filed → PR opened 1 Nov 2026"
+    },
+    {
+      "org": "kgateway-dev",
+      "repo": "kgateway",
+      "project": "kgateway (CNCF)",
+      "number": 14945,
+      "kind": "pr",
+      "status": "review",
+      "date": "2026-10-29",
+      "title": "statPrefix for local rate limits",
+      "summary": "Adds rateLimit.local.statPrefix to the traffic policy, with route template tokens, so local rate-limit stats can be told apart per route (#14925). Unit and translator tests, including strict mode; labelled kind/feature.",
+      "diff": "11 files · +555 −8",
+      "tags": [
+        "Go",
+        "Envoy",
+        "Gateway API"
+      ],
+      "url": "https://github.com/kgateway-dev/kgateway/pull/14945",
+      "note": "Opened 29 Oct 2026"
+    },
+    {
+      "org": "containers",
+      "repo": "kubernetes-mcp-server",
+      "project": "Kubernetes MCP Server",
+      "number": 1521,
+      "kind": "pr",
+      "status": "closed",
+      "date": "2026-10-20",
+      "title": "Fix main not building (Kiali status probe)",
+      "summary": "Found that main stopped compiling after two PRs merged out of order, and fixed it. The maintainer merged his own fix (#1526) with the same code change plus a test, so this one was closed as superseded.",
+      "diff": "1 file · +6 −2",
+      "tags": [
+        "Go",
+        "Build"
+      ],
+      "url": "https://github.com/containers/kubernetes-mcp-server/pull/1521",
+      "note": "Opened 17 Oct · closed 20 Oct 2026"
+    },
+    {
+      "org": "containers",
+      "repo": "kubernetes-mcp-server",
+      "project": "Kubernetes MCP Server",
+      "number": 1568,
+      "kind": "issue",
+      "status": "confirmed",
+      "date": "2026-10-25",
+      "title": "Root-caused a “flaky” test",
+      "summary": "Showed that a reported flaky failure on another contributor's PR was a real merge-order bug, reproduced it and suggested the fix. The author confirmed it, applied the fix and closed the issue as root-caused.",
+      "diff": "Diagnosis",
+      "tags": [
+        "Debugging",
+        "Go"
+      ],
+      "url": "https://github.com/containers/kubernetes-mcp-server/issues/1568",
+      "note": "25 Oct 2026"
+    },
+    {
+      "org": "kubeflow",
+      "repo": "spark-operator",
+      "project": "Kubeflow Spark Operator",
+      "number": 3130,
+      "kind": "issue",
+      "status": "progress",
+      "date": "2026-10-22",
+      "title": "Migrate the API reference docs generator",
+      "summary": "Evaluated crd-ref-docs against genref with sample output, line counts and field-accuracy checks (genref marked some optional fields as required), and recommended crd-ref-docs for the maintainer's decision.",
+      "diff": "Evaluation",
+      "tags": [
+        "Go",
+        "Docs tooling"
+      ],
+      "url": "https://github.com/kubeflow/spark-operator/issues/3130",
+      "note": "Assigned 22 Oct 2026"
+    },
+    {
+      "org": "kgateway-dev",
+      "repo": "kgateway",
+      "project": "kgateway (CNCF)",
+      "number": 14835,
+      "kind": "issue",
+      "status": "waiting",
+      "date": "2026-10-22",
+      "title": "Metrics audit",
+      "summary": "Posted an inventory of findings for the maintainer's metrics audit and offered a cleanup PR for him to pick.",
+      "diff": "Audit",
+      "tags": [
+        "Prometheus",
+        "Go"
+      ],
+      "url": "https://github.com/kgateway-dev/kgateway/issues/14835",
+      "note": "22 Oct 2026"
+    }
+  ]
+}
