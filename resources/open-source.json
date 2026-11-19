@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14",
+  "updated": "2026-11-20",
   "profile": "https://github.com/UchihaIthachi",
   "contributions": [
     {
@@ -265,7 +265,7 @@
         "Tracing"
       ],
       "url": "https://github.com/jaegertracing/jaeger/pull/9997",
-      "note": "Issue #9991 filed → PR opened 1 Nov 2026"
+      "note": "Issue #9991 filed → PR opened 1 Nov 2026 · approved 13 Nov"
     },
     {
       "org": "kgateway-dev",
@@ -357,6 +357,44 @@
       ],
       "url": "https://github.com/kgateway-dev/kgateway/issues/14835",
       "note": "22 Oct 2026"
+    },
+    {
+      "org": "apache",
+      "repo": "camel-k",
+      "project": "Apache Camel K",
+      "number": 6974,
+      "kind": "pr",
+      "status": "merged",
+      "date": "2026-11-17",
+      "title": "feat(trait/keda): add NATS JetStream scaler mapping",
+      "summary": "Adds an NATS JetStream autoscaler to Camel K's KEDA trait (issue #6973, proposed by me): the scaler mapping, unit tests, an end-to-end test in the KEDA workflow and docs. The maintainer's design question was about resolving the server host; the PR answers it.",
+      "diff": "",
+      "tags": [
+        "Go",
+        "KEDA",
+        "NATS"
+      ],
+      "url": "https://github.com/apache/camel-k/pull/6974",
+      "note": "Merged 17 Nov 2026"
+    },
+    {
+      "org": "containers",
+      "repo": "kubernetes-mcp-server",
+      "project": "Kubernetes MCP Server",
+      "number": 1700,
+      "kind": "pr",
+      "status": "review",
+      "date": "2026-11-18",
+      "title": "feat(http): add per-client rate limiting",
+      "summary": "Adds per-client rate limiting to the Kubernetes MCP server's HTTP transport (refs #1472), with 18 new tests and docs, including a caveat about trusting proxy headers.",
+      "diff": "11 files · +670 −3",
+      "tags": [
+        "Go",
+        "MCP",
+        "Rate limiting"
+      ],
+      "url": "https://github.com/containers/kubernetes-mcp-server/pull/1700",
+      "note": "Opened 18 Nov 2026"
     }
   ]
 }
