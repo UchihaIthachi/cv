@@ -258,7 +258,7 @@
       "date": "2026-11-01",
       "title": "MCP get_trace_topology: walk spans no root reaches",
       "summary": "Found and reported (#9991) a bug in Jaeger's MCP get_trace_topology tool: spans in a parent cycle, or a span that lists itself as its parent, had no root above them, so the tool never reached them while total_span_count still counted them. The fix walks the spans no root reached, in start-time order, within the existing depth and span limits. (The reused-ID part of #9991 was fixed separately by #9763.)",
-      "diff": "2 files · +208 −3",
+      "diff": "2 files · +299 −3",
       "tags": [
         "Go",
         "MCP",
@@ -368,14 +368,14 @@
       "date": "2026-11-17",
       "title": "feat(trait/keda): add NATS JetStream scaler mapping",
       "summary": "Adds an NATS JetStream autoscaler to Camel K's KEDA trait (issue #6973, proposed by me): the scaler mapping, unit tests, an end-to-end test in the KEDA workflow and docs. The maintainer's design question was about resolving the server host; the PR answers it.",
-      "diff": "",
+      "diff": "10 files · +471 −2",
       "tags": [
         "Go",
         "KEDA",
         "NATS"
       ],
       "url": "https://github.com/apache/camel-k/pull/6974",
-      "note": "Merged 17 Nov 2026"
+      "note": "Opened 15 Nov → merged 17 Nov 2026"
     },
     {
       "org": "containers",
