@@ -5,8 +5,8 @@
 {Colombo, Sri Lanka}
 
 \begin{itemize}[leftmargin=*, itemsep=0.2em, topsep=0.1em]
-  \item Building CAL's in-house electronic trading platform: a direct gateway to the \skw{Colombo Stock Exchange (CSE)} plus dealing, operations and testing tools.
-  \item Led CSE's \skw{188}-case \skw{exchange certification} with a Certification Runner that drives each case and diffs every field, backed by message logs and a CI-enforced register.
-  \item \kw{Event-sourced CQRS} order path on a \kw{Chronicle Queue} journal with \kw{PostgreSQL} as async read model; \kw{FIX 5.0 SP2} routing and drop copy (\kw{QuickFIX/J}) and a \kw{Java NIO} \kw{MITCH} multicast decoder.
-  \item Built an exchange simulator with \skw{zero parity failures} over \skw{1,700+} real exchange conversations, failover and gap recovery, and \skw{\textasciitilde 1,050 automated tests} in CI.
+  \item Building and owning CAL's in-house trading platform: a direct gateway to the \skw{Colombo Stock Exchange (CSE)} and dealing tools.
+  \item Led CSE's \skw{188}-case \skw{exchange certification} with a Certification Runner that checks and explains every FIX field difference.
+  \item \kw{Event-sourced CQRS} order path (\kw{Chronicle Queue} journal, \kw{PostgreSQL} read model, no DB write on the order path); \kw{FIX 5.0 SP2} trading and drop copy (\kw{QuickFIX/J}); \kw{Java NIO} \kw{MITCH} multicast decoder.
+  \item Exchange simulator with \skw{zero parity failures} over \skw{1,700+} real exchange conversations; \skw{1,300+ automated tests} in CI.
 \end{itemize}

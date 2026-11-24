@@ -203,10 +203,10 @@ Software Engineer specializing in \skw{Distributed Systems}, \skw{Microservices}
 {Colombo, Sri Lanka}
 
 \begin{itemize}[leftmargin=*, itemsep=0.2em, topsep=0.1em]
-  \item Building CAL's in-house electronic trading platform: a direct gateway to the \skw{Colombo Stock Exchange (CSE)} plus dealing, operations and testing tools.
-  \item Led CSE's \skw{188}-case \skw{exchange certification} with a Certification Runner that drives each case and diffs every field, backed by message logs and a CI-enforced register.
-  \item \kw{Event-sourced CQRS} order path on a \kw{Chronicle Queue} journal with \kw{PostgreSQL} as async read model; \kw{FIX 5.0 SP2} routing and drop copy (\kw{QuickFIX/J}) and a \kw{Java NIO} \kw{MITCH} multicast decoder.
-  \item Built an exchange simulator with \skw{zero parity failures} over \skw{1,700+} real exchange conversations, failover and gap recovery, and \skw{\textasciitilde 1,050 automated tests} in CI.
+  \item Building and owning CAL's in-house trading platform: a direct gateway to the \skw{Colombo Stock Exchange (CSE)} and dealing tools.
+  \item Led CSE's \skw{188}-case \skw{exchange certification} with a Certification Runner that checks and explains every FIX field difference.
+  \item \kw{Event-sourced CQRS} order path (\kw{Chronicle Queue} journal, \kw{PostgreSQL} read model, no DB write on the order path); \kw{FIX 5.0 SP2} trading and drop copy (\kw{QuickFIX/J}); \kw{Java NIO} \kw{MITCH} multicast decoder.
+  \item Exchange simulator with \skw{zero parity failures} over \skw{1,700+} real exchange conversations; \skw{1,300+ automated tests} in CI.
 \end{itemize}
 \vspace{0.12em}
 
@@ -261,10 +261,10 @@ Software Engineer specializing in \skw{Distributed Systems}, \skw{Microservices}
 % OSS-RESUME:START
 \kw{Merged:} \href{https://github.com/kedacore/keda/pull/8317}{KEDA \#8317} (CNCF, \texttt{onlyReadyPods} scaler option, docs, refactor);
 \href{https://github.com/kgateway-dev/kgateway/pull/14851}{kgateway \#14851} (CNCF) --- \texttt{kgateway\_build\_info} metric, shipped in v2.5;
+\href{https://github.com/jaegertracing/jaeger/pull/9997}{Jaeger \#9997} (CNCF, MCP topology fix for a bug I reported);
 \href{https://github.com/containers/kubernetes-mcp-server/pull/1482}{kubernetes-mcp-server \#1482} and \href{https://github.com/containers/kubernetes-mcp-server/pull/1549}{\#1549} --- test fixes;
 \href{https://github.com/apache/skywalking-banyandb/pull/1462}{BanyanDB \#1462} and \href{https://github.com/apache/skywalking-banyandb/pull/1465}{\#1465} (Apache, MCP bugs I found).\\
 \kw{In review:} \href{https://github.com/kedacore/keda/pull/8356}{KEDA \#8356} (CNCF, Temporal gRPC metrics, approved);
-\href{https://github.com/jaegertracing/jaeger/pull/9997}{Jaeger \#9997} (CNCF, MCP topology fix, approved);
 \href{https://github.com/kgateway-dev/kgateway/pull/14945}{kgateway \#14945} (\texttt{statPrefix});
 \href{https://github.com/kubeflow/spark-operator/pull/3249}{Spark Operator \#3249} (executor-metrics tests, LGTM);
 \href{https://github.com/containers/kubernetes-mcp-server/pull/1700}{kubernetes-mcp-server \#1700} (per-client rate limiting).

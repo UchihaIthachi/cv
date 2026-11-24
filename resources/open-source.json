@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-20",
+  "updated": "2026-11-25",
   "profile": "https://github.com/UchihaIthachi",
   "contributions": [
     {
@@ -254,8 +254,8 @@
       "project": "Jaeger (CNCF)",
       "number": 9997,
       "kind": "pr",
-      "status": "review",
-      "date": "2026-11-01",
+      "status": "merged",
+      "date": "2026-11-24",
       "title": "MCP get_trace_topology: walk spans no root reaches",
       "summary": "Found and reported (#9991) a bug in Jaeger's MCP get_trace_topology tool: spans in a parent cycle, or a span that lists itself as its parent, had no root above them, so the tool never reached them while total_span_count still counted them. The fix walks the spans no root reached, in start-time order, within the existing depth and span limits. (The reused-ID part of #9991 was fixed separately by #9763.)",
       "diff": "2 files · +299 −3",
@@ -265,7 +265,7 @@
         "Tracing"
       ],
       "url": "https://github.com/jaegertracing/jaeger/pull/9997",
-      "note": "Issue #9991 filed → PR opened 1 Nov 2026 · approved 13 Nov"
+      "note": "Opened 1 Nov → merged 24 Nov 2026"
     },
     {
       "org": "kgateway-dev",
@@ -277,7 +277,7 @@
       "date": "2026-10-29",
       "title": "statPrefix for local rate limits",
       "summary": "Adds rateLimit.local.statPrefix to the traffic policy, with route template tokens, so local rate-limit stats can be told apart per route (#14925). Unit and translator tests, including strict mode; labelled kind/feature.",
-      "diff": "11 files · +555 −8",
+      "diff": "16 files · +1143 −9",
       "tags": [
         "Go",
         "Envoy",
